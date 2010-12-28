@@ -12,7 +12,7 @@ module Diaspora
 
       def raw_visible_posts
         Post.joins(:post_visibilities => :aspect).where(:pending => false,
-                                   :aspects => {:user_id => self.id}).select('DISTINCT `posts`.*')
+                                   :aspects => {:user_id => self.id}).select('DISTINCT posts.*')
       end
 
       def visible_posts( opts = {} )
@@ -42,7 +42,7 @@ module Diaspora
         if opts[:type] == 'remote'
           people = people.where(:owner_id => nil)
         elsif opts[:type] == 'local'
-          people = people.where('`people`.`owner_id` IS NOT NULL')
+          people = people.where('people.owner_id IS NOT NULL')
         end
         people
       end

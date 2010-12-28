@@ -24,8 +24,13 @@ module Diaspora
         object = Diaspora::Parser.from_xml(xml)
         Rails.logger.info("event=receive status=start recipient=#{self.diaspora_handle} payload_type=#{object.class} sender=#{salmon_author.diaspora_handle}")
         if object.is_a?(Request)
-          salmon_author.save!
-          object.sender = salmon_author
+          if (salmon_author.id)
+            salmon_author.save!
+            object.sender = salmon_author
+          else
+            Rails.logger.info("event=receive status=abort reason='missing ID in author' recipient=#{self.diaspora_handle} sender=#{salmon_author.diaspora_handle} payload_type=#{object.class}")
+            return
+          end
         end
 
         if object.is_a?(Comment)

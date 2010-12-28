@@ -160,7 +160,7 @@ class User < ActiveRecord::Base
     target_people = Person.joins(
       :contacts => :aspect_memberships
     ).where(:aspect_memberships => {:aspect_id => target_aspect_ids}
-           ).select("DISTINCT `people`.*")
+           ).select("DISTINCT people.*")
 
     post_to_hub(post) if post.respond_to?(:public) && post.public
     push_to_people(post, target_people)
