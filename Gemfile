@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'mysql2'
+gem 'pg'
 gem 'rails', '3.0.3'
 
 gem 'bundler', '>= 1.0.0'
