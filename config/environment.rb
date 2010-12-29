@@ -4,6 +4,7 @@
 
 # Load the rails application
 require File.expand_path('../application', __FILE__)
+#require 'haml'
 Haml::Template.options[:format] = :html5
 Haml::Template.options[:escape_html] = true
 
