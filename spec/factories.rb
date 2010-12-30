@@ -77,8 +77,15 @@ Factory.define :service do |service|
   service.sequence(:uid)           { |token| "00000#{token}" }
   service.sequence(:access_token)  { |token| "12345#{token}" }
   service.sequence(:access_secret) { |token| "98765#{token}" }
+
+   p "Building Service"
+   p service
+
   service.after_build do |s|
+    p "After build"
     s._type = "Services::#{s.provider.camelize}"
+    p "Made service"
+    p s
   end
 end
 

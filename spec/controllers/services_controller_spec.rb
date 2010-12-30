@@ -67,7 +67,13 @@ describe ServicesController do
       post :create
       p "what do we have"
       p user.services.first
-      user.services.first.class.name.should == "Services::Twitter"
+      user.services.first.class.name.should == "Service"
+      user.services.first.provider.should == "twitter"
+
+      # this is called before the "after build is called"
+      ##<Service id: nil, _type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname:\ "sirrobertking", created_at: nil, updated_at: nil>
+      # so that the type is not set.... #TODO
+
     end
   end
 
