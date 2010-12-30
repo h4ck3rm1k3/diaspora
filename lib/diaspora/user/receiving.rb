@@ -4,6 +4,8 @@ require File.join(Rails.root, 'lib/diaspora/parser')
 module Diaspora
   module UserModules
     module Receiving
+
+    # used to get a user from xml
       def receive_salmon salmon_xml
         salmon = Salmon::SalmonSlap.parse salmon_xml, self
         webfinger = Webfinger.new(salmon.author_email)
@@ -28,11 +30,19 @@ module Diaspora
             salmon_author.save!
             object.sender = salmon_author
           else
-            Rails.logger.info("event=receive status=abort reason='missing ID in author' recipient=#{self.diaspora_handle} sender=#{salmon_author.diaspora_handle} payload_type=#{object.class}")
-            return
+            if (salmon_author._id)
+              salmon_author.id=salmon_author._id
+              salmon_author.save!
+              object.sender = salmon_author
+            else
+              p "Missing id"
+              pp salmon_author
+              
+              Rails.logger.info("event=receive status=abort reason='missing ID in author' recipient=#{self.diaspora_handle} sender=#{salmon_author.diaspora_handle} payload_type=#{object.class}")
+              return
+            end
           end
         end
-
         if object.is_a?(Comment)
           xml_author = (owns?(object.post)) ? object.diaspora_handle : object.post.person.diaspora_handle
         else

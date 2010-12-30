@@ -176,16 +176,22 @@ describe User do
       remote_person = user3.person.dup
       user3.person.delete
       user3.delete
-      remote_person.id = nil
+#why?      remote_person.id = nil
 
       #stubs async webfinger
       Person.should_receive(:by_account_identifier).twice.and_return{ |handle|
         if handle == user.person.diaspora_handle
+          p "got user person"
+          p user.person
           user.person.save
           user.person
         else
           remote_person.profile = Factory(:profile)
+          p "going to save"
+          p "got remote person"
+          p remote_person
           remote_person.save!
+#          remote_person.save
           remote_person
         end
       }
