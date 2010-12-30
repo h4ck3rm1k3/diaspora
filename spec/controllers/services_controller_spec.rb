@@ -65,6 +65,8 @@ describe ServicesController do
       user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
+      p "what do we have"
+      p user.services.first
       user.services.first.class.name.should == "Services::Twitter"
     end
   end
