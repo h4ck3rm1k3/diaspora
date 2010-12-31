@@ -62,9 +62,11 @@ describe ServicesController do
 
 
     it 'creates a twitter service' do
+      Service.delete_all
       user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
+
       p "what do we have"
       p user.services.first
       user.services.first.class.name.should == "Service"
@@ -74,18 +76,8 @@ describe ServicesController do
       ##<Service id: nil, _type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname:\ "sirrobertking", created_at: nil, updated_at: nil>
       # so that the type is not set.... #TODO
 
-    end
-  end
+      user.reload
+      user.services.first.class.name.should == "Services::Twitter"
 
-  describe '#destroy' do
-    before do
-      @service1 = Factory.create(:service)
-      user.services << @service1
-    end
-    it 'destroys a service selected by id' do
-      lambda{
-        delete :destroy, :id => @service1.id
-      }.should change(user.services, :count).by(-1)
     end
   end
-end
