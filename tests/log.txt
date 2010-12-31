@@ -1,6 +1,338 @@
 Jammit Warning: Asset compression disabled -- Java unavailable.
 (in /home/phurl/experiments/diaspora)
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »aspect_memberships_id_seq« für die »serial«-Spalte »aspect_memberships.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »aspect_memberships_pkey« für Tabelle »aspect_memberships«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »aspects_id_seq« für die »serial«-Spalte »aspects.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »aspects_pkey« für Tabelle »aspects«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »comments_id_seq« für die »serial«-Spalte »comments.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »comments_pkey« für Tabelle »comments«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »contacts_id_seq« für die »serial«-Spalte »contacts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »contacts_pkey« für Tabelle »contacts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »invitations_id_seq« für die »serial«-Spalte »invitations.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »invitations_pkey« für Tabelle »invitations«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »notifications_id_seq« für die »serial«-Spalte »notifications.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »notifications_pkey« für Tabelle »notifications«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »people_id_seq« für die »serial«-Spalte »people.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »people_pkey« für Tabelle »people«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »post_visibilities_id_seq« für die »serial«-Spalte »post_visibilities.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »post_visibilities_pkey« für Tabelle »post_visibilities«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »posts_id_seq« für die »serial«-Spalte »posts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »posts_pkey« für Tabelle »posts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »profiles_id_seq« für die »serial«-Spalte »profiles.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »profiles_pkey« für Tabelle »profiles«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »requests_id_seq« für die »serial«-Spalte »requests.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »requests_pkey« für Tabelle »requests«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »services_id_seq« für die »serial«-Spalte »services.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »services_pkey« für Tabelle »services«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »users_id_seq« für die »serial«-Spalte »users.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »users_pkey« für Tabelle »users«
+/usr/bin/ruby1.8 -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb"
+Jammit Warning: Asset compression disabled -- Java unavailable.
+"created user"
+#<Factory:0x2b15a4aa6768 @attributes=[], @options={:parent=>:user}, @factory_name=:user_with_aspect>
+"Building Service"
+#<Factory:0x2b15a4aa58b8 @attributes=[#<Factory::Attribute::Static:0x2b15a4aa5598 @name=:nickname, @value="sirrobertking">, #<Factory::Attribute::Static:0x2b15a4aa5480 @name=:provider, @value="twitter">, #<Factory::Attribute::Dynamic:0x2b15a4aa53b8 @name=:uid, @block=#<Proc:0x00002b15a5a30c60@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b15a4aa5250 @name=:access_token, @block=#<Proc:0x00002b15a5a30c60@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b15a4aa5110 @name=:access_secret, @block=#<Proc:0x00002b15a5a30c60@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>], @options={}, @factory_name=:service>
+"create user"
+"created user:"
+#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+"Does the user exists?"
+#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+"Does the user services exists?"
+[]
+"now going to access them"
+.............................................................................
+  1) Diaspora::Parser parsing compliant XML object connecting should create a new person upon getting a person request
+     Failure/Error: @user.receive_salmon xml
+     undefined method `_id' for #<Person:0x2b15a87fbbe0>
+     # ./lib/diaspora/user/receiving.rb:33:in `receive'
+     # ./lib/diaspora/user/receiving.rb:19:in `receive_salmon'
+     # ./spec/lib/diaspora/parser_spec.rb:59
+     # ./spec/lib/diaspora/parser_spec.rb:58
+.................
+  2) RakeHelpers#process_emails should make a user with 10 invites
+     Failure/Error: User.count.should == 0
+     expected: 0,
+     got: 1 (using ==)
+     # ./spec/lib/rake_helper_spec.rb:31
+............................................*....*..........................................."Sign in user"
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000002", access_token: "123452", access_secret: "987652", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000002", access_token: "123452", access_secret: "987652", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000003", access_token: "123453", access_secret: "987653", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000003", access_token: "123453", access_secret: "987653", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+."Sign in user"
+."Sign in user"
+."Sign in user"
+."Sign in user"
+"what do we have"
+#<Service id: 1, type: "Services::Twitter", user_id: 1, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: "2010-12-31 17:21:27", updated_at: "2010-12-31 17:21:27">
+."Sign in user"
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+..............***.*................................................................................................*........*.....................................................................................
+  3) Person.search should yield search results on partial names
+     Failure/Error: people.count.should == 1
+     expected: 1,
+     got: 0 (using ==)
+     # ./spec/models/person_spec.rb:181
+........................*..............................................."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000006", access_token: "123456", access_secret: "987656", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000006", access_token: "123456", access_secret: "987656", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "000007", access_token: "123457", access_secret: "987657", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "000007", access_token: "123457", access_secret: "987657", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000008", access_token: "123458", access_secret: "987658", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000008", access_token: "123458", access_secret: "987658", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "000009", access_token: "123459", access_secret: "987659", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "000009", access_token: "123459", access_secret: "987659", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000010", access_token: "1234510", access_secret: "9876510", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000010", access_token: "1234510", access_secret: "9876510", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000011", access_token: "1234511", access_secret: "9876511", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000011", access_token: "1234511", access_secret: "9876511", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000012", access_token: "1234512", access_secret: "9876512", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000012", access_token: "1234512", access_secret: "9876512", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000013", access_token: "1234513", access_secret: "9876513", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000013", access_token: "1234513", access_secret: "9876513", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000014", access_token: "1234514", access_secret: "9876514", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000014", access_token: "1234514", access_secret: "9876514", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000015", access_token: "1234515", access_secret: "9876515", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000015", access_token: "1234515", access_secret: "9876515", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000016", access_token: "1234516", access_secret: "9876516", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000016", access_token: "1234516", access_secret: "9876516", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000017", access_token: "1234517", access_secret: "9876517", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000017", access_token: "1234517", access_secret: "9876517", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000018", access_token: "1234518", access_secret: "9876518", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000018", access_token: "1234518", access_secret: "9876518", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000019", access_token: "1234519", access_secret: "9876519", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000019", access_token: "1234519", access_secret: "9876519", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000020", access_token: "1234520", access_secret: "9876520", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000020", access_token: "1234520", access_secret: "9876520", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000021", access_token: "1234521", access_secret: "9876521", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000021", access_token: "1234521", access_secret: "9876521", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000022", access_token: "1234522", access_secret: "9876522", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000022", access_token: "1234522", access_secret: "9876522", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000023", access_token: "1234523", access_secret: "9876523", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000023", access_token: "1234523", access_secret: "9876523", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000024", access_token: "1234524", access_secret: "9876524", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000024", access_token: "1234524", access_secret: "9876524", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000025", access_token: "1234525", access_secret: "9876525", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000025", access_token: "1234525", access_secret: "9876525", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000026", access_token: "1234526", access_secret: "9876526", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000026", access_token: "1234526", access_secret: "9876526", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000027", access_token: "1234527", access_secret: "9876527", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000027", access_token: "1234527", access_secret: "9876527", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000028", access_token: "1234528", access_secret: "9876528", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000028", access_token: "1234528", access_secret: "9876528", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000029", access_token: "1234529", access_secret: "9876529", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000029", access_token: "1234529", access_secret: "9876529", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000030", access_token: "1234530", access_secret: "9876530", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000030", access_token: "1234530", access_secret: "9876530", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000031", access_token: "1234531", access_secret: "9876531", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000031", access_token: "1234531", access_secret: "9876531", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000032", access_token: "1234532", access_secret: "9876532", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000032", access_token: "1234532", access_secret: "9876532", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000033", access_token: "1234533", access_secret: "9876533", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000033", access_token: "1234533", access_secret: "9876533", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000034", access_token: "1234534", access_secret: "9876534", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000034", access_token: "1234534", access_secret: "9876534", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000035", access_token: "1234535", access_secret: "9876535", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000035", access_token: "1234535", access_secret: "9876535", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000036", access_token: "1234536", access_secret: "9876536", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000036", access_token: "1234536", access_secret: "9876536", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000037", access_token: "1234537", access_secret: "9876537", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000037", access_token: "1234537", access_secret: "9876537", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000038", access_token: "1234538", access_secret: "9876538", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000038", access_token: "1234538", access_secret: "9876538", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000039", access_token: "1234539", access_secret: "9876539", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000039", access_token: "1234539", access_secret: "9876539", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000040", access_token: "1234540", access_secret: "9876540", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000040", access_token: "1234540", access_secret: "9876540", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000041", access_token: "1234541", access_secret: "9876541", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000041", access_token: "1234541", access_secret: "9876541", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000042", access_token: "1234542", access_secret: "9876542", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000042", access_token: "1234542", access_secret: "9876542", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000043", access_token: "1234543", access_secret: "9876543", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000043", access_token: "1234543", access_secret: "9876543", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000044", access_token: "1234544", access_secret: "9876544", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000044", access_token: "1234544", access_secret: "9876544", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000045", access_token: "1234545", access_secret: "9876545", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000045", access_token: "1234545", access_secret: "9876545", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000046", access_token: "1234546", access_secret: "9876546", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000046", access_token: "1234546", access_secret: "9876546", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000047", access_token: "1234547", access_secret: "9876547", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000047", access_token: "1234547", access_secret: "9876547", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+............................................
+  4) Diaspora::UserModules::Connecting contact requesting received a contact request should mark the corresponding notification as 'read'
+     Failure/Error: Notification.where(:target_id=>@received_request.id).first.unread.should be_false
+     expected true to be false
+     # ./spec/models/user/connecting_spec.rb:114
+.....................*.......*........."going to save"
+"got remote person"
+#<Person id: 1229, guid: "00a4a822f05ca99a", url: "http://google-123120d0a2.com/", diaspora_handle: "bob805539034@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBAPRABwPNRjoe...", owner_id: 845, created_at: "2010-12-31 17:25:18", updated_at: "2010-12-31 17:25:18">
+"going to save"
+"got remote person"
+#<Person id: 1229, guid: "00a4a822f05ca99a", url: "http://google-123120d0a2.com/", diaspora_handle: "bob805539034@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBAPRABwPNRjoe...", owner_id: 845, created_at: "2010-12-31 17:25:18", updated_at: "2010-12-31 17:25:18">
+.......................................................*..***...........*.........."created service"
+#<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil>
+."created service"
+#<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil>
+."created service"
+#<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil>
+....*..
+
+Pending:
+  AspectsController#hashes_for_contacts does not select the person's rsa key
+    # Don't select RSA keys for views
+    # ./spec/controllers/aspects_controller_spec.rb:202
+  AspectsController#hashes_for_aspects does not return the rsa key
+    # Don't select RSA keys for views
+    # ./spec/controllers/aspects_controller_spec.rb:230
+  HomeController log overriding in lib/log_overrider cross-stage logs a unified id in a request
+    # This might require patching Rails
+    # ./spec/controllers/home_controller_spec.rb:41
+  HomeController log overriding in lib/log_overrider cross-stage logs different ids in different requests
+    # This might require patching Rails
+    # ./spec/controllers/home_controller_spec.rb:47
+  HomeController log overriding in lib/log_overrider starting logs it
+    # This code is never reached in tests, but it seems to work in actual requests
+    # ./spec/controllers/home_controller_spec.rb:61
+  HomeController log overriding in lib/log_overrider rendering logs layouts
+    # where is the template=home/show line?
+    # ./spec/controllers/home_controller_spec.rb:73
+  Invitation.create_invitee with an existing invitee does not change the invitation token
+    # until this passes, old invitation emails will be invalidated by new ones
+    # ./spec/models/invitation_spec.rb:169
+  Invitation.create_invitee with no inviter creates an invitation
+    # Invitations should be more flexible, allowing custom messages to be passed in without an inviter.
+    # ./spec/models/invitation_spec.rb:224
+  User overwriting people does not overwrite old users with factory
+    # Why do you want to set ids directly? MONGOMAPPERRRRR!!!
+    # ./spec/models/user_spec.rb:18
+  attack vectors malicious contact attack vector does not let me update other persons post
+    # this needs to be a photo
+    # ./spec/models/user/attack_vectors_spec.rb:163
+  User#receive_salmon should handle the case where the webfinger fails
+    # Write this to test #receive_salmon
+    # ./spec/models/user/receive_spec.rb:52
+  Photo commenting forwards comments to parent status message
+    # IMPORTANT! comments need to get sent to parent status message for a photo if one is present.  do this from the photo model, NOT in comment.
+    # ./spec/models/photo_spec.rb:147
+  Photo deletion deletes the parent object if there are no other photos or message
+    # No reason given
+    # ./spec/models/photo_spec.rb:174
+  Photo deletion does not delete the parent if the parent has other photos
+    # No reason given
+    # ./spec/models/photo_spec.rb:181
+  Photo deletion does not delete the parent if the parent has a message
+    # No reason given
+    # ./spec/models/photo_spec.rb:191
+  Request.hashes_for_person does not retrieve keys
+    # don't retrieve keys
+    # ./spec/models/request_spec.rb:83
+  Services::Facebook.public_message calls super with  MAX_CHARACTERS
+    # i guess you cant test this?
+    # ./spec/models/services/facebook_spec.rb:33
+
+Finished in 428.38 seconds
+673 examples, 4 failures, 17 pending
 rake aborted!
-Interrupt: : DROP DATABASE IF EXISTS "testing_db"
+ruby -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb" failed
 
 (See full trace by running task with --trace)
