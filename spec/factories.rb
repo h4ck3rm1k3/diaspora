@@ -82,9 +82,9 @@ Factory.define :service do |service|
    p service
 
   service.after_build do |s|
-
-    p "After build"
-    s._type = "Services::#{s.provider.camelize}"
+    p "After build :"
+    p s
+    s.type = "Services::#{s.provider.camelize}"
     p "Made service"
     p s
   end
