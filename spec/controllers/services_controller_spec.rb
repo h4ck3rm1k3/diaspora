@@ -9,8 +9,7 @@ describe ServicesController do
 
   p "create user"
 
-  let(:user)    { Factory.create(:user) }
-
+#  let(user)    { Factory.create(:user) }
   user = Factory.create(:user)
   p "created user:"
   p user
@@ -50,9 +49,9 @@ describe ServicesController do
     it 'displays all connected services for a user' do
       get :index
       p user
-      user.reload  
+#      user.reload  
       p user
-      assigns[:services].should == user.services
+      assigns[:services].should =~ user.services
     end
   end
 
@@ -80,7 +79,7 @@ describe ServicesController do
 
 
     it 'creates a twitter service' do
-#      Service.delete_all
+      Service.delete_all
       user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
@@ -89,12 +88,28 @@ describe ServicesController do
       p user.services.first
    #   user.services.first.class.name.should == "Service"
       user.services.first.provider.should == "twitter"
+
+      # need to reload to get "Services::Twitter"
       user.reload
+
       # this is called before the "after build is called"
       ##<Service id: nil, _type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname:\ "sirrobertking", created_at: nil, updated_at: nil>
       # so that the type is not set.... #TODO
       user.services.first.class.name.should == "Services::Twitter"
     end
   end
+
+  describe '#destroy' do
+    before do
+      @service1 = Factory.create(:service)
+      user.services << @service1
+    end
+    it 'destroys a service selected by id' do
+      lambda{
+        delete :destroy, :id => @service1.id
+      }.should change(user.services, :count).by(-1)
+    end
+  end
+  
 
 end
