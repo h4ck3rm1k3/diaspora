@@ -10,7 +10,9 @@ module YoutubeTitles
     title || I18n.t('application.helper.video_title.unknown')
   end
   def get_youtube_title text
-    self.youtube_titles ||= {}
+#    self.youtube_titles ||= {}
+    self[:youtube_titles] ||= {}
+
     youtube_match = text.match(YOUTUBE_ID_REGEX)
     return unless youtube_match
     video_id = youtube_match[1]
