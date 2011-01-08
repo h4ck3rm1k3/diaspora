@@ -1,0 +1,2 @@
+mongo_id,recipient_mongo_id,sender_mongo_id,aspect_mongo_id,message
+4d2657fdcc8cb46033000022,4d2657fbcc8cb46033000021,4d2657e9cc8cb46033000005,4d2657e9cc8cb46033000006,Hello!
