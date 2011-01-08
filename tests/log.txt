@@ -10,6 +10,32 @@ HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »contacts_id_seq« für d
 HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »contacts_pkey« für Tabelle »contacts«
 HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »invitations_id_seq« für die »serial«-Spalte »invitations.id«
 HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »invitations_pkey« für Tabelle »invitations«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_aspect_memberships_id_seq« für die »serial«-Spalte »mongo_aspect_memberships.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_aspect_memberships_pkey« für Tabelle »mongo_aspect_memberships«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_aspects_id_seq« für die »serial«-Spalte »mongo_aspects.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_aspects_pkey« für Tabelle »mongo_aspects«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_comments_id_seq« für die »serial«-Spalte »mongo_comments.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_comments_pkey« für Tabelle »mongo_comments«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_contacts_id_seq« für die »serial«-Spalte »mongo_contacts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_contacts_pkey« für Tabelle »mongo_contacts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_invitations_id_seq« für die »serial«-Spalte »mongo_invitations.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_invitations_pkey« für Tabelle »mongo_invitations«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_notifications_id_seq« für die »serial«-Spalte »mongo_notifications.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_notifications_pkey« für Tabelle »mongo_notifications«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_people_id_seq« für die »serial«-Spalte »mongo_people.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_people_pkey« für Tabelle »mongo_people«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_post_visibilities_id_seq« für die »serial«-Spalte »mongo_post_visibilities.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_post_visibilities_pkey« für Tabelle »mongo_post_visibilities«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_posts_id_seq« für die »serial«-Spalte »mongo_posts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_posts_pkey« für Tabelle »mongo_posts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_profiles_id_seq« für die »serial«-Spalte »mongo_profiles.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_profiles_pkey« für Tabelle »mongo_profiles«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_requests_id_seq« für die »serial«-Spalte »mongo_requests.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_requests_pkey« für Tabelle »mongo_requests«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_services_id_seq« für die »serial«-Spalte »mongo_services.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_services_pkey« für Tabelle »mongo_services«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_users_id_seq« für die »serial«-Spalte »mongo_users.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_users_pkey« für Tabelle »mongo_users«
 HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »notifications_id_seq« für die »serial«-Spalte »notifications.id«
 HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »notifications_pkey« für Tabelle »notifications«
 HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »people_id_seq« für die »serial«-Spalte »people.id«
@@ -26,256 +52,2365 @@ HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »services_id_seq« für d
 HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »services_pkey« für Tabelle »services«
 HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »users_id_seq« für die »serial«-Spalte »users.id«
 HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »users_pkey« für Tabelle »users«
-/usr/bin/ruby1.8 -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb"
+/usr/bin/ruby1.8 -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/data_conversion/export_from_mongo_spec.rb" "./spec/lib/data_conversion/import_to_mysql_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb"
 Jammit Warning: Asset compression disabled -- Java unavailable.
 "created user"
-#<Factory:0x2b15a4aa6768 @attributes=[], @options={:parent=>:user}, @factory_name=:user_with_aspect>
+#<Factory:0x2b51bc7fae98 @attributes=[], @options={:parent=>:user}, @factory_name=:user_with_aspect>
 "Building Service"
-#<Factory:0x2b15a4aa58b8 @attributes=[#<Factory::Attribute::Static:0x2b15a4aa5598 @name=:nickname, @value="sirrobertking">, #<Factory::Attribute::Static:0x2b15a4aa5480 @name=:provider, @value="twitter">, #<Factory::Attribute::Dynamic:0x2b15a4aa53b8 @name=:uid, @block=#<Proc:0x00002b15a5a30c60@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b15a4aa5250 @name=:access_token, @block=#<Proc:0x00002b15a5a30c60@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b15a4aa5110 @name=:access_secret, @block=#<Proc:0x00002b15a5a30c60@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>], @options={}, @factory_name=:service>
+#<Factory:0x2b51bc7f9e08 @attributes=[#<Factory::Attribute::Static:0x2b51bc7f9ac0 @name=:nickname, @value="sirrobertking">, #<Factory::Attribute::Static:0x2b51bc7f9980 @name=:provider, @value="twitter">, #<Factory::Attribute::Dynamic:0x2b51bc7f9868 @name=:uid, @block=#<Proc:0x00002b51bd7aec68@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b51bc7f9728 @name=:access_token, @block=#<Proc:0x00002b51bd7aec68@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b51bc7f95c0 @name=:access_secret, @block=#<Proc:0x00002b51bd7aec68@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>], @options={}, @factory_name=:service>
 "create user"
 "created user:"
-#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+#<User id: 1, username: "bob1f88712", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICWwIBAAKBgQDc8hA...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob17a0dd0@pivotallabs.com", encrypted_password: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e/vtNpd3st/UCQiqIAMJb5p...", password_salt: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 14:28:46", updated_at: "2011-01-08 14:28:46", mongo_id: nil>
 "Does the user exists?"
-#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+#<User id: 1, username: "bob1f88712", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICWwIBAAKBgQDc8hA...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob17a0dd0@pivotallabs.com", encrypted_password: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e/vtNpd3st/UCQiqIAMJb5p...", password_salt: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 14:28:46", updated_at: "2011-01-08 14:28:46", mongo_id: nil>
 "Does the user services exists?"
 []
 "now going to access them"
-.............................................................................
-  1) Diaspora::Parser parsing compliant XML object connecting should create a new person upon getting a person request
-     Failure/Error: @user.receive_salmon xml
-     undefined method `_id' for #<Person:0x2b15a87fbbe0>
-     # ./lib/diaspora/user/receiving.rb:33:in `receive'
-     # ./lib/diaspora/user/receiving.rb:19:in `receive_salmon'
-     # ./spec/lib/diaspora/parser_spec.rb:59
+...
+  1) StreamHelper renders a new comment form
+     Failure/Error: @post = @user.post(:status_message, :message => "hi", :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0874140>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/helpers/stream_helper_spec.rb:7
+
+  2) StreamHelper renders it fast the second time
+     Failure/Error: @post = @user.post(:status_message, :message => "hi", :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07d7f70>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/helpers/stream_helper_spec.rb:7
+...........................................
+  3) making sure the spec runner works#connect_users allows posting after running
+     Failure/Error: message = @user1.post(:status_message, :message => "Connection!", :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c09eace0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/misc_spec.rb:52
+
+  4) Salmon#create has data in the magic envelope
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c098eda0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  5) Salmon#create has no parsed_data
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0931a38>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  6) Salmon#create sets aes and iv key
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c08caf90>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  7) Salmon#create makes the data in the signature encrypted with that key
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c08546b0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  8) Salmon#xml_for has a encrypted header field
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07d86c8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  9) Salmon#xml_for the encrypted_header field should contain the aes key
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c077be78>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  10) Salmon marshaling should parse out the aes key
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0721b30>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  11) Salmon marshaling should parse out the iv
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c06c6f50>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  12) Salmon marshaling should parse out the authors diaspora_handle
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c066e030>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  13) Salmon marshaling verifies the signature for the sender
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0a9bd60>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  14) Salmon marshaling contains the original data
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0a00e00>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  15) Salmon marshaling#author should reference a local author
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c099f8d0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  16) Salmon marshaling#author should fail if no author is found
+     Failure/Error: let(:post){ user.post :status_message, :message => "hi", :to => user.aspects.create(:name => "sdg").id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c093e580>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/salmon_salmon_spec.rb:11
+     # ./spec/lib/salmon_salmon_spec.rb:13
+
+  17) Diaspora::Exporter <user/> includes a users private key
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c08077e8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  18) Diaspora::Exporter <aspects/> includes the post_ids
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0717798>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  19) Diaspora::Exporter <contacts/> includes a person id
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0c43690>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  20) Diaspora::Exporter <contacts/> should include an aspects names of all aspects they are in
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c09a8868>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  21) Diaspora::Exporter <people/> should include persons id
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c08a0ab0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  22) Diaspora::Exporter <people/> should include their profile
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07732a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  23) Diaspora::Exporter <people/> should include their public key
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c06828c8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  24) Diaspora::Exporter <people/> should include their diaspora handle
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0a2d2c0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  25) Diaspora::Exporter <posts> should include many posts xml
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0928758>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  26) Diaspora::Exporter <posts> should include post created at time
+     Failure/Error: @status_message1 =  @user1.post(:status_message, :message => "One", :public => true, :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07e91a8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/exporter_spec.rb:20
+
+  27) Diaspora::Parser parsing compliant XML object should be able to correctly parse comment fields
+     Failure/Error: post = @user.post :status_message, :message => "hello", :to => @aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07279b8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/parser_spec.rb:17
+
+  28) Diaspora::Parser parsing compliant XML object should accept retractions
+     Failure/Error: message = @user2.post(:status_message, :message => "cats", :to => @aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c06139c8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/lib/diaspora/parser_spec.rb:30
+..."Missing id"
+#<Person id: nil, guid: "1bb8a7397526284c", url: "http://google-1546ed33a.com/", diaspora_handle: "bob1067eb05d@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANzyEAv1wDym...", owner_id: nil, created_at: "2011-01-08 14:29:16", updated_at: "2011-01-08 14:29:16", mongo_id: nil>
+
+  29) Diaspora::Parser parsing compliant XML object connecting should create a new person upon getting a person request
+     Failure/Error: lambda {
+     count should have been changed by 1, but was changed by 0
      # ./spec/lib/diaspora/parser_spec.rb:58
-.................
-  2) RakeHelpers#process_emails should make a user with 10 invites
+..
+  30) Diaspora::Socketable sockets to a user
+     Failure/Error: @post.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0771860>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/lib/diaspora/web_socket_spec.rb:31
+..............
+  31) RakeHelpers#process_emails should make a user with 10 invites
      Failure/Error: User.count.should == 0
      expected: 0,
      got: 1 (using ==)
      # ./spec/lib/rake_helper_spec.rb:31
-............................................*....*..........................................."Sign in user"
+...
+  32) DataConversion::ImportToMysql#process_raw users imports data into the users table
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:25
+
+  33) DataConversion::ImportToMysql#process_raw users imports all the columns
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:25
+
+  34) DataConversion::ImportToMysql#process_raw aspects imports data into the aspects table
+     Failure/Error: @migrator.import_raw_aspects
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' ...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' INTO TABLE mongo_aspects
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
+        SET created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:169:in `import_raw_aspects'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:57
+
+  35) DataConversion::ImportToMysql#process_raw aspects imports all the columns
+     Failure/Error: @migrator.import_raw_aspects
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' ...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' INTO TABLE mongo_aspects
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
+        SET created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:169:in `import_raw_aspects'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:57
+
+  36) DataConversion::ImportToMysql#process_raw aspects sets the relation column
+     Failure/Error: @migrator.import_raw_aspects
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' ...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' INTO TABLE mongo_aspects
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
+        SET created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:169:in `import_raw_aspects'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:57
+
+  37) DataConversion::ImportToMysql#process_raw services imports data into the services table
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:85
+
+  38) DataConversion::ImportToMysql#process_raw services imports all the columns
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:85
+
+  39) DataConversion::ImportToMysql#process_raw services sets the relation column
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:85
+
+  40) DataConversion::ImportToMysql#process_raw people imports data into the people table
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:119
+
+  41) DataConversion::ImportToMysql#process_raw people imports all the columns of a non-owned person
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:119
+
+  42) DataConversion::ImportToMysql#process_raw people imports all the columns of an owned person
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:119
+
+  43) DataConversion::ImportToMysql#process_raw people sets the relational column of an owned person
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:119
+
+  44) DataConversion::ImportToMysql#process_raw contacts imports data into the mongo_contacts table
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:164
+
+  45) DataConversion::ImportToMysql#process_raw contacts imports all the columns
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:164
+
+  46) DataConversion::ImportToMysql#process_raw aspect_memberships imports data into the mongo_aspect_memberships table
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:194
+
+  47) DataConversion::ImportToMysql#process_raw aspect_memberships imports all the columns
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:194
+
+  48) DataConversion::ImportToMysql#import_raw aspects imports data into the mongo_aspects table
+     Failure/Error: @migrator.import_raw_aspects
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' ...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' INTO TABLE mongo_aspects
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
+        SET created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:169:in `import_raw_aspects'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:232
+
+  49) DataConversion::ImportToMysql#import_raw aspects imports all the columns
+     Failure/Error: @migrator.import_raw_aspects
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' ...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspects.csv' INTO TABLE mongo_aspects
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
+        SET created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:169:in `import_raw_aspects'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:237
+
+  50) DataConversion::ImportToMysql#import_raw aspect_memberships imports data into the mongo_aspect_memberships table
+     Failure/Error: @migrator.import_raw_aspect_memberships
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspect_member...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspect_memberships.csv' INTO TABLE mongo_aspect_memberships
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (contact_mongo_id, aspect_mongo_id)
+     # ./lib/data_conversion/import_to_mysql.rb:181:in `import_raw_aspect_memberships'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:252
+
+  51) DataConversion::ImportToMysql#import_raw aspect_memberships imports all the columns
+     Failure/Error: @migrator.import_raw_aspect_memberships
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/aspect_member...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/aspect_memberships.csv' INTO TABLE mongo_aspect_memberships
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (contact_mongo_id, aspect_mongo_id)
+     # ./lib/data_conversion/import_to_mysql.rb:181:in `import_raw_aspect_memberships'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:257
+
+  52) DataConversion::ImportToMysql#import_raw comments imports data into the mongo_comments table
+     Failure/Error: @migrator.import_raw_comments
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/comments.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/comments.csv' INTO TABLE mongo_comments
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, post_mongo_id, person_mongo_id, @diaspora_handle, text, @youtube_titles)
+        SET guid = mongo_id,
+        youtube_titles = NULLIF(@youtube_titles, '');
+     # ./lib/data_conversion/import_to_mysql.rb:191:in `import_raw_comments'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:271
+
+  53) DataConversion::ImportToMysql#import_raw comments imports all the columns
+     Failure/Error: @migrator.import_raw_comments
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/comments.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/comments.csv' INTO TABLE mongo_comments
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, post_mongo_id, person_mongo_id, @diaspora_handle, text, @youtube_titles)
+        SET guid = mongo_id,
+        youtube_titles = NULLIF(@youtube_titles, '');
+     # ./lib/data_conversion/import_to_mysql.rb:191:in `import_raw_comments'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:276
+
+  54) DataConversion::ImportToMysql#import_raw contacts imports data into the mongo_contacts table
+     Failure/Error: @migrator.import_raw_contacts
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/contacts.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/contacts.csv' INTO TABLE mongo_contacts
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, user_mongo_id, person_mongo_id, @pending, @created_at, @updated_at)
+        SET pending= IF(STRCMP(@pending,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:217:in `import_raw_contacts'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:292
+
+  55) DataConversion::ImportToMysql#import_raw contacts imports all the columns
+     Failure/Error: @migrator.import_raw_contacts
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/contacts.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/contacts.csv' INTO TABLE mongo_contacts
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, user_mongo_id, person_mongo_id, @pending, @created_at, @updated_at)
+        SET pending= IF(STRCMP(@pending,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:217:in `import_raw_contacts'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:297
+
+  56) DataConversion::ImportToMysql#import_raw invitations imports data into the mongo_invitations table
+     Failure/Error: @migrator.import_raw_invitations
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/invitations.c...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/invitations.csv' INTO TABLE mongo_invitations
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, recipient_mongo_id, sender_mongo_id, aspect_mongo_id, message)
+     # ./lib/data_conversion/import_to_mysql.rb:263:in `import_raw_invitations'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:313
+
+  57) DataConversion::ImportToMysql#import_raw invitations imports all the columns
+     Failure/Error: @migrator.import_raw_invitations
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/invitations.c...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/invitations.csv' INTO TABLE mongo_invitations
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, recipient_mongo_id, sender_mongo_id, aspect_mongo_id, message)
+     # ./lib/data_conversion/import_to_mysql.rb:263:in `import_raw_invitations'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:318
+
+  58) DataConversion::ImportToMysql#import_raw posts imports data into the mongo_posts table
+     Failure/Error: @migrator.import_raw_posts
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/posts.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/posts.csv' INTO TABLE mongo_posts
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (@youtube_titles,@pending,@created_at,@public,@updated_at,status_message_mongo_id,caption,remote_photo_path,remote_photo_name,random_string,image,mongo_id,type,diaspora_handle,person_mongo_id,message)
+        SET guid = mongo_id,
+        youtube_titles = NULLIF(@youtube_titles, ''),
+        created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3)),
+        pending= IF(STRCMP(@pending,'false'), TRUE, FALSE),
+        public= IF(STRCMP(@public,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:202:in `import_raw_posts'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:335
+
+  59) DataConversion::ImportToMysql#import_raw posts imports all the columns
+     Failure/Error: @migrator.import_raw_posts
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/posts.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/posts.csv' INTO TABLE mongo_posts
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (@youtube_titles,@pending,@created_at,@public,@updated_at,status_message_mongo_id,caption,remote_photo_path,remote_photo_name,random_string,image,mongo_id,type,diaspora_handle,person_mongo_id,message)
+        SET guid = mongo_id,
+        youtube_titles = NULLIF(@youtube_titles, ''),
+        created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3)),
+        pending= IF(STRCMP(@pending,'false'), TRUE, FALSE),
+        public= IF(STRCMP(@public,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:202:in `import_raw_posts'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:340
+
+  60) DataConversion::ImportToMysql#import_raw notifications imports data into the mongo_notifications table
+     Failure/Error: @migrator.import_raw_notifications
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/notifications...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/notifications.csv' INTO TABLE mongo_notifications
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id,target_mongo_id,target_type,@unread)
+        SET unread= IF(STRCMP(@unread,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:272:in `import_raw_notifications'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:368
+
+  61) DataConversion::ImportToMysql#import_raw notifications imports all the columns
+     Failure/Error: @migrator.import_raw_notifications
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/notifications...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/notifications.csv' INTO TABLE mongo_notifications
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id,target_mongo_id,target_type,@unread)
+        SET unread= IF(STRCMP(@unread,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:272:in `import_raw_notifications'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:373
+
+  62) DataConversion::ImportToMysql#import_raw people imports data into the mongo_people table
+     Failure/Error: @migrator.import_raw_people
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/people.csv' I...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/people.csv' INTO TABLE mongo_people
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (@created_at,@updated_at,serialized_public_key,url,mongo_id,@owner_mongo_id,diaspora_handle)
+        SET guid = mongo_id,
+        owner_mongo_id = NULLIF(@owner_mongo_id, ''),
+        created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:282:in `import_raw_people'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:390
+
+  63) DataConversion::ImportToMysql#import_raw people imports all the columns
+     Failure/Error: @migrator.import_raw_people
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/people.csv' I...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/people.csv' INTO TABLE mongo_people
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (@created_at,@updated_at,serialized_public_key,url,mongo_id,@owner_mongo_id,diaspora_handle)
+        SET guid = mongo_id,
+        owner_mongo_id = NULLIF(@owner_mongo_id, ''),
+        created_at = FROM_UNIXTIME(LEFT(@created_at, LENGTH(@created_at)-3)),
+        updated_at = FROM_UNIXTIME(LEFT(@updated_at, LENGTH(@updated_at)-3));
+     # ./lib/data_conversion/import_to_mysql.rb:282:in `import_raw_people'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:395
+
+  64) DataConversion::ImportToMysql#import_raw post_visibilities imports data into the mongo_post_visibilities table
+     Failure/Error: @migrator.import_raw_post_visibilities
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/post_visibili...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/post_visibilities.csv' INTO TABLE mongo_post_visibilities
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (aspect_mongo_id, post_mongo_id)
+     # ./lib/data_conversion/import_to_mysql.rb:243:in `import_raw_post_visibilities'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:413
+
+  65) DataConversion::ImportToMysql#import_raw post_visibilities imports all the columns
+     Failure/Error: @migrator.import_raw_post_visibilities
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/post_visibili...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/post_visibilities.csv' INTO TABLE mongo_post_visibilities
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (aspect_mongo_id, post_mongo_id)
+     # ./lib/data_conversion/import_to_mysql.rb:243:in `import_raw_post_visibilities'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:418
+
+  66) DataConversion::ImportToMysql#import_raw profiles imports data into the mongo_profiles table
+     Failure/Error: @migrator.import_raw_profiles
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/profiles.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/profiles.csv' INTO TABLE mongo_profiles
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (@image_url_medium,@searchable,@image_url,person_mongo_id,
+        @gender,@diaspora_handle,birthday,@last_name,@bio,
+        @image_url_small,@first_name)
+        SET searchable= IF(STRCMP(@searchable,'false'), TRUE, FALSE),
+        image_url_medium = NULLIF(@image_url_medium, ''),
+        image_url = NULLIF(@image_url, ''),
+        gender = NULLIF(@gender, ''),
+        diaspora_handle = NULLIF(@diaspora_handle, ''),
+        last_name = NULLIF(@last_name, ''),
+        bio = NULLIF(@bio, ''),
+        image_url_small = NULLIF(@image_url_small, ''),
+        first_name = NULLIF(@first_name, '');
+     # ./lib/data_conversion/import_to_mysql.rb:295:in `import_raw_profiles'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:431
+
+  67) DataConversion::ImportToMysql#import_raw profiles imports all the columns
+     Failure/Error: @migrator.import_raw_profiles
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/profiles.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/profiles.csv' INTO TABLE mongo_profiles
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (@image_url_medium,@searchable,@image_url,person_mongo_id,
+        @gender,@diaspora_handle,birthday,@last_name,@bio,
+        @image_url_small,@first_name)
+        SET searchable= IF(STRCMP(@searchable,'false'), TRUE, FALSE),
+        image_url_medium = NULLIF(@image_url_medium, ''),
+        image_url = NULLIF(@image_url, ''),
+        gender = NULLIF(@gender, ''),
+        diaspora_handle = NULLIF(@diaspora_handle, ''),
+        last_name = NULLIF(@last_name, ''),
+        bio = NULLIF(@bio, ''),
+        image_url_small = NULLIF(@image_url_small, ''),
+        first_name = NULLIF(@first_name, '');
+     # ./lib/data_conversion/import_to_mysql.rb:295:in `import_raw_profiles'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:436
+
+  68) DataConversion::ImportToMysql#import_raw requests imports data into the mongo_requests table
+     Failure/Error: @migrator.import_raw_requests
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/requests.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/requests.csv' INTO TABLE mongo_requests
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, recipient_mongo_id, sender_mongo_id, @aspect_mongo_id)
+        SET aspect_mongo_id = NULLIF(@aspect_mongo_id, '');
+     # ./lib/data_conversion/import_to_mysql.rb:253:in `import_raw_requests'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:459
+
+  69) DataConversion::ImportToMysql#import_raw requests imports all the columns
+     Failure/Error: @migrator.import_raw_requests
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/requests.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/requests.csv' INTO TABLE mongo_requests
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, recipient_mongo_id, sender_mongo_id, @aspect_mongo_id)
+        SET aspect_mongo_id = NULLIF(@aspect_mongo_id, '');
+     # ./lib/data_conversion/import_to_mysql.rb:253:in `import_raw_requests'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:464
+
+  70) DataConversion::ImportToMysql#import_raw services imports data into the mongo_services table
+     Failure/Error: @migrator.import_raw_services
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/services.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/services.csv' INTO TABLE mongo_services
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, type,user_mongo_id,@provider,@uid,@access_token,@access_secret,@nickname)
+        SET provider = NULLIF(@provider, ''),
+        uid = NULLIF(@uid, ''),
+        access_token = NULLIF(@access_token, ''),
+        access_secret = NULLIF(@access_secret, ''),
+        nickname = NULLIF(@nickname, '');
+     # ./lib/data_conversion/import_to_mysql.rb:228:in `import_raw_services'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:479
+
+  71) DataConversion::ImportToMysql#import_raw services imports all the columns
+     Failure/Error: @migrator.import_raw_services
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/services.csv'...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/services.csv' INTO TABLE mongo_services
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, type,user_mongo_id,@provider,@uid,@access_token,@access_secret,@nickname)
+        SET provider = NULLIF(@provider, ''),
+        uid = NULLIF(@uid, ''),
+        access_token = NULLIF(@access_token, ''),
+        access_secret = NULLIF(@access_secret, ''),
+        nickname = NULLIF(@nickname, '');
+     # ./lib/data_conversion/import_to_mysql.rb:228:in `import_raw_services'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:484
+
+  72) DataConversion::ImportToMysql#import_raw users imports data into the mongo_users table
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:501
+
+  73) DataConversion::ImportToMysql#import_raw users imports all the columns
+     Failure/Error: @migrator.import_raw_users
+     PGError: FEHLER:  Syntaxfehler bei »DATA«
+LINE 1:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' IN...
+                     ^
+:         LOAD DATA INFILE '/tmp/data_conversion/users.csv' INTO TABLE mongo_users
+                  FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          IGNORE 1 LINES
+
+        (mongo_id, email, @username, serialized_private_key, encrypted_password,
+         invites, @invitation_token, @invitation_sent_at, @getting_started,
+         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
+         @reset_password_token, password_salt)
+         SET last_sign_in_at = FROM_UNIXTIME(LEFT(@last_sign_in_at, LENGTH(@last_sign_in_at)-3)),
+         invitation_token = NULLIF(@invitation_token, ''),
+         username = NULLIF(@username, ''),
+         last_sign_in_ip = NULLIF(@last_sign_in_ip, ''),
+         reset_password_token = NULLIF(@reset_password_token, ''),
+         getting_started= IF(STRCMP(@getting_started,'false'), TRUE, FALSE),
+         disable_mail= IF(STRCMP(@disable_mail,'false'), TRUE, FALSE);
+     # ./lib/data_conversion/import_to_mysql.rb:148:in `import_raw_users'
+     # ./spec/lib/data_conversion/import_to_mysql_spec.rb:505
+......................
+  74) AspectsController#index performance takes time
+     Failure/Error: post =  @user.post(:status_message, :message => "hello#{n}", :to => @aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07be570>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/aspects_controller_spec.rb:43
+     # ./spec/controllers/aspects_controller_spec.rb:38:in `times'
+     # ./spec/controllers/aspects_controller_spec.rb:38
+...
+  75) AspectsController#show paginates
+     Failure/Error: 16.times { |i| @user2.post(:status_message, :to => @aspect2.id, :message => "hi #{i}") }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c07a5ef8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/aspects_controller_spec.rb:81
+     # ./spec/controllers/aspects_controller_spec.rb:81:in `times'
+     # ./spec/controllers/aspects_controller_spec.rb:81
+................*....*........
+  76) StatusMessagesController#show succeeds
+     Failure/Error: message.save!
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04525a8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/controllers/status_message_controller_spec.rb:26
+
+  77) StatusMessagesController#create responds to js requests
+     Failure/Error: post :create, status_message_hash.merge(:format => 'js')
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c028a248>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./app/controllers/status_messages_controller.rb:24:in `create'
+     # ./spec/controllers/status_message_controller_spec.rb:44
+
+  78) StatusMessagesController#create doesn't overwrite person_id
+     Failure/Error: post :create, status_message_hash
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c080f240>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./app/controllers/status_messages_controller.rb:24:in `create'
+     # ./spec/controllers/status_message_controller_spec.rb:50
+
+  79) StatusMessagesController#create doesn't overwrite id
+     Failure/Error: old_status_message = user1.post(:status_message, :message => "hello", :to => aspect1.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04e5150>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/status_message_controller_spec.rb:56
+
+  80) StatusMessagesController#create dispatches all referenced photos
+     Failure/Error: post :create, hash
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c08129b8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./app/controllers/status_messages_controller.rb:24:in `create'
+     # ./spec/controllers/status_message_controller_spec.rb:76
+
+  81) StatusMessagesController#destroy let a user delete his photos
+     Failure/Error: let!(:message) {user1.post(:status_message, :message => "hey", :to => aspect1.id)}
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04d25a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/status_message_controller_spec.rb:81
+
+  82) StatusMessagesController#destroy will not let you destroy posts visible to you
+     Failure/Error: let!(:message) {user1.post(:status_message, :message => "hey", :to => aspect1.id)}
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c09d5688>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/status_message_controller_spec.rb:81
+
+  83) StatusMessagesController#destroy will not let you destory posts you do not own
+     Failure/Error: let!(:message) {user1.post(:status_message, :message => "hey", :to => aspect1.id)}
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c05f1490>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/status_message_controller_spec.rb:81
+...............
+  84) PeopleController#show renders with a post
+     Failure/Error: user.post :status_message, :message => 'test more', :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c01ed768>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/people_controller_spec.rb:179
+
+  85) PeopleController#show renders with a post
+     Failure/Error: message = user.post :status_message, :message => 'test more', :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c017d918>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/people_controller_spec.rb:185
+....
+  86) PeopleController#show renders with public posts of a non-contact
+     Failure/Error: status_message = user2.post(:status_message, :message => "hey there", :to => 'all', :public => true)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c02e3dc0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/people_controller_spec.rb:216
+....."Sign in user"
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000002", access_token: "123452", access_secret: "987652", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000002", access_token: "123452", access_secret: "987652", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000002", access_token: "123452", access_secret: "987652", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000002", access_token: "123452", access_secret: "987652", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000003", access_token: "123453", access_secret: "987653", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000003", access_token: "123453", access_secret: "987653", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000003", access_token: "123453", access_secret: "987653", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000003", access_token: "123453", access_secret: "987653", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
-#<User id: 1, username: "bob1396efc", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXwIBAAKBgQD0QAc...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1e13447@pivotallabs.com", encrypted_password: "$2a$10$2Q0BvCZpcQWwdUO6i32byebzdMusZ4VPJ7/kXhjVYY2q...", password_salt: "$2a$10$2Q0BvCZpcQWwdUO6i32bye", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2010-12-31 17:19:29", updated_at: "2010-12-31 17:19:29">
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+#<User id: 1, username: "bob1f88712", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICWwIBAAKBgQDc8hA...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob17a0dd0@pivotallabs.com", encrypted_password: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e/vtNpd3st/UCQiqIAMJb5p...", password_salt: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 14:28:46", updated_at: "2011-01-08 14:28:46", mongo_id: nil>
+#<User id: 1, username: "bob1f88712", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICWwIBAAKBgQDc8hA...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob17a0dd0@pivotallabs.com", encrypted_password: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e/vtNpd3st/UCQiqIAMJb5p...", password_salt: "$2a$10$AnvCCdwfnRt/WrfvXaGH5e", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 14:28:46", updated_at: "2011-01-08 14:28:46", mongo_id: nil>
 ."Sign in user"
 ."Sign in user"
 ."Sign in user"
 ."Sign in user"
 "what do we have"
-#<Service id: 1, type: "Services::Twitter", user_id: 1, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: "2010-12-31 17:21:27", updated_at: "2010-12-31 17:21:27">
+#<Service id: 1, type: "Services::Twitter", user_id: 1, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: "2011-01-08 14:30:43", updated_at: "2011-01-08 14:30:43", mongo_id: nil, user_mongo_id: nil>
 ."Sign in user"
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-..............***.*................................................................................................*........*.....................................................................................
-  3) Person.search should yield search results on partial names
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+..............***.*..................
+  87) PostsController#show shows a public post
+     Failure/Error: status = @user.post(:status_message, :message => "hello", :public => true, :to => 'all')
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04348a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/posts_controller_spec.rb:16
+
+  88) PostsController#show does not show a private post
+     Failure/Error: status = @user.post(:status_message, :message => "hello", :public => false, :to => 'all')
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0365f50>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/posts_controller_spec.rb:23
+
+  89) SocketsController actionhash actionhashes posts
+     Failure/Error: @message = @user.post :status_message, :message => "post through user for victory", :to => @aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0257730>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/sockets_controller_spec.rb:23
+
+  90) SocketsController actionhash actionhashes retractions
+     Failure/Error: @message = @user.post :status_message, :message => "post through user for victory", :to => @aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c01ca6a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/sockets_controller_spec.rb:23
+............
+  91) CommentsController#create on my own post responds to format js
+     Failure/Error: @post = user1.post :status_message, :message => 'GIANTS', :to => aspect1.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfff9858>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/comments_controller_spec.rb:27
+
+  92) CommentsController#create on a post from a contact comments
+     Failure/Error: @post = user2.post :status_message, :message => 'GIANTS', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c05b46a8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/comments_controller_spec.rb:39
+
+  93) CommentsController#create on a post from a contact doesn't overwrite person_id
+     Failure/Error: @post = user2.post :status_message, :message => 'GIANTS', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0234690>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/comments_controller_spec.rb:39
+
+  94) CommentsController#create on a post from a contact doesn't overwrite id
+     Failure/Error: @post = user2.post :status_message, :message => 'GIANTS', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c00be720>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/comments_controller_spec.rb:39
+
+  95) CommentsController#create on a post from a stranger posts no comment
+     Failure/Error: @post = user2.post :status_message, :message => 'GIANTS', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0001af8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/controllers/comments_controller_spec.rb:60
+.........................................................*........*................................
+  96) Aspect posting should add post to aspect via post method
+     Failure/Error: status_message = user.post( :status_message, :message => "hey", :to => aspect.id )
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c022f668>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:109
+
+  97) Aspect posting should add post to aspect via receive method
+     Failure/Error: message = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfff0640>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:120
+
+  98) Aspect posting should retract the post from the aspects as well
+     Failure/Error: message = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfeade68>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:132
+....
+  99) Aspect aspect management#delete_person_from_aspect deletes no posts
+     Failure/Error: user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c00cca78>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:181
+..
+  100) Aspect aspect management moving and removing posts should keep the contact's posts in previous aspect
+     Failure/Error: @message  = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c01d7418>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:202
+
+  101) Aspect aspect management moving and removing posts should not delete other peoples posts
+     Failure/Error: @message  = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bff9e1d8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:202
+
+  102) Aspect aspect management moving and removing posts#move_contact should be able to move a contact from one of users existing aspects to another
+     Failure/Error: @message  = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfe5ce00>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:202
+
+  103) Aspect aspect management moving and removing posts#move_contact should not move a person who is not a contact
+     Failure/Error: @message  = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04cbd18>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:202
+
+  104) Aspect aspect management moving and removing posts#move_contact does not try to delete if add person did not go through
+     Failure/Error: @message  = user2.post(:status_message, :message => "Hey Dude", :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c00443d0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/aspect_spec.rb:202
+.
+  105) StatusMessage should be postable through the user
+     Failure/Error: status = @user.post(:status_message, :message => message, :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0711488>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/status_message_spec.rb:43
+.
+  106) StatusMessage#diaspora_handle= sets #person
+     Failure/Error: post = Factory.create(:status_message, :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c008f380>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:17
+
+  107) StatusMessage XML serializes the message
+     Failure/Error: @message = Factory.create(:status_message, :message => "I hate WALRUSES!", :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bffed508>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:59
+
+  108) StatusMessage XML serializes the author address
+     Failure/Error: @message = Factory.create(:status_message, :message => "I hate WALRUSES!", :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bff511a8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:59
+
+  109) StatusMessage XML.from_xml marshals the message
+     Failure/Error: @message = Factory.create(:status_message, :message => "I hate WALRUSES!", :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfeddd20>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:59
+
+  110) StatusMessage XML.from_xml marshals the guid
+     Failure/Error: @message = Factory.create(:status_message, :message => "I hate WALRUSES!", :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfe77f20>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:59
+
+  111) StatusMessage XML.from_xml marshals the author
+     Failure/Error: @message = Factory.create(:status_message, :message => "I hate WALRUSES!", :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfe190b0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:59
+
+  112) StatusMessage XML.from_xml marshals the diaspora_handle
+     Failure/Error: @message = Factory.create(:status_message, :message => "I hate WALRUSES!", :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0864808>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:59
+
+  113) StatusMessage youtube should process youtube titles on the way in
+     Failure/Error: post.save!
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04fbc98>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/status_message_spec.rb:102
+
+  114) StatusMessage#public_message truncates the message
+     Failure/Error: @status_message = @user.post(:status_message, :message => message, :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0217158>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/status_message_spec.rb:111
+
+  115) StatusMessage#public_message has the correct length if a url is present
+     Failure/Error: @status_message = @user.post(:status_message, :message => message, :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c00c4be8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/status_message_spec.rb:111
+
+  116) StatusMessage#public_message adds the public link if present
+     Failure/Error: @status_message = @user.post(:status_message, :message => message, :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfffe970>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/status_message_spec.rb:111
+........
+  117) Person #owns? posts
+     Failure/Error: person_message = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04237f8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/person_spec.rb:93
+
+  118) Person deletes all of a person's posts upon person deletion
+     Failure/Error: status = Factory.create(:status_message, :person => person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c01f7b50>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/person_spec.rb:103
+
+  119) Person does not delete a person's comments on person deletion
+     Failure/Error: status_message = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0103e10>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/person_spec.rb:112
+.............
+  120) Person.search should yield search results on partial names
      Failure/Error: people.count.should == 1
      expected: 1,
      got: 0 (using ==)
      # ./spec/models/person_spec.rb:181
-........................*..............................................."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000006", access_token: "123456", access_secret: "987656", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+................
+  121) Jobs::PostToServices calls post to services from the given user with given post
+     Failure/Error: post = user.post(:status_message, :message => 'foo', :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfdcaed8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/jobs/post_to_services_spec.rb:7
+.......*..........................................
+  122) User account removal#remove_person should remove the posts
+     Failure/Error: message = user.post(:status_message, :message => "hi", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0a1c038>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user_spec.rb:358
+...."After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000006", access_token: "123456", access_secret: "987656", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000006", access_token: "123456", access_secret: "987656", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000006", access_token: "123456", access_secret: "987656", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "000007", access_token: "123457", access_secret: "987657", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "000007", access_token: "123457", access_secret: "987657", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "000007", access_token: "123457", access_secret: "987657", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "000007", access_token: "123457", access_secret: "987657", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+
+  123) User#add_to_streams saves post into visible post ids
+     Failure/Error: @post.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0a26308>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/user/posting_spec.rb:23
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000008", access_token: "123458", access_secret: "987658", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000008", access_token: "123458", access_secret: "987658", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "000009", access_token: "123459", access_secret: "987659", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "000009", access_token: "123459", access_secret: "987659", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+
+  124) User#add_to_streams saves post into each aspect in aspect_ids
+     Failure/Error: @post.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c01c3b70>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/user/posting_spec.rb:23
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000010", access_token: "1234510", access_secret: "9876510", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000010", access_token: "1234510", access_secret: "9876510", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000011", access_token: "1234511", access_secret: "9876511", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000011", access_token: "1234511", access_secret: "9876511", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+
+  125) User#add_to_streams sockets the post to the poster
+     Failure/Error: @post.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bff87758>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/user/posting_spec.rb:23
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000012", access_token: "1234512", access_secret: "9876512", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"Made service"
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000012", access_token: "1234512", access_secret: "9876512", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"After build :"
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000013", access_token: "1234513", access_secret: "9876513", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+"Made service"
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000013", access_token: "1234513", access_secret: "9876513", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000008", access_token: "123458", access_secret: "987658", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000014", access_token: "1234514", access_secret: "9876514", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000008", access_token: "123458", access_secret: "987658", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000014", access_token: "1234514", access_secret: "9876514", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "000009", access_token: "123459", access_secret: "987659", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000015", access_token: "1234515", access_secret: "9876515", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "000009", access_token: "123459", access_secret: "987659", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000015", access_token: "1234515", access_secret: "9876515", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000010", access_token: "1234510", access_secret: "9876510", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000016", access_token: "1234516", access_secret: "9876516", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000010", access_token: "1234510", access_secret: "9876510", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000016", access_token: "1234516", access_secret: "9876516", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000011", access_token: "1234511", access_secret: "9876511", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000017", access_token: "1234517", access_secret: "9876517", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000011", access_token: "1234511", access_secret: "9876511", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000017", access_token: "1234517", access_secret: "9876517", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000012", access_token: "1234512", access_secret: "9876512", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000018", access_token: "1234518", access_secret: "9876518", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000012", access_token: "1234512", access_secret: "9876512", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000018", access_token: "1234518", access_secret: "9876518", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000013", access_token: "1234513", access_secret: "9876513", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000019", access_token: "1234519", access_secret: "9876519", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000013", access_token: "1234513", access_secret: "9876513", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000019", access_token: "1234519", access_secret: "9876519", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000014", access_token: "1234514", access_secret: "9876514", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000020", access_token: "1234520", access_secret: "9876520", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000014", access_token: "1234514", access_secret: "9876514", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000020", access_token: "1234520", access_secret: "9876520", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000015", access_token: "1234515", access_secret: "9876515", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000021", access_token: "1234521", access_secret: "9876521", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000015", access_token: "1234515", access_secret: "9876515", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000021", access_token: "1234521", access_secret: "9876521", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000016", access_token: "1234516", access_secret: "9876516", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000022", access_token: "1234522", access_secret: "9876522", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000016", access_token: "1234516", access_secret: "9876516", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000022", access_token: "1234522", access_secret: "9876522", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000017", access_token: "1234517", access_secret: "9876517", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000023", access_token: "1234523", access_secret: "9876523", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000017", access_token: "1234517", access_secret: "9876517", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000023", access_token: "1234523", access_secret: "9876523", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000018", access_token: "1234518", access_secret: "9876518", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000024", access_token: "1234524", access_secret: "9876524", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000018", access_token: "1234518", access_secret: "9876518", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000024", access_token: "1234524", access_secret: "9876524", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000019", access_token: "1234519", access_secret: "9876519", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000025", access_token: "1234525", access_secret: "9876525", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000019", access_token: "1234519", access_secret: "9876519", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000025", access_token: "1234525", access_secret: "9876525", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000020", access_token: "1234520", access_secret: "9876520", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000026", access_token: "1234526", access_secret: "9876526", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000020", access_token: "1234520", access_secret: "9876520", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000026", access_token: "1234526", access_secret: "9876526", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000021", access_token: "1234521", access_secret: "9876521", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000027", access_token: "1234527", access_secret: "9876527", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000021", access_token: "1234521", access_secret: "9876521", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000027", access_token: "1234527", access_secret: "9876527", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000022", access_token: "1234522", access_secret: "9876522", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000028", access_token: "1234528", access_secret: "9876528", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000022", access_token: "1234522", access_secret: "9876522", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000028", access_token: "1234528", access_secret: "9876528", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000023", access_token: "1234523", access_secret: "9876523", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000029", access_token: "1234529", access_secret: "9876529", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000023", access_token: "1234523", access_secret: "9876523", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000029", access_token: "1234529", access_secret: "9876529", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000024", access_token: "1234524", access_secret: "9876524", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000030", access_token: "1234530", access_secret: "9876530", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000024", access_token: "1234524", access_secret: "9876524", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000030", access_token: "1234530", access_secret: "9876530", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000025", access_token: "1234525", access_secret: "9876525", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000031", access_token: "1234531", access_secret: "9876531", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000025", access_token: "1234525", access_secret: "9876525", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000031", access_token: "1234531", access_secret: "9876531", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000026", access_token: "1234526", access_secret: "9876526", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000032", access_token: "1234532", access_secret: "9876532", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000026", access_token: "1234526", access_secret: "9876526", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000032", access_token: "1234532", access_secret: "9876532", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000027", access_token: "1234527", access_secret: "9876527", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000033", access_token: "1234533", access_secret: "9876533", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000027", access_token: "1234527", access_secret: "9876527", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000033", access_token: "1234533", access_secret: "9876533", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000028", access_token: "1234528", access_secret: "9876528", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000034", access_token: "1234534", access_secret: "9876534", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000028", access_token: "1234528", access_secret: "9876528", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000034", access_token: "1234534", access_secret: "9876534", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000029", access_token: "1234529", access_secret: "9876529", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000035", access_token: "1234535", access_secret: "9876535", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000029", access_token: "1234529", access_secret: "9876529", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000035", access_token: "1234535", access_secret: "9876535", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000030", access_token: "1234530", access_secret: "9876530", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000036", access_token: "1234536", access_secret: "9876536", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000030", access_token: "1234530", access_secret: "9876530", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000036", access_token: "1234536", access_secret: "9876536", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000031", access_token: "1234531", access_secret: "9876531", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000037", access_token: "1234537", access_secret: "9876537", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000031", access_token: "1234531", access_secret: "9876531", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000037", access_token: "1234537", access_secret: "9876537", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000032", access_token: "1234532", access_secret: "9876532", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000038", access_token: "1234538", access_secret: "9876538", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000032", access_token: "1234532", access_secret: "9876532", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000038", access_token: "1234538", access_secret: "9876538", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000033", access_token: "1234533", access_secret: "9876533", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000039", access_token: "1234539", access_secret: "9876539", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000033", access_token: "1234533", access_secret: "9876533", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000039", access_token: "1234539", access_secret: "9876539", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000034", access_token: "1234534", access_secret: "9876534", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000040", access_token: "1234540", access_secret: "9876540", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000034", access_token: "1234534", access_secret: "9876534", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000040", access_token: "1234540", access_secret: "9876540", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000035", access_token: "1234535", access_secret: "9876535", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000041", access_token: "1234541", access_secret: "9876541", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000035", access_token: "1234535", access_secret: "9876535", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000041", access_token: "1234541", access_secret: "9876541", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000036", access_token: "1234536", access_secret: "9876536", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000042", access_token: "1234542", access_secret: "9876542", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000036", access_token: "1234536", access_secret: "9876536", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000042", access_token: "1234542", access_secret: "9876542", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000037", access_token: "1234537", access_secret: "9876537", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000043", access_token: "1234543", access_secret: "9876543", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000037", access_token: "1234537", access_secret: "9876537", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000043", access_token: "1234543", access_secret: "9876543", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000038", access_token: "1234538", access_secret: "9876538", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000044", access_token: "1234544", access_secret: "9876544", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000038", access_token: "1234538", access_secret: "9876538", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000044", access_token: "1234544", access_secret: "9876544", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000039", access_token: "1234539", access_secret: "9876539", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000045", access_token: "1234545", access_secret: "9876545", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000039", access_token: "1234539", access_secret: "9876539", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000045", access_token: "1234545", access_secret: "9876545", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000040", access_token: "1234540", access_secret: "9876540", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000046", access_token: "1234546", access_secret: "9876546", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000040", access_token: "1234540", access_secret: "9876540", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000046", access_token: "1234546", access_secret: "9876546", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000041", access_token: "1234541", access_secret: "9876541", nickname: "sirrobertking", created_at: nil, updated_at: nil>
+#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000047", access_token: "1234547", access_secret: "9876547", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000041", access_token: "1234541", access_secret: "9876541", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000042", access_token: "1234542", access_secret: "9876542", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000042", access_token: "1234542", access_secret: "9876542", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000043", access_token: "1234543", access_secret: "9876543", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000043", access_token: "1234543", access_secret: "9876543", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000044", access_token: "1234544", access_secret: "9876544", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000044", access_token: "1234544", access_secret: "9876544", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000045", access_token: "1234545", access_secret: "9876545", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000045", access_token: "1234545", access_secret: "9876545", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-."After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "0000046", access_token: "1234546", access_secret: "9876546", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"Made service"
-#<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "0000046", access_token: "1234546", access_secret: "9876546", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"After build :"
-#<Service id: nil, type: nil, user_id: nil, provider: "facebook", uid: "0000047", access_token: "1234547", access_secret: "9876547", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-"Made service"
-#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000047", access_token: "1234547", access_secret: "9876547", nickname: "sirrobertking", created_at: nil, updated_at: nil>
-............................................
-  4) Diaspora::UserModules::Connecting contact requesting received a contact request should mark the corresponding notification as 'read'
+#<Service id: nil, type: "Services::Facebook", user_id: nil, provider: "facebook", uid: "0000047", access_token: "1234547", access_secret: "9876547", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
+............
+  126) User#raw_visible_posts returns all the posts the user can see
+     Failure/Error: self_post = @user.post(:status_message, :message => "hi", :to => @aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd20d70>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:23
+
+  127) User with two posts#visible_posts queries by person id
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0999a98>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+
+  128) User with two posts#visible_posts selects public posts
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfe876f0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+
+  129) User with two posts#visible_posts selects non public posts
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfcab4f8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+
+  130) User with two posts#visible_posts selects by message contents
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0002250>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+
+  131) User with two posts#visible_posts does not return pending posts
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd458a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+
+  132) User with two posts#visible_posts queries by aspect
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c03ad5d0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+
+  133) User with two posts#visible_posts #find_visible_post_by_id
+     Failure/Error: @status_message1 = @user2.post :status_message, :message => "hi", :to => @aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfddb030>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:39
+..........
+  134) User#posts_from displays public posts for a non-contact
+     Failure/Error: @public_message = @user3.post(:status_message, :message => "hey there", :to => 'all', :public => true)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb245a8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:220
+
+  135) User#posts_from does not display private posts for a non-contact
+     Failure/Error: @public_message = @user3.post(:status_message, :message => "hey there", :to => 'all', :public => true)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfea5808>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:220
+
+  136) User#posts_from displays private and public posts for a non-contact after connecting
+     Failure/Error: @public_message = @user3.post(:status_message, :message => "hey there", :to => 'all', :public => true)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfcaac10>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/querying_spec.rb:220
+...........
+  137) Diaspora::UserModules::Connecting contact requesting received a contact request should mark the corresponding notification as 'read'
      Failure/Error: Notification.where(:target_id=>@received_request.id).first.unread.should be_false
      expected true to be false
      # ./spec/models/user/connecting_spec.rb:114
-.....................*.......*........."going to save"
-"got remote person"
-#<Person id: 1229, guid: "00a4a822f05ca99a", url: "http://google-123120d0a2.com/", diaspora_handle: "bob805539034@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBAPRABwPNRjoe...", owner_id: 845, created_at: "2010-12-31 17:25:18", updated_at: "2010-12-31 17:25:18">
-"going to save"
-"got remote person"
-#<Person id: 1229, guid: "00a4a822f05ca99a", url: "http://google-123120d0a2.com/", diaspora_handle: "bob805539034@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBAPRABwPNRjoe...", owner_id: 845, created_at: "2010-12-31 17:25:18", updated_at: "2010-12-31 17:25:18">
-.......................................................*..***...........*.........."created service"
-#<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil>
-."created service"
-#<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil>
-."created service"
-#<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil>
-....*..
+...........
+  138) Diaspora::UserModules::Connecting contact requesting disconnecting with a post deletes the disconnected user's posts from visible_posts
+     Failure/Error: @message = user.post(:status_message, :message => "hi", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd009f8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/connecting_spec.rb:266
+
+  139) Diaspora::UserModules::Connecting contact requesting disconnecting with a post deletes the disconnected user's posts from the aspect's posts
+     Failure/Error: @message = user.post(:status_message, :message => "hi", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb842f0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/connecting_spec.rb:266
+
+  140) attack vectors does not let a user attach to posts previously in the db unless its received from the author
+     Failure/Error: original_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c00f6620>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/attack_vectors_spec.rb:40
+..
+  141) attack vectors malicious contact attack vector ignores retractions on a post not owned by the retraction's sender
+     Failure/Error: original_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd767e8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/attack_vectors_spec.rb:93
+
+  142) attack vectors malicious contact attack vector disregards retractions for non-existent posts that are from someone other than the post's author
+     Failure/Error: original_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb04c30>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/attack_vectors_spec.rb:109
+
+  143) attack vectors malicious contact attack vector should not receive retractions where the retractor and the salmon author do not match
+     Failure/Error: original_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfdcdc50>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/attack_vectors_spec.rb:126
+..*
+  144) attack vectors malicious contact attack vector mass assignment on id does not save a message over an old message with a different author
+     Failure/Error: original_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd6f510>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/attack_vectors_spec.rb:56
+
+  145) attack vectors malicious contact attack vector mass assignment on id does not save a message over an old message with the same author
+     Failure/Error: original_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfae5448>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/attack_vectors_spec.rb:68
+
+  146) User#dispatch_comment post owner's contact is commenting doesn't call receive on local users
+     Failure/Error: @post.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c002dab8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/user/commenting_spec.rb:17
+
+  147) User#dispatch_comment post owner is commenting on own post doesn't call receive on local users
+     Failure/Error: @post.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfce5388>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/user/commenting_spec.rb:17
+
+  148) User streams only one message to the everyone aspect when a multi-aspected contacts posts
+     Failure/Error: user.receive xml, user2.person
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb18f00>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./lib/diaspora/user/receiving.rb:187:in `receive_post'
+     # ./lib/diaspora/user/receiving.rb:88:in `receive_object'
+     # ./lib/diaspora/user/receiving.rb:68:in `receive'
+     # ./spec/models/user/receive_spec.rb:28
+
+  149) User should be able to parse and store a status message from xml
+     Failure/Error: status_message = user2.post :status_message, :message => 'store this!', :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c01686d0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:32
+
+  150) User should not create new aspects on message receive
+     Failure/Error: status_message = user2.post :status_message, :message => "store this #{n}!", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd099e0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:45
+     # ./spec/models/user/receive_spec.rb:44:in `times'
+     # ./spec/models/user/receive_spec.rb:44
+*
+  151) User update posts does not update posts not marked as mutable
+     Failure/Error: status = user.post :status_message, :message => "store this!", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa53160>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:64
+.
+  152) User post refs adds a received post to the aspect and visible_posts array
+     Failure/Error: @status_message = user2.post :status_message, :message => "hi", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bff94cc8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:82
+
+  153) User post refs removes posts upon disconnecting
+     Failure/Error: @status_message = user2.post :status_message, :message => "hi", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc8d908>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:82
+
+  154) User post refs deletes a post if the noone links to it
+     Failure/Error: @status_message = user2.post :status_message, :message => "hi", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfaec9a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:82
+
+  155) User post refs deletes post_visibilities on disconnected by
+     Failure/Error: @status_message = user2.post :status_message, :message => "hi", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c059ffa0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:82
+
+  156) User post refs should keep track of user references for one person 
+     Failure/Error: @status_message = user2.post :status_message, :message => "hi", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd411b0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:82
+
+  157) User post refs should not override userrefs on receive by another person
+     Failure/Error: @status_message = user2.post :status_message, :message => "hi", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb6a5f8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:82
+
+  158) User comments should correctly attach the user already on the pod
+     Failure/Error: @post = user.post :status_message, :message => "hello", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0016660>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:156
+
+  159) User comments should correctly marshal a stranger for the downstream user
+     Failure/Error: @post = user.post :status_message, :message => "hello", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb79198>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:156
+
+  160) User salmon should receive a salmon for a post
+     Failure/Error: let(:post){user.post :status_message, :message => "hello", :to => aspect.id}
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa42180>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/user/receive_spec.rb:210
+     # ./spec/models/user/receive_spec.rb:211
+     # ./spec/models/user/receive_spec.rb:214
+
+  161) Retraction serialization should have a post id after serialization
+     Failure/Error: let!(:post) { user.post :status_message, :message => "Destroy!", :to => aspect.id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c0259d00>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/retraction_spec.rb:13
+
+  162) Retraction dispatching should dispatch a message on destroy
+     Failure/Error: let!(:post) { user.post :status_message, :message => "Destroy!", :to => aspect.id }
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfdf4a80>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/retraction_spec.rb:13
+
+  163) Notification contains a type
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfdae4e0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  164) Notification contains a target_id
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfd22418>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  165) Notification contains a person_id
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfcb7be0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  166) Notification.for returns all of a users notifications
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc53bb8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  167) Notification.notify does not call Notification.create if the object does not have a notification_type
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfbee128>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  168) Notification.notify with a request calls Notification.create if the object has a notification_type
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb95e10>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  169) Notification.notify with a request sockets to the recipient
+     Failure/Error: @sm = Factory(:status_message)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb49830>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/notification_spec.rb:10
+
+  170) Post deletion should delete a posts comments on delete
+     Failure/Error: post = Factory.create(:status_message, :person => @user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfaaf5c8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/post_spec.rb:15
+
+  171) Post serialization should serialize the handle and not the sender
+     Failure/Error: post = @user.post :status_message, :message => "hello", :to => @aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa4f100>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/post_spec.rb:25
+
+  172) Post#mutable? should be false by default
+     Failure/Error: post = @user.post :status_message, :message => "hello", :to => @aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9f1c30>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/post_spec.rb:35
+
+  173) Comment should not send out comments when we have no people
+     Failure/Error: status = Factory.create(:status_message, :person => user.person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfda3f18>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:94
+
+  174) Comment.hash_from_post_ids returns an empty array for posts with no comments
+     Failure/Error: @hello = user.post(:status_message, :message => "Hello.", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb7a110>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:18
+
+  175) Comment.hash_from_post_ids returns a hash from posts to comments
+     Failure/Error: @hello = user.post(:status_message, :message => "Hello.", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa36088>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:18
+
+  176) Comment.hash_from_post_ids gets the people from the db
+     Failure/Error: @hello = user.post(:status_message, :message => "Hello.", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfe91470>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:18
+
+  177) Comment comment#notification_type returns 'comment_on_post' if the comment is on a post you own
+     Failure/Error: @not_your_post = user2.post(:status_message, :message => 'yo', :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfbe50c8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:53
+
+  178) Comment comment#notification_type returns false if the comment is not on a post you own
+     Failure/Error: @not_your_post = user2.post(:status_message, :message => 'yo', :to => aspect2.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa71f48>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:53
+
+  179) Comment User#comment should be able to comment on his own status
+     Failure/Error: @status = user.post(:status_message, :message => "hello", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c00097d0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:77
+
+  180) Comment User#comment should be able to comment on a person's status
+     Failure/Error: @status = user.post(:status_message, :message => "hello", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc5eb30>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:77
+
+  181) Comment comment propagation should send a user's comment on a person's post to that person
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa040b0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  182) Comment comment propagation should send a user comment on his own post to lots of people
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc8cff8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  183) Comment comment propagation should send a comment a person made on your post to all people
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa12d68>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  184) Comment comment propagation should send a comment a user made on your post to all people
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc76af0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  185) Comment comment propagation should not clear the aspect post array on receiving a comment
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9ff858>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  186) Comment comment propagation posts from a remote person should not send a comment a person made on his own post to anyone
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc60228>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  187) Comment comment propagation posts from a remote person should not send a comment a person made on a person post to anyone
+     Failure/Error: @person_status = Factory.create(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9eae58>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/comment_spec.rb:108
+
+  188) Comment xml serializes the sender handle
+     Failure/Error: @post = user.post :status_message, :message => "hello", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc17050>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:176
+
+  189) Comment xml serializes the post_guid
+     Failure/Error: @post = user.post :status_message, :message => "hello", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9a8ee0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:176
+
+  190) Comment xml marshalling marshals the author
+     Failure/Error: @post = user.post :status_message, :message => "hello", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfc17ff0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:176
+
+  191) Comment xml marshalling marshals the post
+     Failure/Error: @post = user.post :status_message, :message => "hello", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9a7130>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:176
+
+  192) Comment local commenting does not multi-post a comment
+     Failure/Error: @status = user.post(:status_message, :message => "hello", :to => aspect.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfddd358>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:200
+
+  193) Comment comments should attach the creator signature if the user is commenting
+     Failure/Error: @remote_message = user2.post :status_message, :message => "hello", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb41a68>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:210
+
+  194) Comment comments should sign the comment if the user is the post creator
+     Failure/Error: @remote_message = user2.post :status_message, :message => "hello", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9dc240>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:210
+
+  195) Comment comments should verify a comment made on a remote post by a different contact
+     Failure/Error: @remote_message = user2.post :status_message, :message => "hello", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bff2be58>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:210
+
+  196) Comment comments should reject comments on a remote post with only a creator sig
+     Failure/Error: @remote_message = user2.post :status_message, :message => "hello", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfba8178>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:210
+
+  197) Comment comments should receive remote comments on a user post with a creator sig
+     Failure/Error: @remote_message = user2.post :status_message, :message => "hello", :to => aspect2.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa19708>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:210
+
+  198) Comment youtube should process youtube titles on the way in
+     Failure/Error: @message = user.post :status_message, :message => "hi", :to => aspect.id
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c02e5800>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/comment_spec.rb:254
+...............*
+  199) Photo commenting accepts comments if there is no parent status message
+     Failure/Error: proc{ @user.comment("big willy style", :on => @photo) }.should change(@photo.comments, :count).by(1)
+     undefined method `youtube_titles' for #<Comment:0x2b51bfbcc230>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/comment.rb:28:in `_callback_before_311'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/photo_spec.rb:156
+     # ./spec/models/photo_spec.rb:156
+
+  200) Photo deletion is deleted with parent status message
+     Failure/Error: @status_message.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb57908>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/photo_spec.rb:164
+
+  201) Photo deletion deletes the parent object if there are no other photos or message
+     Failure/Error: @status_message.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfafc288>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/photo_spec.rb:164
+
+  202) Photo deletion does not delete the parent if the parent has other photos
+     Failure/Error: @status_message.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c04611e8>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/photo_spec.rb:164
+
+  203) Photo deletion does not delete the parent if the parent has a message
+     Failure/Error: @status_message.save
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bffce4a0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/photo_spec.rb:164
+...........*..........
+  204) Services::Twitter#post posts a status message to twitter
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfac4608>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/twitter_spec.rb:8
+
+  205) Services::Twitter#post swallows exception raised by twitter always being down
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfa26138>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/twitter_spec.rb:8
+
+  206) Services::Twitter#post should call public message
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9a6410>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/twitter_spec.rb:8
+
+  207) Services::Facebook#post posts a status message to facebook
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf9392c0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/facebook_spec.rb:8
+
+  208) Services::Facebook#post swallows exception raised by facebook always being down
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf8cdd68>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/facebook_spec.rb:8
+
+  209) Services::Facebook#post should call public message
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bf86f150>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/facebook_spec.rb:8
+
+  210) Services::Facebook.public_message calls super with  MAX_CHARACTERS
+     Failure/Error: @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51c072f988>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/helper_methods.rb:14:in `fantasy_resque'
+     # ./spec/models/services/facebook_spec.rb:8
+
+  211) PostVisibility has an aspect
+     Failure/Error: @post = Factory(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfcf3028>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/post_visibility_spec.rb:9
+
+  212) PostVisibility has a post
+     Failure/Error: @post = Factory(:status_message, :person => @person)
+     undefined method `youtube_titles' for #<StatusMessage:0x2b51bfb02ac0>
+     # ./lib/youtube_titles.rb:13:in `get_youtube_title'
+     # ./app/models/status_message.rb:22:in `_callback_before_531'
+     # ./spec/models/post_visibility_spec.rb:9
+
 
 Pending:
   AspectsController#hashes_for_contacts does not select the person's rsa key
@@ -314,25 +2449,13 @@ Pending:
   Photo commenting forwards comments to parent status message
     # IMPORTANT! comments need to get sent to parent status message for a photo if one is present.  do this from the photo model, NOT in comment.
     # ./spec/models/photo_spec.rb:147
-  Photo deletion deletes the parent object if there are no other photos or message
-    # No reason given
-    # ./spec/models/photo_spec.rb:174
-  Photo deletion does not delete the parent if the parent has other photos
-    # No reason given
-    # ./spec/models/photo_spec.rb:181
-  Photo deletion does not delete the parent if the parent has a message
-    # No reason given
-    # ./spec/models/photo_spec.rb:191
   Request.hashes_for_person does not retrieve keys
     # don't retrieve keys
     # ./spec/models/request_spec.rb:83
-  Services::Facebook.public_message calls super with  MAX_CHARACTERS
-    # i guess you cant test this?
-    # ./spec/models/services/facebook_spec.rb:33
 
-Finished in 428.38 seconds
-673 examples, 4 failures, 17 pending
+Finished in 371.98 seconds
+717 examples, 212 failures, 13 pending
 rake aborted!
-ruby -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb" failed
+ruby -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/data_conversion/export_from_mongo_spec.rb" "./spec/lib/data_conversion/import_to_mysql_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb" failed
 
 (See full trace by running task with --trace)
