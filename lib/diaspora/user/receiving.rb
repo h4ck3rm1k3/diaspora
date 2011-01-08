@@ -30,14 +30,9 @@ module Diaspora
             salmon_author.save!
             object.sender = salmon_author
           else
-            if (salmon_author._id)
-              salmon_author.id=salmon_author._id
-              salmon_author.save!
-              object.sender = salmon_author
-            else
+            if (!salmon_author.id)
               p "Missing id"
-              pp salmon_author
-              
+              pp salmon_author              
               Rails.logger.info("event=receive status=abort reason='missing ID in author' recipient=#{self.diaspora_handle} sender=#{salmon_author.diaspora_handle} payload_type=#{object.class}")
               return
             end
