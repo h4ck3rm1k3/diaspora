@@ -36,15 +36,21 @@ Factory.define :user do |u|
   u.password "bluepin7"
   u.password_confirmation { |u| u.password }
   u.serialized_private_key  OpenSSL::PKey::RSA.generate(1024).export
+#  p "define user :"
+#  p u
   u.after_build do |user|
     user.person = Factory.build(:person, :profile => Factory.create(:profile),
                                 :owner_id => user.id,
                                 :serialized_public_key => user.encryption_key.public_key.export,
                                 :diaspora_handle => "#{user.username}@#{AppConfig[:pod_url].gsub(/(https?:|www\.)\/\//, '').chop!}")
+#    p "define user, person"
+#    p user.person
   end
 end
 
 Factory.define :user_with_aspect, :parent => :user do |u|
+    p  "created user"
+  p u
   u.after_build { |user| user.aspects << Factory(:aspect) }
 end
 
@@ -71,8 +77,16 @@ Factory.define :service do |service|
   service.sequence(:uid)           { |token| "00000#{token}" }
   service.sequence(:access_token)  { |token| "12345#{token}" }
   service.sequence(:access_secret) { |token| "98765#{token}" }
+
+   p "Building Service"
+   p service
+
   service.after_build do |s|
+    p "After build :"
+    p s
     s.type = "Services::#{s.provider.camelize}"
+    p "Made service"
+    p s
   end
 end
 

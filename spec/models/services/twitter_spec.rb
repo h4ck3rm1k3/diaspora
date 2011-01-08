@@ -7,6 +7,8 @@ describe Services::Twitter do
     @user.aspects.create(:name => "whatever")
     @post = @user.post(:status_message, :message => "hello", :to =>@user.aspects.first.id)
     @service = Services::Twitter.new(:access_token => "yeah", :access_secret => "foobar")
+    p "created service"
+    p @service
     @user.services << @service
   end
 

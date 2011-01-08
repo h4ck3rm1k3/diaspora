@@ -6,7 +6,14 @@ require 'spec_helper'
 
 describe ServicesController do
   render_views
-  let(:user)    { Factory.create(:user) }
+
+  p "create user"
+
+#  let(user)    { Factory.create(:user) }
+  user = Factory.create(:user)
+  p "created user:"
+  p user
+
   let!(:aspect) { user.aspects.create(:name => "lame-os") }
 
 
@@ -21,20 +28,30 @@ describe ServicesController do
   }
 
   before do
+    p "Sign in user"
     sign_in :user, user
     @controller.stub!(:current_user).and_return(user)
     mock_access_token.stub!(:token => "12345", :secret => "56789")
   end
 
   describe '#index' do
+    p "Does the user exists?"
+    p user
+    p "Does the user services exists?"
+    p user.services
+    p "now going to access them"
     let!(:service1) {a = Factory(:service); user.services << a; a}
     let!(:service2) {a = Factory(:service); user.services << a; a}
     let!(:service3) {a = Factory(:service); user.services << a; a}
     let!(:service4) {a = Factory(:service); user.services << a; a}
 
-    it 'displays all connected serivices for a user' do
+
+    it 'displays all connected services for a user' do
       get :index
-      assigns[:services].should == user.services
+      p user
+#      user.reload  
+      p user
+      assigns[:services].should =~ user.services
     end
   end
 
@@ -66,7 +83,18 @@ describe ServicesController do
       user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
+
+      p "what do we have"
+      p user.services.first
+   #   user.services.first.class.name.should == "Service"
+      user.services.first.provider.should == "twitter"
+
+      # need to reload to get "Services::Twitter"
       user.reload
+
+      # this is called before the "after build is called"
+      ##<Service id: nil, _type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname:\ "sirrobertking", created_at: nil, updated_at: nil>
+      # so that the type is not set.... #TODO
       user.services.first.class.name.should == "Services::Twitter"
     end
   end
@@ -82,4 +110,6 @@ describe ServicesController do
       }.should change(user.services, :count).by(-1)
     end
   end
+  
+
 end
