@@ -14,12 +14,21 @@ module YoutubeTitles
     self[:youtube_titles] ||= {}
 
     youtube_match = text.match(YOUTUBE_ID_REGEX)
-    return unless youtube_match
-    video_id = youtube_match[1]
 
+    return unless youtube_match
+    p "youtube match"
+    p youtube_match
+
+    p "looking for youtube in text" 
+    p text
+
+    video_id = youtube_match[1]
+    p video_id
     unless self[:youtube_titles][video_id]
       self[:youtube_titles][video_id] = youtube_title_for(video_id)
     end
+    p "results:"
+    p self[:youtube_titles]
 
   end
   YOUTUBE_ID_REGEX = /youtube\.com.*?v=([A-Za-z0-9_\\\-]+)/ unless defined? YOUTUBE_ID_REGEX
