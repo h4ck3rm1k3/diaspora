@@ -1,0 +1,1 @@
+ruby -I spec/ -I spec/lib/ ./spec/lib/diaspora/parser_spec.rb

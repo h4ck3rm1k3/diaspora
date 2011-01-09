@@ -1,0 +1,1 @@
+ruby -I spec/ -I spec/lib/ ./spec/models/status_message_spec.rb

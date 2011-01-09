@@ -1,0 +1,1 @@
+ruby -I spec/ -I spec/lib/ ./spec/models/person_spec.rb
