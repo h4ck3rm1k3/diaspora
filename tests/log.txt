@@ -1,73 +1,18 @@
-Jammit Warning: Asset compression disabled -- Java unavailable.
 (in /home/phurl/experiments/diaspora)
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »aspect_memberships_id_seq« für die »serial«-Spalte »aspect_memberships.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »aspect_memberships_pkey« für Tabelle »aspect_memberships«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »aspects_id_seq« für die »serial«-Spalte »aspects.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »aspects_pkey« für Tabelle »aspects«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »comments_id_seq« für die »serial«-Spalte »comments.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »comments_pkey« für Tabelle »comments«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »contacts_id_seq« für die »serial«-Spalte »contacts.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »contacts_pkey« für Tabelle »contacts«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »invitations_id_seq« für die »serial«-Spalte »invitations.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »invitations_pkey« für Tabelle »invitations«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_aspect_memberships_id_seq« für die »serial«-Spalte »mongo_aspect_memberships.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_aspect_memberships_pkey« für Tabelle »mongo_aspect_memberships«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_aspects_id_seq« für die »serial«-Spalte »mongo_aspects.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_aspects_pkey« für Tabelle »mongo_aspects«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_comments_id_seq« für die »serial«-Spalte »mongo_comments.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_comments_pkey« für Tabelle »mongo_comments«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_contacts_id_seq« für die »serial«-Spalte »mongo_contacts.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_contacts_pkey« für Tabelle »mongo_contacts«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_invitations_id_seq« für die »serial«-Spalte »mongo_invitations.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_invitations_pkey« für Tabelle »mongo_invitations«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_notifications_id_seq« für die »serial«-Spalte »mongo_notifications.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_notifications_pkey« für Tabelle »mongo_notifications«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_people_id_seq« für die »serial«-Spalte »mongo_people.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_people_pkey« für Tabelle »mongo_people«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_post_visibilities_id_seq« für die »serial«-Spalte »mongo_post_visibilities.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_post_visibilities_pkey« für Tabelle »mongo_post_visibilities«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_posts_id_seq« für die »serial«-Spalte »mongo_posts.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_posts_pkey« für Tabelle »mongo_posts«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_profiles_id_seq« für die »serial«-Spalte »mongo_profiles.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_profiles_pkey« für Tabelle »mongo_profiles«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_requests_id_seq« für die »serial«-Spalte »mongo_requests.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_requests_pkey« für Tabelle »mongo_requests«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_services_id_seq« für die »serial«-Spalte »mongo_services.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_services_pkey« für Tabelle »mongo_services«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_users_id_seq« für die »serial«-Spalte »mongo_users.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_users_pkey« für Tabelle »mongo_users«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »notifications_id_seq« für die »serial«-Spalte »notifications.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »notifications_pkey« für Tabelle »notifications«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »people_id_seq« für die »serial«-Spalte »people.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »people_pkey« für Tabelle »people«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »post_visibilities_id_seq« für die »serial«-Spalte »post_visibilities.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »post_visibilities_pkey« für Tabelle »post_visibilities«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »posts_id_seq« für die »serial«-Spalte »posts.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »posts_pkey« für Tabelle »posts«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »profiles_id_seq« für die »serial«-Spalte »profiles.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »profiles_pkey« für Tabelle »profiles«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »requests_id_seq« für die »serial«-Spalte »requests.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »requests_pkey« für Tabelle »requests«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »services_id_seq« für die »serial«-Spalte »services.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »services_pkey« für Tabelle »services«
-HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »users_id_seq« für die »serial«-Spalte »users.id«
-HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »users_pkey« für Tabelle »users«
-/usr/bin/ruby1.8 -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/data_conversion/export_from_mongo_spec.rb" "./spec/lib/data_conversion/import_to_mysql_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb"
-Jammit Warning: Asset compression disabled -- Java unavailable.
 "created user"
-#<Factory:0x2b798bd43980 @attributes=[], @options={:parent=>:user}, @factory_name=:user_with_aspect>
+#<Factory:0x2ba31ccaaba8 @attributes=[], @options={:parent=>:user}, @factory_name=:user_with_aspect>
 "Building Service"
-#<Factory:0x2b798bd42940 @attributes=[#<Factory::Attribute::Static:0x2b798bd42620 @name=:nickname, @value="sirrobertking">, #<Factory::Attribute::Static:0x2b798bd42508 @name=:provider, @value="twitter">, #<Factory::Attribute::Dynamic:0x2b798bd423f0 @name=:uid, @block=#<Proc:0x00002b798ccf5ce8@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b798bd422b0 @name=:access_token, @block=#<Proc:0x00002b798ccf5ce8@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2b798bd42170 @name=:access_secret, @block=#<Proc:0x00002b798ccf5ce8@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>], @options={}, @factory_name=:service>
+#<Factory:0x2ba31cca9b90 @attributes=[#<Factory::Attribute::Static:0x2ba31cca9870 @name=:nickname, @value="sirrobertking">, #<Factory::Attribute::Static:0x2ba31cca9730 @name=:provider, @value="twitter">, #<Factory::Attribute::Dynamic:0x2ba31cca9640 @name=:uid, @block=#<Proc:0x00002ba31dc5cc68@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2ba31cca94b0 @name=:access_token, @block=#<Proc:0x00002ba31dc5cc68@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>, #<Factory::Attribute::Dynamic:0x2ba31cca9348 @name=:access_secret, @block=#<Proc:0x00002ba31dc5cc68@/usr/lib/ruby/gems/1.8/gems/factory_girl-1.3.2/lib/factory_girl/factory.rb:198>>], @options={}, @factory_name=:service>
 "create user"
 "created user:"
-#<User id: 1, username: "bob17a6d7d", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDW20y...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1c614fa@pivotallabs.com", encrypted_password: "$2a$10$wZHQMpt3z2/zQwFh32rTDuBhShpQsAmJsUS3c9N74qtL...", password_salt: "$2a$10$wZHQMpt3z2/zQwFh32rTDu", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 16:09:49", updated_at: "2011-01-08 16:09:49", mongo_id: nil>
+#<User id: 1, username: "bob18fd542", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDbwtn...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1456ce7@pivotallabs.com", encrypted_password: "$2a$10$7EJSR8MxloyixZssm7Q.MOL3qszwTEtViLxtLxyPt/bv...", password_salt: "$2a$10$7EJSR8MxloyixZssm7Q.MO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-09 22:06:25", updated_at: "2011-01-09 22:06:25", mongo_id: nil>
 "Does the user exists?"
-#<User id: 1, username: "bob17a6d7d", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDW20y...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1c614fa@pivotallabs.com", encrypted_password: "$2a$10$wZHQMpt3z2/zQwFh32rTDuBhShpQsAmJsUS3c9N74qtL...", password_salt: "$2a$10$wZHQMpt3z2/zQwFh32rTDu", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 16:09:49", updated_at: "2011-01-08 16:09:49", mongo_id: nil>
+#<User id: 1, username: "bob18fd542", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDbwtn...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1456ce7@pivotallabs.com", encrypted_password: "$2a$10$7EJSR8MxloyixZssm7Q.MOL3qszwTEtViLxtLxyPt/bv...", password_salt: "$2a$10$7EJSR8MxloyixZssm7Q.MO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-09 22:06:25", updated_at: "2011-01-09 22:06:25", mongo_id: nil>
 "Does the user services exists?"
 []
 "now going to access them"
 ............................................................................."Missing id"
-#<Person id: nil, guid: "12e7ffe25321471d", url: "http://google-163be7a1b.com/", diaspora_handle: "bob11530ab44@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANbbTIHMzPTK...", owner_id: nil, created_at: "2011-01-08 16:10:39", updated_at: "2011-01-08 16:10:39", mongo_id: nil>
+#<Person id: nil, guid: "fc4d25174188be46", url: "http://google-16360baf3.com/", diaspora_handle: "bob11517c405@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANvC2fpy3ZGN...", owner_id: nil, created_at: "2011-01-09 22:07:21", updated_at: "2011-01-09 22:07:21", mongo_id: nil>
 
   1) Diaspora::Parser parsing compliant XML object connecting should create a new person upon getting a person request
      Failure/Error: lambda {
@@ -96,23 +41,30 @@ Jammit Warning: Asset compression disabled -- Java unavailable.
 #<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
 #<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000004", access_token: "123454", access_secret: "987654", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
-#<User id: 1, username: "bob17a6d7d", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDW20y...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1c614fa@pivotallabs.com", encrypted_password: "$2a$10$wZHQMpt3z2/zQwFh32rTDuBhShpQsAmJsUS3c9N74qtL...", password_salt: "$2a$10$wZHQMpt3z2/zQwFh32rTDu", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 16:09:49", updated_at: "2011-01-08 16:09:49", mongo_id: nil>
-#<User id: 1, username: "bob17a6d7d", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDW20y...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1c614fa@pivotallabs.com", encrypted_password: "$2a$10$wZHQMpt3z2/zQwFh32rTDuBhShpQsAmJsUS3c9N74qtL...", password_salt: "$2a$10$wZHQMpt3z2/zQwFh32rTDu", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-08 16:09:49", updated_at: "2011-01-08 16:09:49", mongo_id: nil>
+#<User id: 1, username: "bob18fd542", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDbwtn...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1456ce7@pivotallabs.com", encrypted_password: "$2a$10$7EJSR8MxloyixZssm7Q.MOL3qszwTEtViLxtLxyPt/bv...", password_salt: "$2a$10$7EJSR8MxloyixZssm7Q.MO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-09 22:06:25", updated_at: "2011-01-09 22:06:25", mongo_id: nil>
+#<User id: 1, username: "bob18fd542", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQDbwtn...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1456ce7@pivotallabs.com", encrypted_password: "$2a$10$7EJSR8MxloyixZssm7Q.MOL3qszwTEtViLxtLxyPt/bv...", password_salt: "$2a$10$7EJSR8MxloyixZssm7Q.MO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-01-09 22:06:25", updated_at: "2011-01-09 22:06:25", mongo_id: nil>
 ."Sign in user"
 ."Sign in user"
 ."Sign in user"
 ."Sign in user"
 "what do we have"
-#<Service id: 1, type: "Services::Twitter", user_id: 1, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: "2011-01-08 16:11:55", updated_at: "2011-01-08 16:11:55", mongo_id: nil, user_mongo_id: nil>
+#<Service id: 1, type: "Services::Twitter", user_id: 1, provider: "twitter", uid: "000001", access_token: "123451", access_secret: "987651", nickname: "sirrobertking", created_at: "2011-01-09 22:08:36", updated_at: "2011-01-09 22:08:36", mongo_id: nil, user_mongo_id: nil>
 ."Sign in user"
 "After build :"
 #<Service id: nil, type: nil, user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 "Made service"
 #<Service id: nil, type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname: "sirrobertking", created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
-..............***.*................................................................................................*........*.........................................................
+..............***.*................................................................................................*........*........................................................."youtube match"
+#<MatchData "youtube.com/watch?v=ABYnqp-bxvg" 1:"ABYnqp-bxvg">
+"looking for youtube in text"
+"http://www.youtube.com/watch?v=ABYnqp-bxvg&a=GxdCwVVULXdvEBKmx_f5ywvZ0zZHHHDU&list=ML&playnext=1"
+"ABYnqp-bxvg"
+"results:"
+{"ABYnqp-bxvg"=>"UP & down & UP & down &amp;"}
+
   3) StatusMessage youtube should process youtube titles on the way in
      Failure/Error: Post.find(post.id).youtube_titles.should == {video_id => expected_title}
-     undefined method `youtube_titles' for #<StatusMessage:0x2b798fcf1640>
+     undefined method `youtube_titles' for #<StatusMessage:0x2ba320510bf0>
      # ./spec/models/status_message_spec.rb:103
 ...........................
   4) Person.search should yield search results on partial names
@@ -295,16 +247,24 @@ Jammit Warning: Asset compression disabled -- Java unavailable.
      # ./spec/models/user/connecting_spec.rb:114
 .....................*.......*........."going to save"
 "got remote person"
-#<Person id: 1229, guid: "7b513b6985e282d4", url: "http://google-12317487e8.com/", diaspora_handle: "bob80522fc3a@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANbbTIHMzPTK...", owner_id: 845, created_at: "2011-01-08 16:15:17", updated_at: "2011-01-08 16:15:17", mongo_id: nil>
+#<Person id: 1229, guid: "3610bdd5d7150b53", url: "http://google-12311d3bce.com/", diaspora_handle: "bob8050552a0@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANvC2fpy3ZGN...", owner_id: 845, created_at: "2011-01-09 22:12:21", updated_at: "2011-01-09 22:12:21", mongo_id: nil>
 "going to save"
 "got remote person"
-#<Person id: 1229, guid: "7b513b6985e282d4", url: "http://google-12317487e8.com/", diaspora_handle: "bob80522fc3a@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANbbTIHMzPTK...", owner_id: 845, created_at: "2011-01-08 16:15:17", updated_at: "2011-01-08 16:15:17", mongo_id: nil>
-.......................................
-  6) Comment youtube should process youtube titles on the way in
-     Failure/Error: Comment.find(comment.id).youtube_titles.should == {video_id => expected_title}
-     undefined method `youtube_titles' for #<Comment:0x2b798eba6160>
-     # ./spec/models/comment_spec.rb:269
-...............*..***...........*.........."created service"
+#<Person id: 1229, guid: "3610bdd5d7150b53", url: "http://google-12311d3bce.com/", diaspora_handle: "bob8050552a0@example.org", serialized_public_key: "-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBANvC2fpy3ZGN...", owner_id: 845, created_at: "2011-01-09 22:12:21", updated_at: "2011-01-09 22:12:21", mongo_id: nil>
+...............nil
+"youtube match"
+#<MatchData "youtube.com/watch?v=ABYnqp-bxvg" 1:"ABYnqp-bxvg">
+"looking for youtube in text"
+"http://www.youtube.com/watch?v=ABYnqp-bxvg&a=GxdCwVVULXdvEBKmx_f5ywvZ0zZHHHDU&list=ML&playnext=1"
+"ABYnqp-bxvg"
+"results:"
+{"ABYnqp-bxvg"=>"UP & down & UP & down &amp;"}
+"Got comment"
+#<Comment id: 26, text: "http://www.youtube.com/watch?v=ABYnqp-bxvg&a=GxdCwV...", post_id: 261, person_id: 1270, guid: "1489ec229b170d62", creator_signature: "11u2xT8yoawyBqgNHkEkgnWGa2g1XktVInqi1LKTJeXN8xib70b...", post_creator_signature: "11u2xT8yoawyBqgNHkEkgnWGa2g1XktVInqi1LKTJeXN8xib70b...", created_at: "2011-01-09 22:12:32", updated_at: "2011-01-09 22:12:32", mongo_id: nil>
+{"ABYnqp-bxvg"=>"UP & down & UP & down &amp;"}
+"check against"
+{"ABYnqp-bxvg"=>"UP & down & UP & down &amp;"}
+........................................*..***...........*.........."created service"
 #<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
 ."created service"
 #<Services::Twitter id: nil, type: "Services::Twitter", user_id: nil, provider: nil, uid: nil, access_token: "yeah", access_secret: "foobar", nickname: nil, created_at: nil, updated_at: nil, mongo_id: nil, user_mongo_id: nil>
@@ -365,9 +325,5 @@ Pending:
     # i guess you cant test this?
     # ./spec/models/services/facebook_spec.rb:33
 
-Finished in 404.14 seconds
-675 examples, 6 failures, 17 pending
-rake aborted!
-ruby -S bundle exec rspec "./spec/helpers/users_helper_spec.rb" "./spec/helpers/mobile_helper_spec.rb" "./spec/helpers/stream_helper_spec.rb" "./spec/helpers/requests_helper_spec.rb" "./spec/helpers/sockets_helper_spec.rb" "./spec/helpers/application_helper_spec.rb" "./spec/misc_spec.rb" "./spec/lib/salmon_salmon_spec.rb" "./spec/lib/diaspora/exporter_spec.rb" "./spec/lib/diaspora/parser_spec.rb" "./spec/lib/diaspora/web_socket_spec.rb" "./spec/lib/youtube_titles_spec.rb" "./spec/lib/em-webfinger_spec.rb" "./spec/lib/rake_helper_spec.rb" "./spec/lib/web_hooks_spec.rb" "./spec/lib/data_conversion/export_from_mongo_spec.rb" "./spec/lib/data_conversion/import_to_mysql_spec.rb" "./spec/lib/message_handler_spec.rb" "./spec/lib/encryptor_spec.rb" "./spec/lib/app_config_spec.rb" "./spec/lib/webfinger_profile_spec.rb" "./spec/lib/hcard_spec.rb" "./spec/mailers/notifier_spec.rb" "./spec/controllers/aspects_controller_spec.rb" "./spec/controllers/status_message_controller_spec.rb" "./spec/controllers/people_controller_spec.rb" "./spec/controllers/services_controller_spec.rb" "./spec/controllers/publics_controller_spec.rb" "./spec/controllers/home_controller_spec.rb" "./spec/controllers/registrations_controller_spec.rb" "./spec/controllers/posts_controller_spec.rb" "./spec/controllers/sockets_controller_spec.rb" "./spec/controllers/requests_controller_spec.rb" "./spec/controllers/notifications_controller_spec.rb" "./spec/controllers/comments_controller_spec.rb" "./spec/controllers/invitations_controller_spec.rb" "./spec/controllers/users_controller_spec.rb" "./spec/controllers/photos_controller_spec.rb" "./spec/config/config_spec.rb" "./spec/models/invitation_spec.rb" "./spec/models/profile_spec.rb" "./spec/models/aspect_spec.rb" "./spec/models/status_message_spec.rb" "./spec/models/contact_spec.rb" "./spec/models/person_spec.rb" "./spec/models/jobs/http_post_spec.rb" "./spec/models/jobs/receive_salmon_spec.rb" "./spec/models/jobs/post_to_services_spec.rb" "./spec/models/jobs/socket_webfinger_spec.rb" "./spec/models/jobs/receive_spec.rb" "./spec/models/user_spec.rb" "./spec/models/user/posting_spec.rb" "./spec/models/user/invite_spec.rb" "./spec/models/user/querying_spec.rb" "./spec/models/user/connecting_spec.rb" "./spec/models/user/attack_vectors_spec.rb" "./spec/models/user/commenting_spec.rb" "./spec/models/user/receive_spec.rb" "./spec/models/retraction_spec.rb" "./spec/models/notification_spec.rb" "./spec/models/post_spec.rb" "./spec/models/comment_spec.rb" "./spec/models/photo_spec.rb" "./spec/models/request_spec.rb" "./spec/models/services/twitter_spec.rb" "./spec/models/services/facebook_spec.rb" "./spec/models/post_visibility_spec.rb" failed
-
-(See full trace by running task with --trace)
+Finished in 420.68 seconds
+675 examples, 5 failures, 17 pending
