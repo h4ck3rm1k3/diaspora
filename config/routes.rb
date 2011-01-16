@@ -8,10 +8,9 @@ Diaspora::Application.routes.draw do
   resources :requests,        :only => [:destroy, :create]
   resources :services
 
-  resources :notifications
+  match 'notifications/read_all' => 'notifications#read_all'
+  resources :notifications,   :only => [:index, :update]
   resources :posts,           :only => [:show], :path => '/p/'
-
-
 
   match '/people/share_with' => 'people#share_with', :as => 'share_with'
   resources :people do
@@ -42,7 +41,7 @@ Diaspora::Application.routes.draw do
   match 'aspects/add_to_aspect',     :to => 'aspects#add_to_aspect', :as => 'add_to_aspect'
   match 'aspects/remove_from_aspect',:to => 'aspects#remove_from_aspect', :as => 'remove_from_aspect'
   match 'aspects/manage',            :to => 'aspects#manage'
-  resources :aspects,                :except => [:edit]
+  resources :aspects
 
   #public routes
   match 'webfinger',            :to => 'publics#webfinger'

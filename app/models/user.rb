@@ -4,6 +4,7 @@
 
 require File.join(Rails.root, 'lib/diaspora/user')
 require File.join(Rails.root, 'lib/salmon/salmon')
+require File.join(Rails.root, 'lib/postzord/dispatch')
 require 'rest-client'
 
 class User < ActiveRecord::Base
@@ -81,6 +82,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def salmon(post)
+    created_salmon = Salmon::SalmonSlap.create(self, post.to_diaspora_xml)
+    created_salmon
+  end
+
   def add_contact_to_aspect(contact, aspect)
     return true if contact.aspect_memberships.where(:aspect_id => aspect.id).count > 0
     contact.aspect_memberships.create!(:aspect => aspect)
@@ -108,40 +114,27 @@ class User < ActiveRecord::Base
   end
 
   def dispatch_post(post, opts = {})
-    aspect_ids = opts.delete(:to)
-
-    Rails.logger.info("event=dispatch user=#{diaspora_handle} post=#{post.id.to_s}")
-    push_to_aspects(post, aspects_from_ids(aspect_ids))
-    Resque.enqueue(Jobs::PostToServices, self.id, post.id, opts[:url]) if post.public
-  end
-
-  def post_to_services(post, url)
-    if post.respond_to?(:message)
-      self.services.each do |service|
-        service.post(post, url)
-      end
-    end
-  end
-
-  def post_to_hub(post)
-    Rails.logger.debug("event=post_to_service type=pubsub sender_handle=#{self.diaspora_handle}")
-    EventMachine::PubSubHubbub.new(AppConfig[:pubsub_server]).publish self.public_url
+    mailman = Postzord::Dispatch.new(self, post)
+    mailman.post(opts)
   end
 
   def update_post(post, post_hash = {})
     if self.owns? post
       post.update_attributes(post_hash)
-      aspects = self.aspects.joins(:posts).where(:posts => {:id => post.id})
-      self.push_to_aspects(post, aspects)
+      Postzord::Dispatch.new(self, post).post
     end
   end
 
-  def add_to_streams(post, aspect_ids)
-    post.socket_to_uid(id, :aspect_ids => aspect_ids) if post.respond_to? :socket_to_uid
-    target_aspects = aspects_from_ids(aspect_ids)
-    target_aspects.each do |aspect|
+  def add_post_to_aspects(post)
+    Rails.logger.debug("event=add_post_to_aspects user_id=#{self.id} post_id=#{post.id}")
+    add_to_streams(post, self.aspects_with_person(post.person))
+    post
+  end
+
+  def add_to_streams(post, aspects_to_insert)
+    post.socket_to_user(self, :aspect_ids => aspects_to_insert.map{|x| x.id}) if post.respond_to? :socket_to_user
+    aspects_to_insert.each do |aspect|
       aspect.posts << post
-      aspect.save
     end
   end
 
@@ -153,6 +146,7 @@ class User < ActiveRecord::Base
     end
   end
 
+<<<<<<< HEAD:app/models/user.rb
   def push_to_aspects(post, aspects)
     #send to the aspects
     target_aspect_ids = aspects.map {|a| a.id}
@@ -197,6 +191,8 @@ class User < ActiveRecord::Base
     created_salmon
   end
 
+=======
+>>>>>>> mysql:app/models/user.rb
   ######## Commenting  ########
   def build_comment(text, options = {})
     comment = Comment.new(:person_id => self.person.id,
@@ -215,28 +211,8 @@ class User < ActiveRecord::Base
   end
 
   def dispatch_comment(comment)
-    if person.owns? comment.post
-      #push DOWNSTREAM (to original audience)
-      Rails.logger.info "event=dispatch_comment direction=downstream user=#{self.person.diaspora_handle} comment=#{comment.id}"
-      aspects = comment.post.aspects
-
-      #just socket to local users, as the comment has already
-      #been associated and saved by post owner
-      #  (we'll push to all of their aspects for now, the comment won't
-      #   show up via js where corresponding posts are not present)
-
-      people_in_aspects(aspects, :type => 'local').each do |person|
-        comment.socket_to_uid(person.owner_id, :aspect_ids => 'all')
-      end
-
-      #push to remote people
-      push_to_people(comment, people_in_aspects(aspects, :type => 'remote'))
-
-    elsif owns? comment
-      #push UPSTREAM (to poster)
-      Rails.logger.info "event=dispatch_comment direction=upstream user=#{self.diaspora_handle} comment=#{comment.id}"
-      push_to_people comment, [comment.post.person]
-    end
+    mailman = Postzord::Dispatch.new(self, comment)
+    mailman.post
   end
 
   ######### Mailer #######################
@@ -250,9 +226,11 @@ class User < ActiveRecord::Base
   def retract(post)
     aspects = post.aspects
 
-    post.unsocket_from_uid(self.id, :aspect_ids => aspects.map { |a| a.id.to_s }) if post.respond_to? :unsocket_from_uid
     retraction = Retraction.for(post)
-    push_to_people retraction, people_in_aspects(aspects)
+    post.unsocket_from_user(self, :aspect_ids => aspects.map { |a| a.id.to_s }) if post.respond_to? :unsocket_from_user
+    mailman = Postzord::Dispatch.new(self, retraction)
+    mailman.post
+
     retraction
   end
 
@@ -265,7 +243,7 @@ class User < ActiveRecord::Base
       params[:image_url_small] = photo.url(:thumb_small)
     end
     if self.person.profile.update_attributes(params)
-      push_to_people profile, self.contacts.where(:pending => false).includes(:person).map{|c| c.person}
+      Postzord::Dispatch.new(self, profile).post
       true
     else
       false

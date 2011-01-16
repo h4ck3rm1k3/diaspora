@@ -35,7 +35,7 @@ describe Photo do
     end
   end
 
-  it 'should be mutable' do
+  it 'is mutable' do
     @photo.mutable?.should == true
   end
 
@@ -130,10 +130,10 @@ describe Photo do
       thumb_url = @photo.url :thumb_medium
 
       xml = @photo.to_diaspora_xml
-      id = @photo.id
 
       @photo.destroy
-      user2.receive xml, @user.person
+      zord = Postzord::Receiver.new(user2, :person => @photo.person)
+      zord.parse_and_receive(xml)
 
       new_photo = Photo.where(:guid => @photo.guid).first
       new_photo.url.nil?.should be false

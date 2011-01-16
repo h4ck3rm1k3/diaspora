@@ -2,7 +2,9 @@
 # licensed under the Affero General Public License version 3 or later.  See
 # the COPYRIGHT file.
 
-Dir.glob(File.join(Rails.root, 'lib', 'data_conversion', '*.rb')).each { |f| require f }
+require File.join(Rails.root, 'lib', 'data_conversion', 'base')
+require File.join(Rails.root, 'lib', 'data_conversion', 'export_from_mongo')
+require File.join(Rails.root, 'lib', 'data_conversion', 'import_to_mysql')
 
 namespace :migrations do
   desc 'export data for mysql import'
@@ -18,7 +20,8 @@ namespace :migrations do
   end
 
   desc 'import data to mysql'
-  task :import_to_mysql => :environment do
+  task :import_to_mysql do
+    require 'config/environment'
     migrator = DataConversion::ImportToMysql.new
     migrator.full_path = "/tmp/data_conversion/csv"
     migrator.log("**** Starting import to MySQL database #{ActiveRecord::Base.connection.current_database} ****")
@@ -27,4 +30,7 @@ namespace :migrations do
     migrator.log("**** Import finished! ****")
     migrator.log("total elapsed time")
   end
+
+  desc 'execute mongo to mysql migration.  Requires mongoexport to be accessible.'
+  task :migrate_to_mysql => [:export_for_mysql, :import_to_mysql]
 end

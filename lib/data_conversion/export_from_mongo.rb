@@ -85,14 +85,25 @@ module DataConversion
 
     def comments_json_to_csv model_hash
       generic_json_to_csv(model_hash) do |hash|
-        model_hash[:mongo_attrs].map { |attr_name| hash[attr_name] }
+        model_hash[:mongo_attrs].map { |attr_name|
+          attr_val = hash[attr_name]
+          if (attr_name == "youtube_titles" && attr_val && !attr_val.empty?)
+            attr_val.to_yaml
+          else
+            attr_val
+          end
+        }
       end
     end
 
     def contacts_json_to_csv model_hash
       generic_json_to_two_csvs(model_hash) do |hash|
         main_row = model_hash[:main_mongo_attrs].map { |attr_name| hash[attr_name] }
-        aspect_membership_rows = hash["aspect_ids"].map { |id| [hash["_id"], id] }
+        if hash["aspect_ids"]
+          aspect_membership_rows = hash["aspect_ids"].map { |id| [hash["_id"], id] }
+        else
+          aspect_membership_rows = []
+        end
         [main_row, aspect_membership_rows]
       end
       #Also writes the aspect memberships csv
@@ -136,8 +147,11 @@ module DataConversion
         people_csv << person_row
 
         profile_row = model_hash[:profile_attrs].map do |attr_name|
-          attr_name = "_id" if attr_name == "person_mongo_id"
-          hash["profile"][attr_name]
+          if attr_name == "person_mongo_id"
+            hash["_id"] #set person_mongo_id to the person id
+          else
+            hash["profile"][attr_name]
+          end
         end
         profiles_csv << profile_row
       end
@@ -148,7 +162,14 @@ module DataConversion
 
     def posts_json_to_csv model_hash
       generic_json_to_csv(model_hash) do |hash|
-        model_hash[:mongo_attrs].map { |attr_name| hash[attr_name] }
+        model_hash[:mongo_attrs].map { |attr_name|
+          attr_val = hash[attr_name]
+          if (attr_name == "youtube_titles" && attr_val && !attr_val.empty?)
+            attr_val.to_yaml
+          else
+            attr_val
+          end
+        }
       end
       #has to handle the polymorphic stuff
     end
@@ -170,7 +191,13 @@ module DataConversion
 
       generic_json_to_two_csvs(model_hash) do |hash|
         main_row = model_hash[:mongo_attrs].map { |attr_name| hash[attr_name] }
-        post_visibility_rows = hash["post_ids"].map { |id| [hash["_id"], id] }
+
+        if hash["post_ids"]
+          post_visibility_rows = hash["post_ids"].map { |id| [hash["_id"], id] }
+        else
+          post_visibility_rows = []
+        end
+
         [main_row, post_visibility_rows]
       end
     end
@@ -183,7 +210,7 @@ module DataConversion
       main_csv << model_hash[:main_attrs]
 
       join_csv = CSV.open("#{full_path}/csv/#{model_hash[:join_table_name]}.csv", 'w')
-      join_csv << model_hash[:join_table_attrs]
+      join_csv << model_hash[:join_table_attrs] unless model_hash[:join_table_attrs].empty?
 
       json_file.each do |aspect_json|
         hash = JSON.parse(aspect_json)

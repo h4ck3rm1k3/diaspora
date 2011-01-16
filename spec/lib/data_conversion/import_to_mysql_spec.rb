@@ -11,12 +11,19 @@ describe DataConversion::ImportToMysql do
                  "#{@migrator.full_path}/#{table_name}.csv")
   end
 
+  def import_and_process(table_name)
+    copy_fixture_for(table_name)
+    @migrator.send("import_raw_#{table_name}".to_sym)
+    @migrator.send("process_raw_#{table_name}".to_sym)
+  end
+
   before do
     @migrator = DataConversion::ImportToMysql.new
     @migrator.full_path = "/tmp/data_conversion"
     system("rm -rf #{@migrator.full_path}")
     FileUtils.mkdir_p(@migrator.full_path)
   end
+
 
 #  describe "#process_raw" do
 #     describe "users" do
@@ -522,4 +529,5 @@ describe DataConversion::ImportToMysql do
 #       end
 #     end
 #  end
+
 end

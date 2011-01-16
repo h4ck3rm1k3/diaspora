@@ -27,4 +27,3 @@ end
 
 # Initialize the rails application
 Diaspora::Application.initialize!
-
