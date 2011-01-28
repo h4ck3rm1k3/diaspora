@@ -102,7 +102,7 @@ module DataConversion
 
     def process_raw_aspects
       log "Importing aspects to main table..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #       Aspect.connection.execute <<-SQL
 #         INSERT INTO aspects
 #         SELECT mongo_aspects.id,
@@ -114,25 +114,6 @@ module DataConversion
 #                mongo_aspects.user_mongo_id
 #           FROM mongo_aspects INNER JOIN users ON (users.mongo_id = mongo_aspects.user_mongo_id)
 #       SQL
-=======
-      Aspect.connection.execute <<-SQL
-        INSERT INTO aspects
-        SELECT mongo_aspects.id,
-               mongo_aspects.name,
-               users.id,
-               mongo_aspects.created_at,
-               mongo_aspects.updated_at,
-               mongo_aspects.mongo_id,
-               mongo_aspects.user_mongo_id
-          FROM mongo_aspects
-          INNER JOIN users ON (users.mongo_id = mongo_aspects.user_mongo_id)
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
-      log "Imported #{Aspect.count} aspects."
-    end
-    def process_raw_contacts
-      log "Importing contacts to main table..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
 #       Contact.connection.execute <<-SQL
 #         INSERT INTO contacts
 #         SELECT mongo_contacts.id,
@@ -144,45 +125,31 @@ module DataConversion
 #                mongo_contacts.mongo_id
 #           FROM mongo_contacts INNER JOIN (users, people) ON (users.mongo_id = mongo_contacts.user_mongo_id AND people.mongo_id = mongo_contacts.person_mongo_id)
 #       SQL
-=======
-      Contact.connection.execute <<-SQL
-        INSERT INTO contacts
-        SELECT mongo_contacts.id,
-               users.id,
-               people.id,
-               mongo_contacts.pending,
-               mongo_contacts.created_at,
-               mongo_contacts.updated_at,
-               mongo_contacts.mongo_id
-          FROM mongo_contacts
-          INNER JOIN (users, people) ON (users.mongo_id = mongo_contacts.user_mongo_id
-                                         AND people.mongo_id = mongo_contacts.person_mongo_id)
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Imported #{Contact.count} contacts."
     end
     def process_raw_profiles
       log "Importing profiles to main table..."
       Profile.connection.execute <<-SQL
-        INSERT INTO profiles
-        SELECT mongo_profiles.id,
-               mongo_profiles.diaspora_handle,
-               mongo_profiles.first_name,
-               mongo_profiles.last_name,
-               mongo_profiles.image_url,
-               mongo_profiles.image_url_small,
-               mongo_profiles.image_url_medium,
-               mongo_profiles.birthday,
-               mongo_profiles.gender,
-               mongo_profiles.bio,
-               mongo_profiles.searchable,
-               people.id,
-               mongo_profiles.created_at,
-               mongo_profiles.updated_at,
-               mongo_profiles.person_mongo_id
-          FROM mongo_profiles
-          INNER JOIN (people) ON (people.mongo_id = mongo_profiles.person_mongo_id)
-      SQL
+#         INSERT INTO profiles
+#         SELECT mongo_profiles.id,
+#                mongo_profiles.diaspora_handle,
+#                mongo_profiles.first_name,
+#                mongo_profiles.last_name,
+#                mongo_profiles.image_url,
+#                mongo_profiles.image_url_small,
+#                mongo_profiles.image_url_medium,
+#                mongo_profiles.birthday,
+#                mongo_profiles.gender,
+#                mongo_profiles.bio,
+#                mongo_profiles.searchable,
+#                people.id,
+#                mongo_profiles.created_at,
+#                mongo_profiles.updated_at,
+#                mongo_profiles.person_mongo_id
+#           FROM mongo_profiles
+#           INNER JOIN (people) ON (people.mongo_id = mongo_profiles.person_mongo_id)
+#       SQL
       log "Imported #{Profile.count} profiles."
     end
     def process_raw_aspect_memberships
@@ -202,38 +169,38 @@ module DataConversion
     def process_raw_invitations
       log "Importing invitations to main table..."
       Invitation.connection.execute <<-SQL
-      INSERT INTO invitations
-      SELECT m_inv.id,
-             m_inv.message,
-             senders.id,
-             recipients.id,
-             aspects.id,
-             m_inv.created_at,
-             m_inv.updated_at,
-             m_inv.mongo_id
-        FROM mongo_invitations AS m_inv
-        INNER JOIN users AS senders ON m_inv.sender_mongo_id = senders.mongo_id
-        INNER JOIN users AS recipients ON m_inv.recipient_mongo_id = recipients.mongo_id
-        INNER JOIN aspects ON m_inv.aspect_mongo_id = aspects.mongo_id
-      SQL
+#       INSERT INTO invitations
+#       SELECT m_inv.id,
+#              m_inv.message,
+#              senders.id,
+#              recipients.id,
+#              aspects.id,
+#              m_inv.created_at,
+#              m_inv.updated_at,
+#              m_inv.mongo_id
+#         FROM mongo_invitations AS m_inv
+#         INNER JOIN users AS senders ON m_inv.sender_mongo_id = senders.mongo_id
+#         INNER JOIN users AS recipients ON m_inv.recipient_mongo_id = recipients.mongo_id
+#         INNER JOIN aspects ON m_inv.aspect_mongo_id = aspects.mongo_id
+#       SQL
       log "Imported #{Invitation.count} invitations."
     end
     def process_raw_requests
       log "Importing requests to main table..."
-      Request.connection.execute <<-SQL
-      INSERT INTO requests
-      SELECT m_r.id,
-             senders.id,
-             recipients.id,
-             aspects.id,
-             m_r.created_at,
-             m_r.updated_at,
-             m_r.mongo_id
-        FROM mongo_requests AS m_r
-        INNER JOIN people AS senders ON m_r.sender_mongo_id = senders.mongo_id
-        INNER JOIN people AS recipients ON m_r.recipient_mongo_id = recipients.mongo_id
-        LEFT JOIN aspects ON m_r.aspect_mongo_id = aspects.mongo_id
-      SQL
+#       Request.connection.execute <<-SQL
+#       INSERT INTO requests
+#       SELECT m_r.id,
+#              senders.id,
+#              recipients.id,
+#              aspects.id,
+#              m_r.created_at,
+#              m_r.updated_at,
+#              m_r.mongo_id
+#         FROM mongo_requests AS m_r
+#         INNER JOIN people AS senders ON m_r.sender_mongo_id = senders.mongo_id
+#         INNER JOIN people AS recipients ON m_r.recipient_mongo_id = recipients.mongo_id
+#         LEFT JOIN aspects ON m_r.aspect_mongo_id = aspects.mongo_id
+#       SQL
       log "Imported #{Request.count} requests."
     end
     def process_raw_services
@@ -258,22 +225,22 @@ module DataConversion
     end
     def process_raw_comments
       log "Importing comments to main table..."
-      Comment.connection.execute <<-SQL
-        INSERT INTO comments
-        SELECT mongo_comments.id,
-               mongo_comments.text,
-               posts.id,
-               people.id,
-               mongo_comments.guid,
-               mongo_comments.creator_signature,
-               mongo_comments.post_creator_signature,
-               mongo_comments.youtube_titles,
-               mongo_comments.created_at,
-               mongo_comments.updated_at,
-               mongo_comments.mongo_id
-          FROM mongo_comments INNER JOIN (posts, people)
-            ON (posts.mongo_id = mongo_comments.post_mongo_id AND people.mongo_id = mongo_comments.person_mongo_id)
-      SQL
+#       Comment.connection.execute <<-SQL
+#         INSERT INTO comments
+#         SELECT mongo_comments.id,
+#                mongo_comments.text,
+#                posts.id,
+#                people.id,
+#                mongo_comments.guid,
+#                mongo_comments.creator_signature,
+#                mongo_comments.post_creator_signature,
+#                mongo_comments.youtube_titles,
+#                mongo_comments.created_at,
+#                mongo_comments.updated_at,
+#                mongo_comments.mongo_id
+#           FROM mongo_comments INNER JOIN (posts, people)
+#             ON (posts.mongo_id = mongo_comments.post_mongo_id AND people.mongo_id = mongo_comments.person_mongo_id)
+#       SQL
       log "Imported #{Comment.count} comments."
     end
     def process_raw_people
@@ -339,8 +306,9 @@ module DataConversion
 
     def import_raw_users
       log "Loading users file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
-#        (mongo_id, email, @username, serialized_private_key, encrypted_password,      invites, @invitation_token, @invitation_sent_at, @getting_started,      @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,    @reset_password_token, password_salt)
+
+#        (mongo_id, email, @username, serialized_private_key, encrypted_password,      
+# invites, @invitation_token, @invitation_sent_at, @getting_started,      @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,    @reset_password_token, password_salt)
 #       Mongo::User.connection.execute <<-SQL
 #         #{load_string("users")}
 #         #{infile_opts}
@@ -352,33 +320,13 @@ module DataConversion
 #          #{boolean_set("getting_started")},
 #          #{boolean_set("disable_mail")};
 #       SQL
-=======
-      Mongo::User.connection.execute set_time_zone_to_utc
-      Mongo::User.connection.execute <<-SQL
-        #{load_string("users")}
-        #{infile_opts}
-        (mongo_id, email, @username, serialized_private_key, encrypted_password,
-         invites, @invitation_token, @invitation_sent_at, @getting_started,
-         @disable_mail, language, @last_sign_in_ip, @last_sign_in_at,
-         @reset_password_token, password_salt)
-         SET #{unix_time("last_sign_in_at")},
-         #{nil_es("invitation_token")},
-         #{nil_es("username")},
-         #{nil_es("last_sign_in_ip")},
-         #{nil_es("reset_password_token")},
-         #{unix_time("created_at")},
-         #{unix_time("updated_at")},
-         #{boolean_set("getting_started")},
-         #{boolean_set("disable_mail")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
       log "Finished. Imported #{Mongo::User.count} users."
     end
 
 
     def import_raw_aspects
       log "Loading aspects file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
 #       Mongo::Aspect.connection.execute <<-SQL
 #         #{load_string("aspects")}
@@ -387,42 +335,19 @@ module DataConversion
 #         SET #{unix_time("created_at")},
 #         #{unix_time("updated_at")};
 #       SQL
-=======
-      Mongo::Aspect.connection.execute set_time_zone_to_utc
-      Mongo::Aspect.connection.execute <<-SQL
-        #{load_string("aspects")}
-        #{infile_opts}
-        (mongo_id, name, user_mongo_id, @created_at, @updated_at)
-        SET #{unix_time("created_at")},
-        #{unix_time("updated_at")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
-      log "Finished. Imported #{Mongo::Aspect.count} aspects."
-    end
-
-    def import_raw_aspect_memberships
-      log "Loading aspect memberships file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
 #        (contact_mongo_id, aspect_mongo_id)
 #       Mongo::AspectMembership.connection.execute <<-SQL
 #         #{load_string("aspect_memberships")}
 #         #{infile_opts}
 
 #       SQL
-=======
-      Mongo::AspectMembership.connection.execute set_time_zone_to_utc
-      Mongo::AspectMembership.connection.execute <<-SQL
-        #{load_string("aspect_memberships")}
-        #{infile_opts}
-        (contact_mongo_id, aspect_mongo_id)
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::AspectMembership.count} aspect memberships."
     end
 
     def import_raw_comments
       log "Loading comments file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (mongo_id, post_mongo_id, person_mongo_id, @diaspora_handle, text, @youtube_titles)
 #       Mongo::Comment.connection.execute <<-SQL
 #         #{load_string("comments")}
@@ -431,24 +356,13 @@ module DataConversion
 #         SET guid = mongo_id,
 #         #{nil_es("youtube_titles")};
 #       SQL
-=======
-      Mongo::Comment.connection.execute set_time_zone_to_utc
-      Mongo::Comment.connection.execute <<-SQL
-        #{load_string("comments")}
-        #{infile_opts}
-        (mongo_id, post_mongo_id, person_mongo_id, @diaspora_handle, text, @youtube_titles, @created_at, @updated_at)
-        SET guid = mongo_id,
-         #{unix_time("created_at")},
-         #{unix_time("updated_at")},
-        #{nil_es("youtube_titles")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Comment.count} comments."
     end
 
     def import_raw_posts
       log "Loading posts file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (@youtube_titles,@pending,@created_at,@public,@updated_at,status_message_mongo_id,caption,remote_photo_path,remote_photo_name,random_string,image,mongo_id,type,diaspora_handle,person_mongo_id,message)
 #       Mongo::Post.connection.execute <<-SQL
 #         #{load_string("posts")}
@@ -461,34 +375,13 @@ module DataConversion
 #         #{boolean_set("pending")},
 #         #{boolean_set("public")};
 #       SQL
-=======
-      Mongo::Post.connection.execute set_time_zone_to_utc
-      Mongo::Post.connection.execute <<-SQL
-        #{load_string("posts")}
-        #{infile_opts}
-        (@youtube_titles, @pending, @created_at, @public, @updated_at, @status_message_mongo_id, @caption,
-        @remote_photo_path, @remote_photo_name, @random_string, @image, mongo_id, type, diaspora_handle, person_mongo_id, @message)
-        SET guid = mongo_id,
-        #{nil_es("youtube_titles")},
-        #{nil_es("status_message_mongo_id")},
-        #{nil_es("caption")},
-        #{nil_es("remote_photo_path")},
-        #{nil_es("remote_photo_name")},
-        #{nil_es("random_string")},
-        #{nil_es("image")},
-        #{nil_es("message")},
-        #{unix_time("created_at")},
-        #{unix_time("updated_at")},
-        #{boolean_set("pending")},
-        #{boolean_set("public")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Post.count} posts."
     end
 
     def import_raw_contacts
       log "Loading contacts file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (mongo_id, user_mongo_id, person_mongo_id, @pending, @created_at, @updated_at)
 #       Mongo::Contact.connection.execute <<-SQL
 #         #{load_string("contacts")}
@@ -496,23 +389,13 @@ module DataConversion
 
 #         SET #{boolean_set("pending")};
 #       SQL
-=======
-      Mongo::Contact.connection.execute set_time_zone_to_utc
-      Mongo::Contact.connection.execute <<-SQL
-        #{load_string("contacts")}
-        #{infile_opts}
-        (mongo_id, user_mongo_id, person_mongo_id, @pending, @created_at, @updated_at)
-        SET #{boolean_set("pending")},
-         #{unix_time("created_at")},
-         #{unix_time("updated_at")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Contact.count} contacts."
     end
 
     def import_raw_services
       log "Loading services file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (mongo_id, type,user_mongo_id,@provider,@uid,@access_token,@access_secret,@nickname)
 #       Mongo::Service.connection.execute <<-SQL
 #         #{load_string("services")}
@@ -524,47 +407,26 @@ module DataConversion
 #         #{nil_es("access_secret")},
 #         #{nil_es("nickname")};
 #       SQL
-=======
-      Mongo::Service.connection.execute set_time_zone_to_utc
-      Mongo::Service.connection.execute <<-SQL
-        #{load_string("services")}
-        #{infile_opts}
-        (mongo_id, type,user_mongo_id,@provider,@uid,@access_token,@access_secret,@nickname, @created_at, @updated_at)
-        SET #{nil_es("provider")},
-        #{nil_es("uid")},
-        #{unix_time("created_at")},
-        #{unix_time("updated_at")},
-        #{nil_es("access_token")},
-        #{nil_es("access_secret")},
-        #{nil_es("nickname")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Service.count} services."
     end
 
     def import_raw_post_visibilities
       log "Loading post visibilities file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (aspect_mongo_id, post_mongo_id)
 #       Mongo::PostVisibility.connection.execute <<-SQL
 #         #{load_string("post_visibilities")}
 #         #{infile_opts}
 
 #       SQL
-=======
-      Mongo::PostVisibility.connection.execute set_time_zone_to_utc
-      Mongo::PostVisibility.connection.execute <<-SQL
-        #{load_string("post_visibilities")}
-        #{infile_opts}
-        (aspect_mongo_id, post_mongo_id)
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::PostVisibility.count} post visibilities."
     end
 
     def import_raw_requests
       log "Loading requests file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (mongo_id, recipient_mongo_id, sender_mongo_id, @aspect_mongo_id)
 #       Mongo::Request.connection.execute <<-SQL
 #         #{load_string("requests")}
@@ -572,45 +434,20 @@ module DataConversion
 
 #         SET #{nil_es("aspect_mongo_id")};
 #       SQL
-=======
-      Mongo::Request.connection.execute set_time_zone_to_utc
-      Mongo::Request.connection.execute <<-SQL
-        #{load_string("requests")}
-        #{infile_opts}
-        (mongo_id, recipient_mongo_id, sender_mongo_id, @aspect_mongo_id, @created_at, @updated_at)
-        SET #{nil_es("aspect_mongo_id")},
-        #{unix_time("created_at")},
-        #{unix_time("updated_at")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Request.count} requests."
     end
 
     def import_raw_invitations
       log "Loading invitations file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (mongo_id, recipient_mongo_id, sender_mongo_id, aspect_mongo_id, message)
 #       Mongo::Invitation.connection.execute <<-SQL
 #         #{load_string("invitations")}
 #         #{infile_opts}
 
 #       SQL
-=======
-      Mongo::Invitation.connection.execute set_time_zone_to_utc
-      Mongo::Invitation.connection.execute <<-SQL
-        #{load_string("invitations")}
-        #{infile_opts}
-        (mongo_id, recipient_mongo_id, sender_mongo_id, aspect_mongo_id, message, @created_at, @updated_at)
-        SET #{unix_time("created_at")},
-        #{unix_time("updated_at")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
-      log "Finished. Imported #{Mongo::Invitation.count} invitations."
-    end
 
-    def import_raw_notifications
-      log "Loading notifications file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
 #        (mongo_id,target_mongo_id,target_type,@unread)
 #       Mongo::Notification.connection.execute <<-SQL
 #         #{load_string("notifications")}
@@ -618,17 +455,7 @@ module DataConversion
 
 #         SET #{boolean_set("unread")};
 #       SQL
-=======
-      Mongo::Notification.connection.execute set_time_zone_to_utc
-      Mongo::Notification.connection.execute <<-SQL
-        #{load_string("notifications")}
-        #{infile_opts}
-        (mongo_id,target_mongo_id,recipient_mongo_id,actor_mongo_id,@null_action,action,@unread, @created_at, @updated_at)
-        SET #{boolean_set("unread")},
-        #{unix_time("created_at")},
-        #{unix_time("updated_at")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Notification.count} notifications."
       {"new_request" => "Request",
       "request_accepted" => "Request",
@@ -641,7 +468,7 @@ module DataConversion
 
     def import_raw_people
       log "Loading people file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (@created_at,@updated_at,serialized_public_key,url,mongo_id,@owner_mongo_id,diaspora_handle)
 #       Mongo::Person.connection.execute <<-SQL
 #         #{load_string("people")}
@@ -652,24 +479,13 @@ module DataConversion
 #         #{unix_time("created_at")},
 #         #{unix_time("updated_at")};
 #       SQL
-=======
-      Mongo::Person.connection.execute set_time_zone_to_utc
-      Mongo::Person.connection.execute <<-SQL
-        #{load_string("people")}
-        #{infile_opts}
-        (@created_at,@updated_at,serialized_public_key,url,mongo_id,@owner_mongo_id,diaspora_handle)
-        SET guid = mongo_id,
-        #{nil_es("owner_mongo_id")},
-        #{unix_time("created_at")},
-        #{unix_time("updated_at")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       log "Finished. Imported #{Mongo::Person.count} people."
     end
 
     def import_raw_profiles
       log "Loading profiles file..."
-<<<<<<< HEAD:lib/data_conversion/import_to_mysql.rb
+
 #        (@image_url_medium,@searchable,@image_url,person_mongo_id,       @gender,@diaspora_handle,birthday,@last_name,@bio,        @image_url_small,@first_name)
 #       Mongo::Profile.connection.execute <<-SQL
 #         #{load_string("profiles")}
@@ -685,26 +501,7 @@ module DataConversion
 #         #{nil_es("image_url_small")},
 #         #{nil_es("first_name")};
 #       SQL
-=======
-      Mongo::Profile.connection.execute set_time_zone_to_utc
-      Mongo::Profile.connection.execute <<-SQL
-        #{load_string("profiles")}
-        #{infile_opts}
-        (@image_url_medium,@searchable,@image_url,person_mongo_id,
-        @gender,@diaspora_handle,@birthday,@last_name,@bio,
-        @image_url_small,@first_name)
-        SET #{boolean_set("searchable")},
-        #{unix_time("birthday")},
-        #{nil_es("image_url_medium")},
-        #{nil_es("image_url")},
-        #{nil_es("gender")},
-        #{nil_es("diaspora_handle")},
-        #{nil_es("last_name")},
-        #{nil_es("bio")},
-        #{nil_es("image_url_small")},
-        #{nil_es("first_name")};
-      SQL
->>>>>>> mysql:lib/data_conversion/import_to_mysql.rb
+
       #STRCMP returns 0 if the arguments are the same
       log "Finished. Imported #{Mongo::Profile.count} profiles."
     end

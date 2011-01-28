@@ -1,13 +1,9 @@
 source 'http://rubygems.org'
 
-<<<<<<< HEAD:Gemfile
 #Views
 gem 'haml'
 
 gem 'pg'
-=======
-gem 'mysql2', '0.2.6'
->>>>>>> mysql:Gemfile
 gem 'rails', '3.0.3'
 
 gem 'bundler', '>= 1.0.0'
@@ -23,12 +19,8 @@ gem 'devise_invitable','0.3.5'
 gem 'omniauth', '0.1.6'
 gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git', :ref => 'ef122bbb280e229ed343'
 
-<<<<<<< HEAD:Gemfile
-
-=======
 #Views
-gem 'haml', '3.0.25'
->>>>>>> mysql:Gemfile
+#gem 'haml', '3.0.25'
 gem 'will_paginate', '3.0.pre2'
 
 #Uncatagorized
