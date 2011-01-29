@@ -6,8 +6,8 @@ require 'spec_helper'
 
 describe Photo do
   before do
-    @user = Factory.create(:user)
-    @aspect = @user.aspects.create(:name => "losers")
+    @user = alice
+    @aspect = @user.aspects.first
 
     @fixture_filename  = 'button.png'
     @fixture_name      = File.join(File.dirname(__FILE__), '..', 'fixtures', @fixture_filename)
@@ -54,7 +54,13 @@ describe Photo do
       photo.created_at.nil?.should be_true
       photo.image.read.nil?.should be_false
     end
-
+    it 'sets a remote url' do
+      image = File.open(@fixture_name)
+      photo = Photo.diaspora_initialize(
+                :person => @user.person, :user_file => image)
+      photo.remote_photo_path.should include("http")
+      photo.remote_photo_name.should include(".png")
+    end
   end
 
   it 'should save a photo' do
@@ -82,7 +88,7 @@ describe Photo do
     it 'should remove its reference in user profile if it is referred' do
       @photo.save
 
-      @user.profile.image_url = @photo.image.url(:thumb_large)
+      @user.profile.image_url = @photo.url(:thumb_large)
       @user.person.save
       @photo.destroy
       Person.find(@user.person.id).profile.image_url.should be_nil
@@ -111,7 +117,8 @@ describe Photo do
       @xml = @photo.to_xml.to_s
     end
     it 'serializes the url' do
-      @xml.include?(@photo.image.url).should be true
+      @xml.include?(@photo.remote_photo_path).should be true
+      @xml.include?(@photo.remote_photo_name).should be true
     end
     it 'serializes the diaspora_handle' do
       @xml.include?(@user.diaspora_handle).should be true
@@ -143,15 +150,6 @@ describe Photo do
   end
 
   context "commenting" do
-
-    it "forwards comments to parent status message" do
-      pending 'IMPORTANT! comments need to get sent to parent status message for a photo if one is present.  do this from the photo model, NOT in comment.'
-      status_message = @user.build_post(:status_message, :message => "whattup", :to => @aspect.id)
-      status_message.photos << @photo2
-      status_message.save
-      proc{ @user.comment("big willy style", :on => @photo2) }.should change(status_message.comments, :count).by(1)
-    end
-
     it "accepts comments if there is no parent status message" do
       proc{ @user.comment("big willy style", :on => @photo) }.should change(@photo.comments, :count).by(1)
     end

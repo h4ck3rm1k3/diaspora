@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Jobs::Receive do
+describe Job::Receive do
   before do
-    @user = Factory.create(:user)
+    @user = alice
     @person = Factory(:person)
     @xml = '<xml></xml>'
     User.stub(:find){ |id|
@@ -18,6 +18,6 @@ describe Jobs::Receive do
     zord_mock = mock()
     zord_mock.should_receive(:parse_and_receive).with(@xml)
     Postzord::Receiver.should_receive(:new).with(@user, anything).and_return(zord_mock)
-    Jobs::Receive.perform(@user.id, @xml, @person.id)
+    Job::Receive.perform(@user.id, @xml, @person.id)
   end
 end

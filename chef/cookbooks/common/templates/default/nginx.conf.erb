@@ -88,6 +88,10 @@ http {
    ssl_certificate      <%= @cert_location %>;
    ssl_certificate_key  <%= @key_location %>;
 
+   location /assets {
+    expires 1d;
+    add_header Cache-Control public
+   }
 
    location / {
     proxy_set_header X-Real-IP $remote_addr;
@@ -108,13 +112,16 @@ http {
      proxy_pass http://thin_cluster;
      break;
     }
+
+    <% unless @s3_bucket.blank? || @s3_path.blank? %>
+      <%= "rewrite ^/uploads/images/(.*)$ #{@s3_bucket}#{@s3_path}$1 permanent; %>
+    <% end %>
    }
 
    error_page 500 502 503 504 /50x.html;
    location = /50x.html {
     root html;
    }
-
 }
 
 }

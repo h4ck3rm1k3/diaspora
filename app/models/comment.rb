@@ -61,26 +61,28 @@ class Comment < ActiveRecord::Base
   end
 
   def receive(user, person)
-    commenter = self.person
-    unless self.post.person == user.person || self.verify_post_creator_signature
+    local_comment = Comment.where(:guid => self.guid).first
+    comment = local_comment || self
+
+    unless comment.post.person == user.person || comment.verify_post_creator_signature
       Rails.logger.info("event=receive status=abort reason='comment signature not valid' recipient=#{user.diaspora_handle} sender=#{self.post.person.diaspora_handle} payload_type=#{self.class} post_id=#{self.post_id}")
       return
     end
 
     #sign comment as the post creator if you've been hit UPSTREAM
-    if user.owns? self.post
-      self.post_creator_signature = self.sign_with_key(user.encryption_key)
-      self.save
+    if user.owns? comment.post
+      comment.post_creator_signature = comment.sign_with_key(user.encryption_key)
+      comment.save
     end
 
     #dispatch comment DOWNSTREAM, received it via UPSTREAM
-    unless user.owns?(self)
-      self.save
-      user.dispatch_comment(self)
+    unless user.owns?(comment)
+      comment.save
+      user.dispatch_comment(comment)
     end
 
-    self.socket_to_user(user, :aspect_ids => self.post.aspect_ids)
-    self
+    comment.socket_to_user(user, :aspect_ids => comment.post.aspect_ids)
+    comment
   end
 
   #ENCRYPTION
@@ -108,16 +110,4 @@ class Comment < ActiveRecord::Base
     verify_signature(creator_signature, person)
   end
 
-  def self.hash_from_post_ids post_ids
-    hash = {}
-    comments = where(:post_id => post_ids)
-    post_ids.each do |id|
-      hash[id] = []
-    end
-    comments.each do |comment|
-      hash[comment.post_id] << comment
-    end
-    hash.each_value {|comments| comments.sort!{|c1, c2| c1.created_at <=> c2.created_at }}
-    hash
-  end
 end

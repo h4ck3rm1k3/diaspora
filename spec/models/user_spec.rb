@@ -5,9 +5,9 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) { Factory.create(:user) }
+  let(:user) { alice }
   let(:aspect) { user.aspects.create(:name => 'heroes') }
-  let(:user2) { Factory.create(:user) }
+  let(:user2) { eve }
   let(:aspect2) { user2.aspects.create(:name => 'stuff') }
 
   it 'should have a key' do
@@ -16,10 +16,9 @@ describe User do
 
   describe 'overwriting people' do
     it 'does not overwrite old users with factory' do
-      pending "Why do you want to set ids directly? MONGOMAPPERRRRR!!!"
-      new_user = Factory.create(:user, :id => user.id)
-      new_user.persisted?.should be_true
-      new_user.id.should_not == user.id
+      lambda {
+        new_user = Factory.create(:user, :id => user.id)
+      }.should raise_error ActiveRecord::RecordNotUnique
     end
     it 'does not overwrite old users with create' do
           params = {:username => "ohai",
@@ -267,9 +266,9 @@ describe User do
 
     it "only pushes to non-pending contacts" do
       connect_users(user, aspect, user2, aspect2)
-      user.contacts.count.should == 1
-      user.send_contact_request_to(Factory(:user).person, aspect)
-      user.contacts.count.should == 2
+      lambda {
+        user.send_contact_request_to(Factory(:user).person, aspect)
+      }.should change(user.contacts, :count).by(1)
 
       m = mock()
       m.should_receive(:post)
@@ -288,9 +287,9 @@ describe User do
       end
       it 'updates image_url' do
         user.update_profile(@params).should be_true
-        user.reload.profile.image_url.should == @photo.absolute_url(:thumb_large)
-        user.profile.image_url_medium.should == @photo.absolute_url(:thumb_medium)
-        user.profile.image_url_small.should == @photo.absolute_url(:thumb_small)
+        user.reload.profile.image_url.should == @photo.url(:thumb_large)
+        user.profile.image_url_medium.should == @photo.url(:thumb_medium)
+        user.profile.image_url_small.should == @photo.url(:thumb_small)
       end
       it 'unpends the photo' do
         @photo.pending = true
@@ -339,7 +338,9 @@ describe User do
 
     it 'should remove all aspects' do
       aspect
-      lambda {user.destroy}.should change{user.aspects.reload.count}.by(-1)
+      lambda {
+        user.destroy
+      }.should change{ user.aspects(true).count }.by(-2)
     end
 
     describe '#remove_person' do
@@ -361,9 +362,10 @@ describe User do
     describe '#disconnect_everyone' do
 
       it 'should send retractions to remote poeple' do
+        person = user2.person
         user2.delete
-        user2.person.owner_id = nil
-        user2.person.save
+        person.owner_id = nil
+        person.save
         user.activate_contact(user2.person, aspect)
 
         user.should_receive(:disconnect).once
@@ -385,8 +387,8 @@ describe User do
       user.save
       user.reload
 
-      Resque.should_receive(:enqueue).with(Jobs::MailRequestReceived, user.id, 'contactrequestid').once
-      user.mail(Jobs::MailRequestReceived, user.id, 'contactrequestid')
+      Resque.should_receive(:enqueue).with(Job::MailRequestReceived, user.id, 'contactrequestid').once
+      user.mail(Job::MailRequestReceived, user.id, 'contactrequestid')
     end
 
     it 'does not enqueue a mail job' do
@@ -395,7 +397,7 @@ describe User do
       user.reload
 
       Resque.should_not_receive(:enqueue)
-      user.mail(Jobs::MailRequestReceived, user.id, 'contactrequestid')
+      user.mail(Job::MailRequestReceived, user.id, 'contactrequestid')
     end
   end
 

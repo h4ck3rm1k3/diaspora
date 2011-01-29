@@ -1,7 +1,5 @@
 #   Copyright (c) 2010, Diaspora Inc.  This file is
-#   licensed under the Affero General Public License version 3 or later.  See
-#   the COPYRIGHT file.
-
+#   licensed under the Affero General Public License version 3 or later.  See #   the COPYRIGHT file.  
 
 class ServicesController < ApplicationController
   before_filter :authenticate_user!
@@ -20,9 +18,8 @@ class ServicesController < ApplicationController
     user     = auth['user_info']
 
     service = "Services::#{provider.camelize}".constantize.new(:nickname => user['nickname'],
-                                                               :access_token => toke, 
+                                                               :access_token => toke,
                                                                :access_secret => secret,
-                                                               :provider => provider,
                                                                :uid => auth['uid'])
     current_user.services << service
 
@@ -30,10 +27,9 @@ class ServicesController < ApplicationController
     if current_user.getting_started
       redirect_to  getting_started_path(:step => 3)
     else
-      redirect_to services_url 
+      redirect_to services_url
     end
   end
-
 
   def failure
     Rails.logger.info  "error in oauth #{params.inspect}"
@@ -46,5 +42,36 @@ class ServicesController < ApplicationController
     @service.destroy
     flash[:notice] = I18n.t 'services.destroy.success'
     redirect_to services_url
+  end
+
+  def finder
+    service = current_user.services.where(:type => "Services::#{params[:provider].titleize}").first
+    @friends = service ? service.finder : {}
+    render :layout => false
+  end
+
+  def inviter
+    if current_user.invites == 0
+      flash[:error] = I18n.t 'invitations.create.no_more'
+      redirect_to :back
+      return
+    end
+
+    @uid = params[:uid]
+
+    if i_id = params[:invitation_id]
+      invited_user = Invitation.find(i_id).recipient
+    else
+      invited_user = current_user.invite_user(params[:aspect_id], params[:provider], @uid)
+    end
+
+    @subject = t('services.inviter.join_me_on_diaspora')
+    @message = <<MSG
+#{t('services.inviter.click_link_to_accept_invitation')}: 
+\n
+\n
+#{accept_invitation_url(invited_user, :invitation_token => invited_user.invitation_token)}
+MSG
+    redirect_to "https://www.facebook.com/?compose=1&id=#{@uid}&subject=#{@subject}&message=#{@message}&sk=messages"
   end
 end

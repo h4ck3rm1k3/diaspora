@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Jobs::PostToServices do
+describe Job::PostToServices do
   it 'calls post to services from the given user with given post' do
-    user = Factory.create(:user)
+    user = alice
     aspect = user.aspects.create(:name => "yeah")
     post = user.post(:status_message, :message => 'foo', :to => aspect.id)
     User.stub!(:find_by_id).with(user.id.to_s).and_return(user)
@@ -10,6 +10,6 @@ describe Jobs::PostToServices do
     url = "foobar"
     m.should_receive(:post).with(anything, url)
     user.stub!(:services).and_return([m])
-    Jobs::PostToServices.perform(user.id.to_s, post.id.to_s, url)
+    Job::PostToServices.perform(user.id.to_s, post.id.to_s, url)
   end
 end

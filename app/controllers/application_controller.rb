@@ -3,10 +3,9 @@
 #   the COPYRIGHT file.
 
 class ApplicationController < ActionController::Base
-  #has_mobile_fu
+  has_mobile_fu
   protect_from_forgery :except => :receive
 
-  #before_filter :mobile_except_ipad
   before_filter :set_contacts_notifications_and_status, :except => [:create, :update]
   before_filter :count_requests
   before_filter :set_invites
@@ -16,19 +15,8 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       @aspect = nil
       @object_aspect_ids = []
-      @all_aspects = current_user.aspects
-      @aspects_dropdown_array = @all_aspects.collect{|x| [x.to_s, x.id]}
+      @all_aspects = current_user.aspects.includes(:aspect_memberships)
       @notification_count = Notification.for(current_user, :unread =>true).count
-    end
-  end
-
-  def mobile_except_ipad
-    if is_mobile_device?
-      if request.env["HTTP_USER_AGENT"].include? "iPad"
-        session[:mobile_view] = false
-      else
-        session[:mobile_view] = true
-      end
     end
   end
 
@@ -50,25 +38,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def similar_people contact, opts={}
-    opts[:limit] ||= 5
-    aspect_ids = contact.aspects.map{|a| a.id}
-    count = Contact.joins(:aspect_memberships).where(
-      :user_id => current_user.id).where(
-      "contacts.person_id != #{contact.person_id}").where(
-      :aspect_memberships => {:aspect_id => aspect_ids}).count
-    if count > opts[:limit]
-      offset = rand(count-opts[:limit])
-    else
-      offset = 0
-    end
-
-    contacts = Contact.joins(:aspect_memberships).includes(:person).where(
-      :user_id => current_user.id).where(
-      "contacts.person_id != #{contact.person_id}").where(
-      :aspect_memberships => {:aspect_id => aspect_ids}).all(
-      :offset => offset,
-      :limit => opts[:limit])
-    contacts.collect!{ |contact| contact.person }
-  end
 end

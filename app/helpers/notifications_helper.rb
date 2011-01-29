@@ -1,6 +1,6 @@
 module NotificationsHelper
   def object_link(note)
-    target_type = note.target_type
+    target_type = note.action
     translation = t("notifications.#{target_type}")
     case target_type
     when 'request_accepted'
@@ -8,14 +8,14 @@ module NotificationsHelper
     when 'new_request'
       translation
     when 'comment_on_post'
-      comment = Comment.first(:id => note.target_id)
+      comment = Comment.where(:id => note.target_id).first
       if comment
        "#{translation} #{link_to t('notifications.post'), object_path(comment.post)}".html_safe
       else
         "#{translation} #{t('notifications.deleted')} #{t('notifications.post')}"
       end
     when 'also_commented'
-      comment = Comment.first(:id => note.target_id)
+      comment = Comment.where(:id => note.target_id).first
       if comment
        "#{translation} #{link_to t('notifications.post'), object_path(comment.post)}".html_safe
       else

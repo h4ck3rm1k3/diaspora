@@ -1,0 +1,62 @@
+-#   Copyright (c) 2010, Diaspora Inc.  This file is
+-#   licensed under the Affero General Public License version 3 or later.  See
+-#   the COPYRIGHT file.
+
+- content_for :head do
+  = include_javascripts :aspects
+
+#aspect_edit_pane.larger
+  #facebox_header
+    %h4
+      = t('.invite_your_friends_from', :service => params[:provider].titleize)
+      .description
+        - if @friends.keys.length > 0
+          = t('.friends', :count => @friends.keys.length)
+        - else
+          %i= t('.not_connected')
+
+
+  .contact_list
+    - if @friends.keys.length > 0
+      = search_field_tag :contact_search, "", :class => 'contact_list_search', :results => 5, :placeholder => t('shared.contact_list.all_contacts')
+      %ul
+        - for uid in @friends.keys
+          - friend = @friends[uid]
+          %li
+            .right
+              -if friend[:contact] && !friend[:contact].pending
+                = t('people.person.already_connected')
+              - elsif (friend[:contact] && friend[:contact].pending)
+                = t('people.person.pending_request')
+              - elsif friend[:invitation_id]
+                = t('invitations.new.already_invited')
+                %br
+                = link_to t('.resend'), service_inviter_path(:uid => uid, :provider => 'facebook', :invitation_id => friend[:invitation_id])
+              - elsif current_user.invites > 0
+                = form_tag service_inviter_path do
+                  = select_tag(:aspect_id, options_from_collection_for_select(@all_aspects, 'id', 'name'))
+                  = hidden_field_tag :uid, uid
+                  = hidden_field_tag :provider, 'facebook'
+                  = submit_tag t('.invite')
+
+            - if friend[:person]
+              = person_image_link(friend[:person])
+            - else
+              = image_tag('/images/user/default.png', :class => 'avatar')
+
+            %h4.name
+              - if friend[:person]
+                = link_to friend[:name], person_path(friend[:person])
+              - else
+                = friend[:name]
+
+    - else
+      %br
+      %br
+      %br
+      %br
+      %br
+      %br
+      %br
+      %h4{:style => 'text-align:center;'}
+        = link_to t('services.index.connect_to_facebook'), "/auth/facebook" if SERVICES['facebook']['app_id'] !=""

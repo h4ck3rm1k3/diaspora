@@ -11,11 +11,12 @@ var Stream = {
     $("abbr.timeago").timeago();
     $stream.not(".show").delegate("a.show_post_comments", "click", Stream.toggleComments);
 
-    /* In field labels */
-    $("label").inFieldLabels();
     // publisher textarea reset
-    $publisher.find("textarea").bind("blur", function() {
-      $(this).css('height','42px');
+    $publisher.find("textarea").bind("focus", function() {
+      $(this).css('min-height','42px');
+    });
+    $publisher.find("form").bind("blur", function() {
+      $("#publisher textarea").css('min-height','2px');
     });
 
     // comment link form focus
@@ -81,52 +82,6 @@ var Stream = {
       }
     });
 
-    $stream.delegate("a.video-link", "click", function(evt) {
-      evt.preventDefault();
-
-      var $this = $(this),
-        container = document.createElement("div"),
-        $container = $(container).attr("class", "video-container"),
-        $videoContainer = $this.siblings("div.video-container");
-
-      if ($videoContainer.length > 0) {
-        $videoContainer.slideUp('fast', function() {
-          $videoContainer.detach();
-        });
-        return;
-      }
-
-      if ($("div.video-container").length > 0) {
-        $("div.video-container").slideUp("fast", function() {
-          $(this).detach();
-        });
-      }
-
-      if ($this.data("host") === "youtube.com") {
-        $container.html(
-          '<a href="//www.youtube.com/watch?v=' + $this.data("video-id") + '" target="_blank">Watch this video on Youtube</a><br />' +
-            '<iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/' + $this.data("video-id") + '"></iframe>'
-          );
-      } else if($this.data("host") === "vimeo.com"){
-        $container.html(
-            '<p><a href="http://vimeo.com/' + $this.data("video-id") + '">Watch this video on Vimeo</a></p>' +
-            '<iframe class="vimeo-player" src="http://player.vimeo.com/video/' + $this.data("video-id") + '"></iframe>'
-            );
-      } else {
-        $container.html('Invalid videotype <i>' + $this.data("host") + '</i> (ID: ' + $this.data("video-id") + ')');
-      }
-
-      $container.hide()
-        .insertAfter($this)
-        .slideDown('fast');
-
-      $this.click(function() {
-        $container.slideUp('fast', function() {
-          $(this).detach();
-        });
-      });
-    });
-
     $(".new_status_message").live('ajax:loading', function(data, json, xhr) {
       $("#photodropzone").find('li').remove();
       $("#publisher textarea").removeClass("with_attachments");
@@ -142,7 +97,7 @@ var Stream = {
     });
 
     $(".new_status_message").bind('ajax:failure', function(data, html, xhr) {
-      alert('failed to post message!');
+      Diaspora.widgets.alert.alert('Failed to post message!');
     });
 
     $(".new_comment").live('ajax:success', function(data, json, xhr) {
@@ -150,7 +105,7 @@ var Stream = {
       WebSocketReceiver.processComment(json.post_id, json.comment_id, json.html, false);
     });
     $(".new_comment").live('ajax:failure', function(data, html, xhr) {
-      alert('failed to post message!');
+      Diaspora.widgets.alert.alert('Failed to post message!');
     });
 
     $(".stream").find(".delete").live('ajax:success', function(data, html, xhr) {

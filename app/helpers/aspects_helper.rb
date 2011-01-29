@@ -1,4 +1,4 @@
-#   Copyright (c) 2010, Diaspora Inc.  This file is
+#/   Copyright (c) 2010, Diaspora Inc.  This file is
 #   licensed under the Affero General Public License version 3 or later.  See
 #   the COPYRIGHT file.
 
@@ -38,27 +38,21 @@ module AspectsHelper
       :class => 'added button'
   end
 
-  def aspect_membership_button(aspect_id, contact, person)
-    if contact.nil? || !contact.aspect_ids.include?(aspect_id)
-      add_to_aspect_button(aspect_id, person.id)
+  def aspect_membership_button(aspect, contact, person)
+    if contact.nil? || !aspect.contacts.include?(contact)
+      add_to_aspect_button(aspect.id, person.id)
     else
-      remove_from_aspect_button(aspect_id, person.id)
+      remove_from_aspect_button(aspect.id, person.id)
     end
   end
 
-  def publisher_description(aspect_count, aspect=nil)
-    if aspect && aspect == :all
-      str = t('.share_with_all')
+  def publisher_description(aspect_count)
+    str = "#{t('.share_with')} #{aspect_count} "
+    if aspect_count == 1
+      str += t('_aspect').downcase
     else
-      str = "#{t('.post_a_message_to', :aspect => aspect_count)} "
-      if aspect_count == 1
-        str += t('_aspect').downcase
-      else
-        str += t('_aspects').downcase
-      end
+      str += t('_aspects').downcase
     end
-    (link_to str, '#', :id => 'expand_publisher').html_safe
+    ("<span>#{str}</span>").html_safe
   end
-
 end
-

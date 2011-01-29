@@ -3,13 +3,12 @@
 #   the COPYRIGHT file.
 
 
-module Jobs
-  class InviteUser
-    extend ResqueJobLogging
+module Job
+  class InviteUserByEmail < Base
     @queue = :mail
-    def self.perform(sender_id, email, aspect_id, invite_message)
+    def self.perform_delegate(sender_id, email, aspect_id, invite_message)
       user = User.find(sender_id)
-      user.invite_user(email, aspect_id, invite_message)
+      user.invite_user(aspect_id, 'email', email, invite_message)
     end
   end
 end

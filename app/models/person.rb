@@ -37,13 +37,15 @@ class Person < ActiveRecord::Base
 
   scope :searchable, joins(:profile).where(:profiles => {:searchable => true})
 
-  def self.search(query)
-    return [] if query.to_s.empty?
+  def self.search(query, user)
+    return [] if query.to_s.blank? || query.to_s.length < 3
 
     where_clause = <<-SQL
       profiles.first_name LIKE ? OR
       profiles.last_name LIKE ? OR
-      people.diaspora_handle LIKE ?
+      people.diaspora_handle LIKE ? OR
+      profiles.first_name LIKE ? OR
+      profiles.last_name LIKE ?
     SQL
     sql = ""
     tokens = []
@@ -51,15 +53,25 @@ class Person < ActiveRecord::Base
     query_tokens = query.to_s.strip.split(" ")
     query_tokens.each_with_index do |raw_token, i|
       token = "%#{raw_token}%"
+      up_token = "#{raw_token.titleize}%"
       sql << " OR " unless i == 0
       sql << where_clause
       tokens.concat([token, token, token])
+      tokens.concat([up_token, up_token])
     end
-
-    Person.searchable.where(sql, *tokens).order("profiles.first_name")
+#SELECT `people`.* FROM people
+#  INNER JOIN `profiles` ON `profiles`.person_id = `people`.id
+#  LEFT OUTER JOIN `contacts` ON (`contacts`.user_id = #{user.id} AND `contacts`.person_id = `people`.id)
+#  WHERE `profiles`.searchable = true AND
+#  `profiles`.first_name LIKE '%Max%'
+#  ORDER BY `contacts`.user_id DESC
+    Person.searchable.where(sql, *tokens).joins(
+      "LEFT OUTER JOIN `contacts` ON `contacts`.user_id = #{user.id} AND `contacts`.person_id = `people`.id"
+    ).joins("LEFT OUTER JOIN `requests` ON `requests`.recipient_id = #{user.person.id} AND `requests`.sender_id = `people`.id"
+    ).order("contacts.user_id DESC", "requests.recipient_id DESC", "profiles.last_name ASC", "profiles.first_name ASC")
   end
 
-  def name
+  def name(opts = {})
     @name ||= if profile.first_name.nil? || profile.first_name.blank?
                 self.diaspora_handle
               else
@@ -80,7 +92,7 @@ class Person < ActiveRecord::Base
   end
 
   def receive_url
-    "#{self.url}receive/users/#{self.id}/"
+    "#{self.url}receive/users/#{self.guid}/"
   end
 
   def public_url
@@ -126,18 +138,22 @@ class Person < ActiveRecord::Base
     #hcard_profile = HCard.find profile.hcard.first[:href]
     Rails.logger.info("event=webfinger_marshal valid=#{new_person.valid?} target=#{new_person.diaspora_handle}")
     new_person.url = hcard[:url]
-    new_person.profile = Profile.create!(:first_name => hcard[:given_name],
+    new_person.profile = Profile.new(:first_name => hcard[:given_name],
                               :last_name  => hcard[:family_name],
                               :image_url  => hcard[:photo],
                               :image_url_medium  => hcard[:photo_medium],
                               :image_url_small  => hcard[:photo_small],
                               :searchable => hcard[:searchable])
     new_person.save!
+    new_person.profile.save!
     new_person
   end
 
   def remote?
     owner_id.nil?
+  end
+  def local?
+    !remote?
   end
 
   def as_json(opts={})

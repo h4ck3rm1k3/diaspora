@@ -1,7 +1,7 @@
 Given /^a user with username "([^\"]*)" and password "([^\"]*)"$/ do |username, password|
-  user = Factory(:user, :username       => username, :password => password,
+  @me ||= Factory(:user, :username       => username, :password => password,
           :password_confirmation => password, :getting_started => false)
-  user.aspects.create(:name => "Besties")
+  @me.aspects.create(:name => "Besties")
 end
 
 Given /^a user with email "([^\"]*)"$/ do |email|
@@ -11,13 +11,13 @@ Given /^a user with email "([^\"]*)"$/ do |email|
 end
 
 Given /^I have been invited by an admin$/ do
-  @me = Invitation.create_invitee(:email => "new_invitee@example.com")
+  @me = Invitation.create_invitee(:service => 'email', :identifier => "new_invitee@example.com")
 end
 
 Given /^I have been invited by a user$/ do
   @inviter = Factory(:user)
   aspect = @inviter.aspects.create(:name => "Rocket Scientists")
-  @me = @inviter.invite_user("new_invitee@example.com", aspect.id, "Hey, tell me about your rockets!")
+  @me = @inviter.invite_user(aspect.id, 'email', "new_invitee@example.com",  "Hey, tell me about your rockets!")
 end
 
 When /^I click on my name$/ do

@@ -8,20 +8,21 @@
 .span-8.append-1.last
   = render :partial => 'people/profile_sidebar', :locals => {:person => @person, :contact => @contact }
 
-  - if @contact && @similar_people.count > 0
+  - if @contact && @contacts_of_contact.count > 0
     .span-8.last
       %hr{:style=>"width:300px;"}
       .section.contact_pictures
         %h4
+          = @contacts_of_contact.length
           = t('.similar_contacts')
-        - for person in @similar_people
+        - for person in @contacts_of_contact
           = person_image_link person
 
 .span-15.last
   #author_info
     - unless @contact || current_user.person == @person
       .right
-        = link_to "start sharing",
+        = link_to t('.start_sharing'),
           {:controller => "people",
           :action => "share_with",
           :id => @person.id},
@@ -55,8 +56,9 @@
       = render 'photos/index', :photos => @posts
     - else
       #main_stream.stream
-        = render 'shared/stream', :posts => @post_hashes
-
+        = render 'shared/stream', :posts => @fakes
+        %a.paginate
+          = t("more")
     = will_paginate @posts
 
   - else

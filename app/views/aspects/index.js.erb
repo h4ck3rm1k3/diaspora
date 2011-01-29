@@ -1,10 +1,10 @@
-$('#aspect_stream_container').html("<%= escape_javascript(render('aspects/aspect_stream', :aspect => @aspect, :aspect_ids => @aspect_ids, :post_hashes => @post_hashes)) %>");
-$('#aspect_listings').html("<%= escape_javascript(render('aspects/aspect_listings', :aspect_hashes => @aspect_hashes)) %>");
+$('#aspect_stream_container').html("<%= escape_javascript(render('aspects/aspect_stream', :aspect => @aspect, :aspect_ids => @aspect_ids, :posts => @posts, :fakes => @fakes)) %>");
+$('#aspect_listings').html("<%= escape_javascript(render('aspects/aspect_listings', :aspects => @aspects, :contacts => @contacts)) %>");
 $('a[rel*=facebox]').facebox();
 
 $(document).ready(function() {
   $('#main_stream').infinitescroll({
-    navSelector  : "div.pagination",
+    navSelector  : "#main_stream + div.pagination",
                    // selector for the paged navigation (it will be hidden)
     nextSelector : ".pagination a.next_page",
                    // selector for the NEXT link (to page 2)
@@ -15,5 +15,5 @@ $(document).ready(function() {
     loadingText: "",
     loadingImg: '/images/ajax-loader.gif'
   });
+  $("abbr.timeago").timeago();
 });
-

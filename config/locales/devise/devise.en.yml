@@ -20,7 +20,6 @@ en:
         username: 'Username'
         password: 'Password'
         sign_in: 'Sign in'
-        have_a_problem: "Have a problem? Find an answer here"
         remember_me: "Remember me"
         alpha_software: 'You are about to use alpha software.'
         bugs_and_feedback: 'Be advised, you will experience bugs.  We encourage you to use the Feedback button on the right hand side of your browser to report any hiccups!  We will work as fast as we can to resolve any issues you report.'
@@ -35,6 +34,7 @@ en:
         change_password: "Change my password"
       new:
         forgot_password: "Forgot your password?"
+        no_account: 'No account with this email exsists.  If you are waiting for an invite, we are rolling them out as soon as possible'
         send_password_instructions: "Send me reset password instructions"
     confirmations:
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'

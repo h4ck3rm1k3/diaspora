@@ -5,6 +5,8 @@
 
 var Mobile = {
   initialize: function() {
+    $("abbr.timeago").timeago();
+    $('#main_stream + .pagination').hide();
     $('#aspect_picker').change(Mobile.changeAspect);
   },
   

@@ -4,6 +4,21 @@ When /^(.*) in the header$/ do |action|
   end
 end
 
+And /^I expand the publisher$/ do
+  page.execute_script('
+    $("#publisher").removeClass("closed");
+    $("#publisher").find("textarea").focus();
+    ')
+end
+
+And /^I hover over the post$/ do
+  page.execute_script('$(".stream_element").first().mouseover()')
+end
+
+And /^I preemptively confirm the alert$/ do
+  a = page.evaluate_script("window.confirm = function() { return true; }")
+end
+
 When /^(.*) in the modal window$/ do |action|
   within('#facebox') do
     When action
@@ -46,4 +61,10 @@ end
 
 When /^I have turned off jQuery effects$/ do
   evaluate_script("$.fx.off = true")
+end
+
+When /^I click ok in the confirm dialog to appear next$/ do
+  evaluate_script <<-JS
+    window.confirm = function() { return true; };    
+  JS
 end

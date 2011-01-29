@@ -6,7 +6,7 @@ require 'spec_helper'
 
 describe Post do
   before do
-    @user = Factory(:user)
+    @user = alice
     @aspect = @user.aspects.create(:name => "winners")
   end
 
@@ -25,7 +25,7 @@ describe Post do
       post = @user.post :status_message, :message => "hello", :to => @aspect.id
       xml = post.to_diaspora_xml
 
-      xml.include?(@user.person.id.to_s).should be false
+      xml.include?("person_id").should be false
       xml.include?(@user.person.diaspora_handle).should be true
     end
   end

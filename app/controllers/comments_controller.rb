@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   include ApplicationHelper
   before_filter :authenticate_user!
 
-  respond_to :html
+  respond_to :html, :mobile
   respond_to :json, :only => :show
 
   def create
@@ -26,15 +26,15 @@ class CommentsController < ApplicationController
                                        :comment_id => @comment.id,
                                        :html => render_to_string(
                                          :partial => 'comments/comment',
-                                         :locals => { :hash => {
-                                           :comment => @comment,
+                                         :locals => { :comment => @comment,
                                            :person => current_user.person,
-                                          }}
+                                          }
                                         )
                                       }
             render(:json => json, :status => 201)
           }
           format.html{ render :nothing => true, :status => 201 }
+          format.mobile{ redirect_to status_message_path(@comment.post_id) }
         end
       else
         render :nothing => true, :status => 406

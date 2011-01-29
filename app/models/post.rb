@@ -75,14 +75,14 @@ class Post < ActiveRecord::Base
       known_post = user.visible_posts(:guid => self.guid).first
       if known_post
         if known_post.mutable?
-          known_post.save_update(self)
+          known_post.update_attributes(self.attributes)
         else
           Rails.logger.info("event=receive payload_type=#{self.class} update=true status=abort sender=#{self.diaspora_handle} reason=immutable existing_post=#{known_post.id}")
         end
       else
         user.add_post_to_aspects(local_post)
         Rails.logger.info("event=receive payload_type=#{self.class} update=true status=complete sender=#{self.diaspora_handle} existing_post=#{local_post.id}")
-        self
+        local_post 
       end
     elsif !local_post
       self.save

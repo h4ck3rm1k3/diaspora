@@ -2,10 +2,17 @@
 -#   licensed under the Affero General Public License version 3 or later.  See
 -#   the COPYRIGHT file.
 
-= select_tag "aspect_picker", aspect_select_options(@aspects, @aspect)
+#aspect_header
+  - if @aspect == :all
+    = t('application.helper.aspect_badge.all_aspects')
+  - else
+    = @aspect
 
-%div{:data => {:role => 'content'}}
-  %div{:data => {:role => 'fieldcontain'}}
-    =render 'shared/publisher', :aspect => @aspect
+.grey_back
+  = render 'shared/publisher', :aspect_ids => @aspect_ids
 
-= render 'shared/stream', :posts => @post_hashes
+#main_stream.stream
+  = render 'shared/stream', :posts => @fakes
+  %a.more-link.paginate{:href => '#'}
+    %h2= t("more")
+= will_paginate @posts

@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
     if conditions[:username] =~ /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i # email regex
       conditions[:email] = conditions.delete(:username)
     end
-    super
+    super(conditions)
   end
 
   ######### Aspects ######################
@@ -146,7 +146,6 @@ class User < ActiveRecord::Base
     end
   end
 
-<<<<<<< HEAD:app/models/user.rb
   def push_to_aspects(post, aspects)
     #send to the aspects
     target_aspect_ids = aspects.map {|a| a.id}
@@ -191,8 +190,6 @@ class User < ActiveRecord::Base
     created_salmon
   end
 
-=======
->>>>>>> mysql:app/models/user.rb
   ######## Commenting  ########
   def build_comment(text, options = {})
     comment = Comment.new(:person_id => self.person.id,
@@ -251,10 +248,11 @@ class User < ActiveRecord::Base
   end
 
   ###Invitations############
-  def invite_user(email, aspect_id, invite_message = "")
+  def invite_user(aspect_id, service, identifier, invite_message = "")
     aspect = aspects.find(aspect_id)
     if aspect
-      Invitation.invite(:email => email,
+      Invitation.invite(:service => service,
+                        :identifier => identifier,
                         :from => self,
                         :into => aspect,
                         :message => invite_message)

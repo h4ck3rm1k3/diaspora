@@ -7,18 +7,24 @@ module Diaspora
     module Querying
 
       def find_visible_post_by_id( id )
-        self.raw_visible_posts.where(:id => id).first
+        self.raw_visible_posts.where(:id => id).includes({:person => :profile}, {:comments => {:person => :profile}}, :photos).first
       end
 
       def raw_visible_posts
-        Post.joins(:post_visibilities => :aspect).where(:pending => false,
-                                   :aspects => {:user_id => self.id}).select('DISTINCT posts.*')
+        Post.joins(:aspects).where(:pending => false,
+                                   :aspects => {:user_id => self.id}).select('DISTINCT `posts`.*')
+      end
+
+      def visible_photos
+        p = Photo.arel_table
+        Photo.joins(:aspects).where(p[:status_message_id].not_eq(nil).or(p[:pending].eq(false))
+          ).where(:aspects => {:user_id => self.id}).select('DISTINCT `posts`.*').order("posts.updated_at DESC")
       end
 
       def visible_posts( opts = {} )
         order = opts.delete(:order)
         order ||= 'created_at DESC'
-        opts[:type] ||= ["StatusMessage","Photo"]
+        opts[:type] ||= ["StatusMessage", "Photo"]
 
         if (aspect = opts[:by_members_of]) && opts[:by_members_of] != :all
           raw_visible_posts.where(:aspects => {:id => aspect.id}).order(order)
@@ -45,7 +51,7 @@ module Diaspora
         if opts[:type] == 'remote'
           people = people.where(:owner_id => nil)
         elsif opts[:type] == 'local'
-          people = people.where('people.owner_id IS NOT NULL')
+          people = people.where('`people`.`owner_id` IS NOT NULL')
         end
         people
       end
@@ -70,10 +76,9 @@ module Diaspora
       end
 
       def posts_from(person)
-        public_posts = person.posts.where(:public => true)
-        directed_posts = raw_visible_posts.where(:person_id => person.id)
-        posts = public_posts | directed_posts
-        posts.sort!{|p1,p2| p1.created_at <=> p2.created_at }
+        asp = Aspect.arel_table
+        p = Post.arel_table
+        person.posts.includes(:aspects, :comments).where( p[:public].eq(true).or(asp[:user_id].eq(self.id))).select('DISTINCT `posts`.*').order("posts.updated_at DESC")
       end
     end
   end

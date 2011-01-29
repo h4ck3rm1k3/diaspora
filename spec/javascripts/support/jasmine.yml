@@ -16,13 +16,16 @@ src_files:
   - public/javascripts/vendor/jquery.tipsy.js
   - public/javascripts/vendor/jquery.infieldlabel.js
   - public/javascripts/vendor/jquery.autoresize.min.js
+  - public/javascripts/vendor/Mustache.js
   - public/javascripts/vendor/timeago.js
   - public/javascripts/vendor/facebox.js
   - public/javascripts/diaspora.js
+  - public/javascripts/widgets/alert.js
   - public/javascripts/mobile.js
   - public/javascripts/aspect-edit.js
   - public/javascripts/aspect-contacts.js
   - public/javascripts/web-socket-receiver.js
+  - public/javascripts/embedder.js
   - public/javascripts/view.js
   - public/javascripts/stream.js
   - public/javascripts/validation.js

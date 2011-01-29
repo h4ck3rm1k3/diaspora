@@ -5,11 +5,13 @@
 
 nl: 
   _aspect: "Aspect"
-  _aspects: "Aspects"
+  _aspects: "Aspecten"
+  _comment: "Reageer"
   _comments: "Reacties"
   _contact: "Contact"
-  _contacts: "Contacts"
+  _contacts: "Contacten"
   _home: "Home"
+  _more: "Meer"
   _photos: "foto's"
   _services: "Services"
   account: "Account"
@@ -57,17 +59,18 @@ nl:
     destroy: 
       success: "%{name} is met succes verwijderd."
     edit: 
-      add_existing: "Add an existing contact"
-      confirm_remove_aspect: "Are you sure you want to delete this aspect?"
-      remove_aspect: "Delete this aspect"
-      rename_aspect: "Rename aspect"
+      add_existing: "Voeg een bestaand contact toe"
+      confirm_remove_aspect: "Weet je zeker dat je dit aspect wilt verwijderen?"
+      remove_aspect: "Verwijder dit aspect"
+      rename: "hernoem"
+      rename_aspect: "Hernoem aspect"
     helper: 
       are_you_sure: "Weet je zeker dat je dit aspect wilt verwijderen?"
       aspect_not_empty: "Aspect niet leeg"
       remove: "verwijderen"
     index: 
       handle_explanation: "Dit is jouw Diaspora handle. Deze kun je aan mensen geven zodat ze je kunnen bereiken, net als een e-mailadres."
-      no_contacts: "No contacts"
+      no_contacts: "Geen contacten"
     manage: 
       add_a_new_aspect: "Voeg een nieuw aspect toe"
       add_a_new_contact: "Voeg contact toe"
@@ -159,6 +162,7 @@ nl:
       to: "Aan"
   layouts: 
     application: 
+      have_a_problem: "Probleem? Vind hier een antwoord"
       powered_by: "POWERED BY DIASPORA*"
       whats_new: "wat is nieuw op Diaspora?"
     header: 
@@ -169,6 +173,7 @@ nl:
       login: "inloggen"
       logout: "log uit"
       view_profile: "bekijk profiel"
+  more: "Meer"
   new_notifications: "%{count} nieuwe notificaties"
   new_requests: 
     few: "%{count} nieuwe verzoeken!"
@@ -178,7 +183,7 @@ nl:
   next: "volgende"
   no_new_notifications: "Geen nieuwe notificaties"
   notifications: 
-    also_commented: "heeft ook gereageerd op"
+    also_commented: "heeft ook gereageerd op jouw contact zijn of haar"
     comment_on_post: "reageerde op jouw"
     deleted: "verwijderd"
     index: 
@@ -267,6 +272,7 @@ nl:
       recent_public_posts: "Recente Openbare Berichten"
       return_to_aspects: "Ga terug naar je aspecten pagina"
       similar_contacts: "vergelijkbare contacten"
+      start_sharing: "start met delen"
       to_accept_or_ignore: "om te accepteren of te negeren."
     update: 
       failed: "Updaten van profiel mislukt"
@@ -348,6 +354,10 @@ nl:
       success: "Authenticatie succesvol vernietigd."
     failure: 
       error: "er ging iets mis bij het verbinden met die service"
+    finder: 
+      invite_your_friends_from: "Nodig je %{service} contacten uit"
+      not_connected: "niet verbonden"
+      resend: "herstuur"
     index: 
       connect_to_facebook: "Verbind met Facebook"
       connect_to_twitter: "Verbind met Twitter"
@@ -355,6 +365,9 @@ nl:
       edit_services: "Bewerk services"
       logged_in_as: "ingelogd als"
       really_disconnect: "verbreek verbinding met %{service}?"
+    inviter: 
+      click_link_to_accept_invitation: "Klik op deze link om de uitnodiging te accepteren"
+      join_me_on_diaspora: "Volg me op DIASPORA*"
   settings: "Instellingen"
   shared: 
     add_contact: 
@@ -367,9 +380,12 @@ nl:
       all_contacts: "Alle contacten"
       cannot_remove: "Kan persoon niet van laatste aspect verwijderen. (Als je met deze persoon wilt breken moet je dit contact verwijderen)"
     invitations: 
+      by_email: "via E-mail"
       dont_have_now: "Momenteel heb je er geen, maar meer uitnodigingen volgen spoedig!"
+      from_facebook: "Van Facebook"
       invitations_left: "(%{count} over)"
       invite_someone: "Nodig iemand uit"
+      invite_your_friends: "Nodig je vrienden uit"
       invites: "Uitnodigingen"
       invites_closed: "Uitnodigingen zijn momenteel gesloten voor deze Diaspora pod"
     notification: 
@@ -387,8 +403,8 @@ nl:
       post_a_message_to: "Plaats een bericht aan %{aspect}"
       posting: "Plaatsen..."
       share: "Delen"
-      share_with: "Deel met %{aspect}"
-      share_with_all: "Deel met al je aspecten"
+      share_with: "deel met"
+      whats_on_your_mind: "waar denk je aan?"
     reshare: 
       reshare: "Herdeel"
   status_messages: 
@@ -412,6 +428,7 @@ nl:
       change_language: "Taal wijzigen"
       change_password: "Verander wachtwoord"
       close_account: "Verwijder account"
+      current_password: "Huidig wachtwoord"
       download_photos: "download mijn foto's"
       download_xml: "download mijn xml"
       edit_account: "Bewerk account"

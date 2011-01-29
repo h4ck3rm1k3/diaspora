@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110105051803) do
+ActiveRecord::Schema.define(:version => 20110127000953) do
 
   create_table "aspect_memberships", :force => true do |t|
-    t.integer  "aspect_id"
-    t.integer  "contact_id"
+    t.integer  "aspect_id",  :null => false
+    t.integer  "contact_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,22 +24,23 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
   add_index "aspect_memberships", ["contact_id"], :name => "index_aspect_memberships_on_contact_id"
 
   create_table "aspects", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
+    t.string   "name",                               :null => false
+    t.integer  "user_id",                            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
     t.string   "user_mongo_id"
+    t.boolean  "contacts_visible", :default => true, :null => false
   end
 
-  add_index "aspects", ["mongo_id"], :name => "index_aspects_on_mongo_id"
+  add_index "aspects", ["user_id", "contacts_visible"], :name => "index_aspects_on_user_id_and_contacts_visible"
   add_index "aspects", ["user_id"], :name => "index_aspects_on_user_id"
 
   create_table "comments", :force => true do |t|
-    t.text     "text"
-    t.integer  "post_id"
-    t.integer  "person_id"
-    t.string   "guid"
+    t.text     "text",                   :null => false
+    t.integer  "post_id",                :null => false
+    t.integer  "person_id",              :null => false
+    t.string   "guid",                   :null => false
     t.text     "creator_signature"
     t.text     "post_creator_signature"
     t.datetime "created_at"
@@ -48,34 +49,44 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
   end
 
   add_index "comments", ["guid"], :name => "index_comments_on_guid", :unique => true
-  add_index "comments", ["mongo_id"], :name => "index_comments_on_mongo_id"
+  add_index "comments", ["person_id"], :name => "index_comments_on_person_id"
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
   create_table "contacts", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "person_id"
-    t.boolean  "pending",    :default => true
+    t.integer  "user_id",                      :null => false
+    t.integer  "person_id",                    :null => false
+    t.boolean  "pending",    :default => true, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
   end
 
-  add_index "contacts", ["mongo_id"], :name => "index_contacts_on_mongo_id"
   add_index "contacts", ["person_id", "pending"], :name => "index_contacts_on_person_id_and_pending"
   add_index "contacts", ["user_id", "pending"], :name => "index_contacts_on_user_id_and_pending"
   add_index "contacts", ["user_id", "person_id"], :name => "index_contacts_on_user_id_and_person_id", :unique => true
 
+  create_table "data_points", :force => true do |t|
+    t.string   "key",          :null => false
+    t.integer  "value",        :null => false
+    t.integer  "statistic_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "data_points", ["statistic_id"], :name => "index_data_points_on_statistic_id"
+
   create_table "invitations", :force => true do |t|
     t.text     "message"
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
+    t.integer  "sender_id",    :null => false
+    t.integer  "recipient_id", :null => false
     t.integer  "aspect_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
   end
 
-  add_index "invitations", ["mongo_id"], :name => "index_invitations_on_mongo_id"
+  add_index "invitations", ["aspect_id"], :name => "index_invitations_on_aspect_id"
+  add_index "invitations", ["recipient_id"], :name => "index_invitations_on_recipient_id"
   add_index "invitations", ["sender_id"], :name => "index_invitations_on_sender_id"
 
   create_table "mongo_aspect_memberships", :force => true do |t|
@@ -220,7 +231,7 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
   add_index "mongo_profiles", ["first_name", "last_name", "searchable"], :name => "index_mongo_profiles_on_first_name_and_last_name_and_searchable"
   add_index "mongo_profiles", ["first_name", "searchable"], :name => "index_mongo_profiles_on_first_name_and_searchable"
   add_index "mongo_profiles", ["last_name", "searchable"], :name => "index_mongo_profiles_on_last_name_and_searchable"
-  add_index "mongo_profiles", ["person_mongo_id"], :name => "index_mongo_profiles_on_person_mongo_id", :unique => true
+  add_index "mongo_profiles", ["person_mongo_id"], :name => "index_mongo_profiles_on_person_mongo_id"
 
   create_table "mongo_requests", :force => true do |t|
     t.string   "mongo_id"
@@ -232,7 +243,7 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
   end
 
   add_index "mongo_requests", ["recipient_mongo_id"], :name => "index_mongo_requests_on_recipient_mongo_id"
-  add_index "mongo_requests", ["sender_mongo_id", "recipient_mongo_id"], :name => "index_mongo_requests_on_sender_mongo_id_and_recipient_mongo_id", :unique => true
+  add_index "mongo_requests", ["sender_mongo_id", "recipient_mongo_id"], :name => "index_mongo_requests_on_sender_mongo_id_and_recipient_mongo_id"
   add_index "mongo_requests", ["sender_mongo_id"], :name => "index_mongo_requests_on_sender_mongo_id"
 
   create_table "mongo_services", :force => true do |t|
@@ -275,28 +286,27 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
     t.string   "mongo_id"
   end
 
-  add_index "mongo_users", ["mongo_id"], :name => "index_mongo_users_on_mongo_id", :unique => true
-
   create_table "notifications", :force => true do |t|
     t.string   "target_type"
     t.integer  "target_id"
-    t.integer  "recipient_id"
-    t.integer  "actor_id"
-    t.string   "action"
-    t.boolean  "unread",       :default => true
+    t.integer  "recipient_id",                   :null => false
+    t.integer  "actor_id",                       :null => false
+    t.string   "action",                         :null => false
+    t.boolean  "unread",       :default => true, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
   end
 
-  add_index "notifications", ["mongo_id"], :name => "index_notifications_on_mongo_id"
+  add_index "notifications", ["recipient_id"], :name => "index_notifications_on_recipient_id"
+  add_index "notifications", ["target_id"], :name => "index_notifications_on_target_id"
   add_index "notifications", ["target_type", "target_id"], :name => "index_notifications_on_target_type_and_target_id"
 
   create_table "people", :force => true do |t|
-    t.string   "guid"
-    t.text     "url"
-    t.string   "diaspora_handle"
-    t.text     "serialized_public_key"
+    t.string   "guid",                  :null => false
+    t.text     "url",                   :null => false
+    t.string   "diaspora_handle",       :null => false
+    t.text     "serialized_public_key", :null => false
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -305,26 +315,26 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
 
   add_index "people", ["diaspora_handle"], :name => "index_people_on_diaspora_handle", :unique => true
   add_index "people", ["guid"], :name => "index_people_on_guid", :unique => true
-  add_index "people", ["mongo_id"], :name => "index_people_on_mongo_id"
   add_index "people", ["owner_id"], :name => "index_people_on_owner_id", :unique => true
 
   create_table "post_visibilities", :force => true do |t|
-    t.integer  "aspect_id"
-    t.integer  "post_id"
+    t.integer  "aspect_id",  :null => false
+    t.integer  "post_id",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "post_visibilities", ["aspect_id", "post_id"], :name => "index_post_visibilities_on_aspect_id_and_post_id"
   add_index "post_visibilities", ["aspect_id"], :name => "index_post_visibilities_on_aspect_id"
   add_index "post_visibilities", ["post_id"], :name => "index_post_visibilities_on_post_id"
 
   create_table "posts", :force => true do |t|
-    t.integer  "person_id"
-    t.boolean  "public",            :default => false
+    t.integer  "person_id",                            :null => false
+    t.boolean  "public",            :default => false, :null => false
     t.string   "diaspora_handle"
-    t.string   "guid"
-    t.boolean  "pending",           :default => false
-    t.string   "type"
+    t.string   "guid",                                 :null => false
+    t.boolean  "pending",           :default => false, :null => false
+    t.string   "type",                                 :null => false
     t.text     "message"
     t.integer  "status_message_id"
     t.text     "caption"
@@ -338,8 +348,10 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
   end
 
   add_index "posts", ["guid"], :name => "index_posts_on_guid"
-  add_index "posts", ["mongo_id"], :name => "index_posts_on_mongo_id"
   add_index "posts", ["person_id"], :name => "index_posts_on_person_id"
+  add_index "posts", ["status_message_id", "pending"], :name => "index_posts_on_status_message_id_and_pending"
+  add_index "posts", ["status_message_id"], :name => "index_posts_on_status_message_id"
+  add_index "posts", ["type", "pending", "id"], :name => "index_posts_on_type_and_pending_and_id"
   add_index "posts", ["type"], :name => "index_posts_on_type"
 
   create_table "profiles", :force => true do |t|
@@ -352,8 +364,8 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
     t.date     "birthday"
     t.string   "gender"
     t.text     "bio"
-    t.boolean  "searchable",       :default => true
-    t.integer  "person_id"
+    t.boolean  "searchable",       :default => true, :null => false
+    t.integer  "person_id",                          :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
@@ -362,27 +374,24 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
   add_index "profiles", ["first_name", "last_name", "searchable"], :name => "index_profiles_on_first_name_and_last_name_and_searchable"
   add_index "profiles", ["first_name", "searchable"], :name => "index_profiles_on_first_name_and_searchable"
   add_index "profiles", ["last_name", "searchable"], :name => "index_profiles_on_last_name_and_searchable"
-  add_index "profiles", ["mongo_id"], :name => "index_profiles_on_mongo_id"
-  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
+  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id", :unique => true
 
   create_table "requests", :force => true do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
+    t.integer  "sender_id",    :null => false
+    t.integer  "recipient_id", :null => false
     t.integer  "aspect_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
   end
 
-  add_index "requests", ["mongo_id"], :name => "index_requests_on_mongo_id"
   add_index "requests", ["recipient_id"], :name => "index_requests_on_recipient_id"
   add_index "requests", ["sender_id", "recipient_id"], :name => "index_requests_on_sender_id_and_recipient_id", :unique => true
   add_index "requests", ["sender_id"], :name => "index_requests_on_sender_id"
 
   create_table "services", :force => true do |t|
-    t.string   "type"
-    t.integer  "user_id"
-    t.string   "provider"
+    t.string   "type",          :null => false
+    t.integer  "user_id",       :null => false
     t.string   "uid"
     t.string   "access_token"
     t.string   "access_secret"
@@ -393,15 +402,21 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
     t.string   "user_mongo_id"
   end
 
-  add_index "services", ["mongo_id"], :name => "index_services_on_mongo_id"
   add_index "services", ["user_id"], :name => "index_services_on_user_id"
+
+  create_table "statistics", :force => true do |t|
+    t.integer  "average"
+    t.datetime "time",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.text     "serialized_private_key"
-    t.integer  "invites",                               :default => 0
-    t.boolean  "getting_started",                       :default => true
-    t.boolean  "disable_mail",                          :default => false
+    t.integer  "invites",                               :default => 0,     :null => false
+    t.boolean  "getting_started",                       :default => true,  :null => false
+    t.boolean  "disable_mail",                          :default => false, :null => false
     t.string   "language"
     t.string   "email",                                 :default => "",    :null => false
     t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
@@ -419,11 +434,13 @@ ActiveRecord::Schema.define(:version => 20110105051803) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mongo_id"
+    t.string   "invitation_service"
+    t.string   "invitation_identifier"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["invitation_service", "invitation_identifier"], :name => "index_users_on_invitation_service_and_invitation_identifier", :unique => true
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
-  add_index "users", ["mongo_id"], :name => "index_users_on_mongo_id"
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end

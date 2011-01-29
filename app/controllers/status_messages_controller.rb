@@ -6,6 +6,7 @@ class StatusMessagesController < ApplicationController
   before_filter :authenticate_user!
 
   respond_to :html
+  respond_to :mobile
   respond_to :json, :only => :show
 
   def create
@@ -14,7 +15,7 @@ class StatusMessagesController < ApplicationController
     photos = Photo.where(:id => [*params[:photos]], :diaspora_handle => current_user.person.diaspora_handle)
 
     public_flag = params[:status_message][:public]
-    public_flag.to_s.match(/(true)/) ? public_flag = true : public_flag = false
+    public_flag.to_s.match(/(true)|(on)/) ? public_flag = true : public_flag = false
     params[:status_message][:public] = public_flag
 
     @status_message = current_user.build_post(:status_message, params[:status_message])
@@ -27,11 +28,13 @@ class StatusMessagesController < ApplicationController
         @status_message.photos += photos
         for photo in photos
           photo.public = public_flag
+          photo.pending = false
           photo.save
           current_user.add_to_streams(photo, aspects)
           current_user.dispatch_post(photo)
         end
       end
+
       respond_to do |format|
         format.js { render :json => {:post_id => @status_message.id,
                                      :html => render_to_string(
@@ -48,6 +51,7 @@ class StatusMessagesController < ApplicationController
         },
                            :status => 201 }
         format.html { respond_with @status_message }
+        format.mobile{ redirect_to :back}
       end
     else
       respond_to do |format|
@@ -69,13 +73,6 @@ class StatusMessagesController < ApplicationController
 
   def show
     @status_message = current_user.find_visible_post_by_id params[:id]
-    comments_hash = Comment.hash_from_post_ids [@status_message.id]
-    person_hash = Person.from_post_comment_hash comments_hash
-    @comment_hashes = comments_hash[@status_message.id].map do |comment|
-      {:comment => comment,
-       :person => person_hash[comment.person_id]
-      }
-    end
 
     @object_aspect_ids = @status_message.aspects.map{|a| a.id}
 

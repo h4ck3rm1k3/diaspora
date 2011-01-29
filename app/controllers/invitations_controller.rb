@@ -7,8 +7,8 @@ class InvitationsController < Devise::InvitationsController
   before_filter :check_token, :only => [:edit]
 
   def new
-    sent_invitations = current_user.invitations_from_me
-    @emails_delivered = sent_invitations.map!{ |i| i.to.email }
+    sent_invitations = current_user.invitations_from_me.includes(:recipient)
+    @emails_delivered = sent_invitations.map!{ |i| i.recipient.email }
   end
 
   def create
@@ -23,7 +23,7 @@ class InvitationsController < Devise::InvitationsController
 
       good_emails, bad_emails = emails.partition{|e| e.try(:match, Devise.email_regexp)}
 
-      good_emails.each{|e| Resque.enqueue(Jobs::InviteUser, current_user.id, e, aspect, message)}
+      good_emails.each{|e| Resque.enqueue(Job::InviteUserByEmail, current_user.id, e, aspect, message)}
 
       if bad_emails.any?
         flash[:error] = I18n.t('invitations.create.sent') + good_emails.join(', ') + " "+ I18n.t('invitations.create.rejected') + bad_emails.join(', ')
@@ -41,8 +41,8 @@ class InvitationsController < Devise::InvitationsController
         raise I18n.t('invitations.check_token.not_found')
       end
       user = User.find_by_invitation_token(params[:user][:invitation_token])
-      user.seed_aspects
       user.accept_invitation!(params[:user])
+      user.seed_aspects
     rescue Exception => e
       user = nil
       flash[:error] = e.message

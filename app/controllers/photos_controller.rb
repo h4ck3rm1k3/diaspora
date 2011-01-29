@@ -23,11 +23,10 @@ class PhotosController < ApplicationController
 
       if @contact
         @aspects_with_person = @contact.aspects
-        @similar_people = similar_people @contact
+        @contacts_of_contact = @contact.contacts
       end
 
-      @posts = current_user.raw_visible_posts.where(
-        :type => 'Photo',
+      @posts = current_user.visible_photos.where(
         :person_id => @person.id
       ).paginate(:page => params[:page])
 
@@ -136,7 +135,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @photo = current_user.find_visible_post_by_id params[:id]
+    @photo = current_user.visible_photos.where(:id => params[:id]).includes(:person, :status_message => :photos).first
     if @photo
       @parent = @photo.status_message
 
@@ -153,17 +152,10 @@ class PhotosController < ApplicationController
       end
 
       @object_aspect_ids = []
-      if @parent.aspects
-        @object_aspect_ids = @parent.aspects.map{|a| a.id}
+      if @parent_aspects = @parent.aspects.where(:user_id => current_user.id)
+        @object_aspect_ids = @parent_aspects.map{|a| a.id}
       end
 
-      comments_hash = Comment.hash_from_post_ids [@parent.id]
-      person_hash = Person.from_post_comment_hash comments_hash
-      @comment_hashes = comments_hash[@parent.id].map do |comment|
-        {:comment => comment,
-          :person => person_hash[comment.person_id]
-        }
-      end
       @ownership = current_user.owns? @photo
 
     end

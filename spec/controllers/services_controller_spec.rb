@@ -28,25 +28,22 @@ describe ServicesController do
   }
 
   before do
-    p "Sign in user"
-    sign_in :user, user
-    @controller.stub!(:current_user).and_return(user)
+    @user   = alice
+    @aspect = @user.aspects.first
+    @user.invites = 100
+    @user.save
+
+    sign_in :user, @user
+    @controller.stub!(:current_user).and_return(@user)
     mock_access_token.stub!(:token => "12345", :secret => "56789")
   end
 
   describe '#index' do
-    p "Does the user exists?"
-    p user
-    p "Does the user services exists?"
-    p user.services
-    p "now going to access them"
-    let!(:service1) {a = Factory(:service); user.services << a; a}
-    let!(:service2) {a = Factory(:service); user.services << a; a}
-    let!(:service3) {a = Factory(:service); user.services << a; a}
-    let!(:service4) {a = Factory(:service); user.services << a; a}
+    it 'displays all connected serivices for a user' do
+      4.times do
+        Factory(:service, :user => @user)
+      end
 
-
-    it 'displays all connected services for a user' do
       get :index
       p user
 #      user.reload  
@@ -60,18 +57,18 @@ describe ServicesController do
       request.env['omniauth.auth'] = omniauth_auth
       lambda{
         post :create
-      }.should change(user.services, :count).by(1)
+      }.should change(@user.services, :count).by(1)
     end
 
     it 'redirects to getting started if the user is getting started' do
-      user.getting_started = true
+      @user.getting_started = true
       request.env['omniauth.auth'] = omniauth_auth
       post :create
       response.should redirect_to getting_started_path(:step => 3)
     end
 
     it 'redirects to services url' do
-      user.getting_started = false
+      @user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
       response.should redirect_to services_url
@@ -80,7 +77,7 @@ describe ServicesController do
 
     it 'creates a twitter service' do
       Service.delete_all
-      user.getting_started = false
+      @user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
 
@@ -101,8 +98,7 @@ describe ServicesController do
 
   describe '#destroy' do
     before do
-      @service1 = Factory.create(:service)
-      user.services << @service1
+      @service1 = Factory.create(:service, :user => @user)
     end
     it 'destroys a service selected by id' do
       lambda{
@@ -113,3 +109,4 @@ describe ServicesController do
   
 
 end
+

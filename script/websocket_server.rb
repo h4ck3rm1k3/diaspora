@@ -2,8 +2,8 @@
 #   licensed under the Affero General Public License version 3 or later.  See
 #   the COPYRIGHT file.
 
-require File.dirname(__FILE__) + '/../config/environment'
-require File.dirname(__FILE__) + '/../lib/diaspora/web_socket'
+require File.join(File.dirname(__FILE__), '..', 'config', 'environment')
+require File.join(File.dirname(__FILE__), '..','lib', 'diaspora', 'web_socket')
 
 at_exit do
   begin

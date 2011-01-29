@@ -5,77 +5,12 @@
 require 'spec_helper'
 
 describe Comment do
-  let(:user)    {Factory.create(:user)}
-  let(:aspect)  {user.aspects.create(:name => "Doofuses")}
+  let(:user)    {alice}
+  let(:aspect)  {user.aspects.first}
 
-  let(:user2)   {Factory.create(:user)}
-  let(:aspect2) {user2.aspects.create(:name => "Lame-faces")}
+  let(:user2)   {bob}
+  let(:aspect2) {user2.aspects.first}
 
-  let!(:connecting) { connect_users(user, aspect, user2, aspect2) }
-
-  describe 'youtube' do
-    before do
-      @message = user.post :status_message, :message => "hi", :to => aspect.id
-    end
-    it 'should process youtube titles on the way in' do
-      video_id = "ABYnqp-bxvg"
-      url="http://www.youtube.com/watch?v=#{video_id}&a=GxdCwVVULXdvEBKmx_f5ywvZ0zZHHHDU&list=ML&playnext=1"
-      expected_title = "UP & down & UP & down &amp;"
-
-      mock_http = mock("http")
-      Net::HTTP.stub!(:new).with('gdata.youtube.com', 80).and_return(mock_http)
-      mock_http.should_receive(:get).with('/feeds/api/videos/'+video_id+'?v=2', nil).and_return(
-        [nil, 'Foobar <title>'+expected_title+'</title> hallo welt <asd><dasdd><a>dsd</a>'])
-
-      comment = user.build_comment url, :on => @message
-      p comment[:youtube_titles]
-      comment.save!
-      p "Got comment"
-      p comment
-      c = Comment.find(comment.id)
-      p comment[:youtube_titles]
-      tomatch = {video_id => expected_title}
-      p "check against"
-      p tomatch
-      comment[:youtube_titles].should == tomatch
-    end
-  end
-
- describe '.hash_from_post_ids' do
-   before do
-      user.reload
-      @hello = user.post(:status_message, :message => "Hello.", :to => aspect.id)
-      @hi = user.post(:status_message, :message => "hi", :to => aspect.id)
-      @lonely = user.post(:status_message, :message => "Hello?", :to => aspect.id)
-
-      @c11 = user2.comment "why so formal?", :on => @hello
-      @c21 = user2.comment "lol hihihi", :on => @hi
-      @c12 = user.comment "I simply felt like issuing a greeting.  Do step off.", :on => @hello
-      @c22 = user.comment "stfu noob", :on => @hi
-
-      @c12.created_at = Time.now+10
-      @c12.save!
-      @c22.created_at = Time.now+10
-      @c22.save!
-    end
-    it 'returns an empty array for posts with no comments' do
-      Comment.hash_from_post_ids([@lonely.id]).should ==
-        {@lonely.id => []}
-    end
-    it 'returns a hash from posts to comments' do
-      Comment.hash_from_post_ids([@hello.id, @hi.id]).should ==
-        {@hello.id => [@c11, @c12],
-         @hi.id => [@c21, @c22]
-        }
-    end
-    it 'gets the people from the db' do
-      hash = Comment.hash_from_post_ids([@hello.id, @hi.id])
-      Person.from_post_comment_hash(hash).should == {
-        user.person.id => user.person,
-        user2.person.id => user2.person,
-      }
-    end
- end
 
  describe 'comment#notification_type' do
    let(:user3)   {Factory(:user)}
@@ -273,5 +208,24 @@ describe Comment do
     end
   end
 
+  describe 'youtube' do
+    before do
+      @message = user.post :status_message, :message => "hi", :to => aspect.id
+    end
+    it 'should process youtube titles on the way in' do
+      video_id = "ABYnqp-bxvg"
+      url="http://www.youtube.com/watch?v=#{video_id}&a=GxdCwVVULXdvEBKmx_f5ywvZ0zZHHHDU&list=ML&playnext=1"
+      expected_title = "UP & down & UP & down &amp;"
 
+      mock_http = mock("http")
+      Net::HTTP.stub!(:new).with('gdata.youtube.com', 80).and_return(mock_http)
+      mock_http.should_receive(:get).with('/feeds/api/videos/'+video_id+'?v=2', nil).and_return(
+        [nil, 'Foobar <title>'+expected_title+'</title> hallo welt <asd><dasdd><a>dsd</a>'])
+
+      comment = user.build_comment url, :on => @message
+
+      comment.save!
+      Comment.find(comment.id).youtube_titles.should == {video_id => CGI::escape(expected_title)}
+    end
+  end
 end

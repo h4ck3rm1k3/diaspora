@@ -11,7 +11,7 @@ $(document).ready(function(){
     var button = $(this),
         guid = button.attr('data-guid');
 
-    if(guid && location.href.search("a_ids..="+guid) != -1){
+    if(guid && location.href.search("a_ids..="+guid+"(&|$)") != -1){
       button.addClass('selected');
       selectedGUIDS.push(guid);
     }
@@ -37,7 +37,7 @@ $(document).ready(function(){
     $("#aspect_stream_container").fadeTo(100, 0.4);
     $("#aspect_contact_pictures").fadeTo(100, 0.4);
 
-    performAjax( $(this).attr('href'), $("#publisher textarea").val());
+    performAjax( $(this).attr('href'));
   });
 
   $("#aspect_nav a.aspect_selector").click(function(e){
@@ -53,19 +53,8 @@ $(document).ready(function(){
     var $this = $(this),
         listElement = $this.parent(),
         guid = listElement.attr('data-guid'),
-        post = $("#publisher textarea").val(),
-        homeListElement = $("#aspect_nav a.home_selector").parent(),
-        photos = {};
+        homeListElement = $("#aspect_nav a.home_selector").parent();
 
-
-        //pass photos
-        $('#photodropzone img').each(function(){
-          var img = $(this);
-          guid = img.attr('data-id');
-          url = img.attr('src');
-          photos[guid] = url;
-        });
-        
     if( listElement.hasClass('selected') ){
       // remove filter
       var idx = selectedGUIDS.indexOf( guid );
@@ -88,7 +77,7 @@ $(document).ready(function(){
       homeListElement.removeClass('selected');
     }
 
-     performAjax(generateURL(), post, photos);
+     performAjax(generateURL());
   });
 
 
@@ -112,7 +101,27 @@ $(document).ready(function(){
     return baseURL;
   }
 
-  function performAjax(newURL, post, photos){
+  function performAjax(newURL) {
+    var post = $("#publisher textarea").val(),
+        photos = {};
+
+
+    //pass photos
+    $('#photodropzone img').each(function(){
+      var img = $(this);
+      guid = img.attr('data-id');
+      url = img.attr('src');
+      photos[guid] = url;
+    });
+
+
+
+    // set url
+    // some browsers (Firefox for example) don't support pushState
+    if (typeof(history.pushState) == 'function') {
+      history.pushState(null, document.title, newURL);
+    }
+
     $.ajax({
       url : newURL,
       dataType : 'script',
@@ -124,7 +133,7 @@ $(document).ready(function(){
         var textarea = $("#publisher textarea");
         var photozone = $('#photodropzone')
 
-        if( textarea.val() == "" ) {
+        if( post != "" ) {
           textarea.val(post);
           textarea.focus();
         }
@@ -150,4 +159,5 @@ $(document).ready(function(){
       }
     });
   }
+
 });

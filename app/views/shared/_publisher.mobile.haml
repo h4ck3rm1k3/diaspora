@@ -2,28 +2,29 @@
 -#   licensed under the Affero General Public License version 3 or later.  See
 -#   the COPYRIGHT file.
 
+:javascript
+  $(document).ready(function(){
+    $("#status_message_message").bind("focus", function(){
+      $("#publisher fieldset:first").removeClass('hidden');
+    });
+  });
 
 #publisher
   = form_for StatusMessage.new, :remote => true do |status|
-    %p
-      = status.label :message, t('.post_a_message_to', :aspect => (aspect == :all ? t('.all') : aspect))
-      = status.text_area :message, :rows => 2, :value => params[:prefill]
+    #publisher_text
+      = t('.whats_on_your_mind')
 
-    = status.hidden_field :to, :value => (aspect == :all ? aspect : aspect.id)
+    = status.text_area :message
 
-    %fieldset{:class => 'ui-grid-a'}
-      .options_and_submit
-        %div{:class => 'ui-block-a'}
-          - if aspect == :all
-            = status.submit t('.share'), :title => t('.share_with_all')
-          - else
-            = status.submit t('.share'), :title => t('.share_with', :aspect => aspect)
+    - for aspect_id in @aspect_ids
+      = hidden_field_tag 'aspect_ids[]', aspect_id.to_s
 
-        - if aspect == :all
-          %div{:class => 'ui-block-a'}
 
-            .public_toggle
-              %p.checkbox_select
-                = status.check_box( :public, {}, true, false )
-                = status.label :public, t('.make_public')
-              = link_to '(?)', "#question_mark_pane", :class => 'question_mark', :style=>"display:none;"
+    %fieldset.hidden{:style => 'text-align:right;'}
+      %fieldset{:data => {:role => 'controlgroup', :type=>'horizontal'}}
+        - unless params[:a_ids]
+          %input{:type => 'checkbox', :name => 'status_message[public]', :id => 'public', :class => 'custom', :value => 'true'}
+          %label{:for => 'public'}
+            = t('.make_public')
+        = status.submit t('.share'), 'data-inline' => 'true', 'data-theme' => 'b'
+

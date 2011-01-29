@@ -13,7 +13,8 @@
     = render 'aspect_stream',
       :aspect => @aspect,
       :aspect_ids => @aspect_ids,
-      :post_hashes => @post_hashes
+      :posts => @posts,
+      :fakes => @fakes
 
 .span-7.last
   #home_user_badge
@@ -22,7 +23,6 @@
       = current_user.name
       .description
         = link_to current_user.diaspora_handle, person_path(current_user.person)
-        /= info_text(t('.handle_explanation'))
 
   - if @notification_count > 0 || @request_count > 0
     #new_requests
@@ -38,9 +38,9 @@
     %hr
 
   #aspect_listings.section
-    = render 'aspects/aspect_listings', :aspect_hashes => @aspect_hashes
+    = render 'aspects/aspect_listings', :aspects => @aspects, :contacts => @contacts
 
   .section
-    %h4= t('shared.invitations.invites')
+    %h4= t('shared.invitations.invite_your_friends')
     = render "shared/invitations", :invites => @invites
 

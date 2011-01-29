@@ -11,9 +11,11 @@ gem 'chef', '0.9.12', :require => false
 
 gem 'nokogiri', '1.4.3.1'
 
+gem "fog"
+
 #Security
 gem 'devise', '1.1.3'
-gem 'devise_invitable','0.3.5'
+gem 'devise_invitable', :git => 'git://github.com/zhitomirskiyi/devise_invitable.git', :branch => '0.3.5'
 
 #Authentication
 gem 'omniauth', '0.1.6'
@@ -22,6 +24,9 @@ gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git', :ref => 'ef122
 #Views
 #gem 'haml', '3.0.25'
 gem 'will_paginate', '3.0.pre2'
+
+#Statistics
+gem 'googlecharts'
 
 #Uncatagorized
 gem 'roxml', :git => 'git://github.com/Empact/roxml.git', :ref => '7ea9a9ffd2338aaef5b0'
@@ -35,7 +40,7 @@ gem 'thin', '1.2.7', :require => false
 gem 'em-websocket', :git => 'git://github.com/igrigorik/em-websocket', :ref => 'e278f5a1c4db60be7485'
 
 #File uploading
-gem 'carrierwave', :git => 'git://github.com/rsofaer/carrierwave.git' , :branch => 'master' #Untested mongomapper branch
+gem 'carrierwave', :git => 'git://github.com/recruitmilitary/carrierwave.git' , :branch => 'master'
 gem 'mini_magick', '3.2'
 gem 'aws', '2.3.32' # upgrade to 2.4 breaks 1.8 >.<
 gem 'fastercsv', '1.5.4', :require => false
@@ -57,12 +62,12 @@ end
 
 group :test do
   gem 'factory_girl_rails'
+  gem 'fixture_builder', '~> 0.2.0'
   gem 'capybara', '~> 0.3.9'
   gem 'cucumber-rails', '0.3.2'
   gem 'rspec', '>= 2.0.0'
   gem 'rspec-rails', '>= 2.0.0'
-  gem 'mocha'
-  gem 'database_cleaner', '0.5.2'
+  gem 'database_cleaner', '0.6.0'
   gem 'webmock', :require => false
   gem 'jasmine', :path => 'vendor/gems/jasmine', :require => false
   gem 'mongrel', :require => false if RUBY_VERSION.include? '1.8'
