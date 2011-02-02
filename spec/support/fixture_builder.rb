@@ -5,9 +5,20 @@ FixtureBuilder.configure do |fbuilder|
 
   # now declare objects
   fbuilder.factory do
+    p "test building"    
     alice = Factory(:user_with_aspect, :username => "alice")
     bob   = Factory(:user_with_aspect, :username => "bob")
     eve   = Factory(:user_with_aspect, :username => "eve")
+
+
+    p alice
+    p alice.aspects
+    p bob
+    p bob.aspects
+    p "Eve"
+    p eve
+    p "Eve aspects"
+    p eve.aspects
 
     connect_users(bob, bob.aspects.first, alice, alice.aspects.first)
     connect_users(bob, bob.aspects.first, eve, eve.aspects.first)

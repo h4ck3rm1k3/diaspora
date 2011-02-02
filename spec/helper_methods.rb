@@ -3,6 +3,10 @@ module HelperMethods
     connect_users(u1, u1.aspects.first, u2, u2.aspects.first)
   end
   def connect_users(user1, aspect1, user2, aspect2)
+    p "connect_users"
+    puts "user1 #{user1.inspect}, person2 #{user2.person},  aspect1 #{aspect1.inspect}"
+    puts "user2 #{user2.inspect}, person1 #{user1.person}, aspect2 #{aspect2.inspect}"
+
     Contact.create!(:user => user1,
                     :person => user2.person,
                     :aspects => [aspect1],
