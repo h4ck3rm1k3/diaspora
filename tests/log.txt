@@ -1,10 +1,87 @@
+Jammit Warning: Asset compression disabled -- Java unavailable.
 (in /home/phurl/experiments/diaspora)
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »aspect_memberships_id_seq« für die »serial«-Spalte »aspect_memberships.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »aspect_memberships_pkey« für Tabelle »aspect_memberships«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »aspects_id_seq« für die »serial«-Spalte »aspects.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »aspects_pkey« für Tabelle »aspects«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »comments_id_seq« für die »serial«-Spalte »comments.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »comments_pkey« für Tabelle »comments«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »contacts_id_seq« für die »serial«-Spalte »contacts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »contacts_pkey« für Tabelle »contacts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »data_points_id_seq« für die »serial«-Spalte »data_points.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »data_points_pkey« für Tabelle »data_points«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »invitations_id_seq« für die »serial«-Spalte »invitations.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »invitations_pkey« für Tabelle »invitations«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_aspect_memberships_id_seq« für die »serial«-Spalte »mongo_aspect_memberships.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_aspect_memberships_pkey« für Tabelle »mongo_aspect_memberships«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_aspects_id_seq« für die »serial«-Spalte »mongo_aspects.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_aspects_pkey« für Tabelle »mongo_aspects«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_comments_id_seq« für die »serial«-Spalte »mongo_comments.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_comments_pkey« für Tabelle »mongo_comments«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_contacts_id_seq« für die »serial«-Spalte »mongo_contacts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_contacts_pkey« für Tabelle »mongo_contacts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_invitations_id_seq« für die »serial«-Spalte »mongo_invitations.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_invitations_pkey« für Tabelle »mongo_invitations«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_notifications_id_seq« für die »serial«-Spalte »mongo_notifications.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_notifications_pkey« für Tabelle »mongo_notifications«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_people_id_seq« für die »serial«-Spalte »mongo_people.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_people_pkey« für Tabelle »mongo_people«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_post_visibilities_id_seq« für die »serial«-Spalte »mongo_post_visibilities.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_post_visibilities_pkey« für Tabelle »mongo_post_visibilities«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_posts_id_seq« für die »serial«-Spalte »mongo_posts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_posts_pkey« für Tabelle »mongo_posts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_profiles_id_seq« für die »serial«-Spalte »mongo_profiles.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_profiles_pkey« für Tabelle »mongo_profiles«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_requests_id_seq« für die »serial«-Spalte »mongo_requests.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_requests_pkey« für Tabelle »mongo_requests«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_services_id_seq« für die »serial«-Spalte »mongo_services.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_services_pkey« für Tabelle »mongo_services«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »mongo_users_id_seq« für die »serial«-Spalte »mongo_users.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »mongo_users_pkey« für Tabelle »mongo_users«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »notification_actors_id_seq« für die »serial«-Spalte »notification_actors.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »notification_actors_pkey« für Tabelle »notification_actors«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »notifications_id_seq« für die »serial«-Spalte »notifications.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »notifications_pkey« für Tabelle »notifications«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »people_id_seq« für die »serial«-Spalte »people.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »people_pkey« für Tabelle »people«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »post_visibilities_id_seq« für die »serial«-Spalte »post_visibilities.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »post_visibilities_pkey« für Tabelle »post_visibilities«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »posts_id_seq« für die »serial«-Spalte »posts.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »posts_pkey« für Tabelle »posts«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »profiles_id_seq« für die »serial«-Spalte »profiles.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »profiles_pkey« für Tabelle »profiles«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »requests_id_seq« für die »serial«-Spalte »requests.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »requests_pkey« für Tabelle »requests«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »services_id_seq« für die »serial«-Spalte »services.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »services_pkey« für Tabelle »services«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »statistics_id_seq« für die »serial«-Spalte »statistics.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »statistics_pkey« für Tabelle »statistics«
+HINWEIS:  CREATE TABLE erstellt implizit eine Sequenz »users_id_seq« für die »serial«-Spalte »users.id«
+HINWEIS:  CREATE TABLE / PRIMARY KEY erstellt implizit einen Index »users_pkey« für Tabelle »users«
+/usr/bin/ruby1.8 -S bundle exec rspec ./spec/helpers/statistics_helper_spec.rb ./spec/helpers/users_helper_spec.rb ./spec/helpers/mobile_helper_spec.rb ./spec/helpers/stream_helper_spec.rb ./spec/helpers/application_helper_spec.rb ./spec/intergration/receiving_spec.rb ./spec/misc_spec.rb ./spec/lib/salmon_salmon_spec.rb ./spec/lib/diaspora/webhooks_spec.rb ./spec/lib/diaspora/exporter_spec.rb ./spec/lib/diaspora/parser_spec.rb ./spec/lib/diaspora/web_socket_spec.rb ./spec/lib/fake_spec.rb ./spec/lib/pubsubhubbub_spec.rb ./spec/lib/youtube_titles_spec.rb ./spec/lib/webfinger_spec.rb ./spec/lib/rake_helper_spec.rb ./spec/lib/web_hooks_spec.rb ./spec/lib/data_conversion/export_from_mongo_spec.rb ./spec/lib/data_conversion/import_to_mysql_spec.rb ./spec/lib/encryptor_spec.rb ./spec/lib/postzord/dispatch_spec.rb ./spec/lib/postzord/receiver_spec.rb ./spec/lib/app_config_spec.rb ./spec/lib/webfinger_profile_spec.rb ./spec/lib/hcard_spec.rb ./spec/lib/resque_job_logging_spec.rb ./spec/mailers/notifier_spec.rb ./spec/controllers/aspects_controller_spec.rb ./spec/controllers/status_message_controller_spec.rb ./spec/controllers/people_controller_spec.rb ./spec/controllers/services_controller_spec.rb ./spec/controllers/publics_controller_spec.rb ./spec/controllers/home_controller_spec.rb ./spec/controllers/registrations_controller_spec.rb ./spec/controllers/posts_controller_spec.rb ./spec/controllers/sockets_controller_spec.rb ./spec/controllers/requests_controller_spec.rb ./spec/controllers/statistics_controller_spec.rb ./spec/controllers/notifications_controller_spec.rb ./spec/controllers/comments_controller_spec.rb ./spec/controllers/invitations_controller_spec.rb ./spec/controllers/users_controller_spec.rb ./spec/controllers/photos_controller_spec.rb ./spec/config/config_spec.rb ./spec/models/invitation_spec.rb ./spec/models/profile_spec.rb ./spec/models/aspect_spec.rb ./spec/models/status_message_spec.rb ./spec/models/contact_spec.rb ./spec/models/person_spec.rb ./spec/models/statistic_spec.rb ./spec/models/jobs/http_post_spec.rb ./spec/models/jobs/invite_user_by_email_spec.rb ./spec/models/jobs/notify_local_users_spec.rb ./spec/models/jobs/receive_salmon_spec.rb ./spec/models/jobs/post_to_services_spec.rb ./spec/models/jobs/socket_webfinger_spec.rb ./spec/models/jobs/receive_local_spec.rb ./spec/models/jobs/post_to_service_spec.rb ./spec/models/jobs/publish_to_hub_spec.rb ./spec/models/jobs/receive_spec.rb ./spec/models/user_spec.rb ./spec/models/data_point_spec.rb ./spec/models/user/posting_spec.rb ./spec/models/user/invite_spec.rb ./spec/models/user/querying_spec.rb ./spec/models/user/connecting_spec.rb ./spec/models/user/attack_vectors_spec.rb ./spec/models/user/commenting_spec.rb ./spec/models/retraction_spec.rb ./spec/models/notification_spec.rb ./spec/models/post_spec.rb ./spec/models/comment_spec.rb ./spec/models/photo_spec.rb ./spec/models/request_spec.rb ./spec/models/services/twitter_spec.rb ./spec/models/services/facebook_spec.rb ./spec/models/post_visibility_spec.rb
+Jammit Warning: Asset compression disabled -- Java unavailable.
 "created user"
-#<Factory:0x2b07433bcbd8 @factory_name=:user_with_aspect, @attributes=[], @options={:parent=>:user}>
+#<Factory:0x2b4938322a88 @attributes=[], @options={:parent=>:user}, @factory_name=:user_with_aspect>
+rm: cannot remove `/home/phurl/experiments/diaspora/tmp/fixture_builder.yml': No such file or directory
 => Building fixtures
+"test building"
+#<User id: 2, username: "alice", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1f44a6b@pivotallabs.com", encrypted_password: "$2a$10$YKYFsRQInvvf7Z/GQ6fxdOpn.PXlMa3lIokVZ5m2cLFi...", password_salt: "$2a$10$YKYFsRQInvvf7Z/GQ6fxdO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:54", updated_at: "2011-02-02 19:03:54", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>
+[#<Aspect id: 1, name: "generic", user_id: 1, created_at: "2011-02-02 19:03:54", updated_at: "2011-02-02 19:03:54", mongo_id: nil, user_mongo_id: nil, contacts_visible: true, open: false>]
+#<User id: 4, username: "bob", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob3845a84@pivotallabs.com", encrypted_password: "$2a$10$MXu/i/D7.dlXgv.CTNCpeOlAaz7J5L/aY1D7Jp/hmBVI...", password_salt: "$2a$10$MXu/i/D7.dlXgv.CTNCpeO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>
+[#<Aspect id: 2, name: "generic", user_id: 3, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, user_mongo_id: nil, contacts_visible: true, open: false>]
+"Eve"
+#<User id: 6, username: "eve", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob53bf475@pivotallabs.com", encrypted_password: "$2a$10$fGefWR3Zrhb05pj1BGeN3eeDzIoTTuYawBoOBkudOPdb...", password_salt: "$2a$10$fGefWR3Zrhb05pj1BGeN3e", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>
+"Eve aspects"
+[#<Aspect id: 3, name: "generic", user_id: 5, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, user_mongo_id: nil, contacts_visible: true, open: false>]
+"connect_users"
+user1 #<User id: 4, username: "bob", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob3845a84@pivotallabs.com", encrypted_password: "$2a$10$MXu/i/D7.dlXgv.CTNCpeOlAaz7J5L/aY1D7Jp/hmBVI...", password_salt: "$2a$10$MXu/i/D7.dlXgv.CTNCpeO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>, person2 #<Person:0x2b493816dd78>,  aspect1 #<Aspect id: 2, name: "generic", user_id: 3, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, user_mongo_id: nil, contacts_visible: true, open: false>
+user2 #<User id: 2, username: "alice", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob1f44a6b@pivotallabs.com", encrypted_password: "$2a$10$YKYFsRQInvvf7Z/GQ6fxdOpn.PXlMa3lIokVZ5m2cLFi...", password_salt: "$2a$10$YKYFsRQInvvf7Z/GQ6fxdO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:54", updated_at: "2011-02-02 19:03:54", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>, person1 #<Person:0x2b493d6a2730>, aspect2 #<Aspect id: 1, name: "generic", user_id: 1, created_at: "2011-02-02 19:03:54", updated_at: "2011-02-02 19:03:54", mongo_id: nil, user_mongo_id: nil, contacts_visible: true, open: false>
+"connect_users"
+user1 #<User id: 4, username: "bob", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob3845a84@pivotallabs.com", encrypted_password: "$2a$10$MXu/i/D7.dlXgv.CTNCpeOlAaz7J5L/aY1D7Jp/hmBVI...", password_salt: "$2a$10$MXu/i/D7.dlXgv.CTNCpeO", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>, person2 #<Person:0x2b493d634258>,  aspect1 nil
+user2 #<User id: 6, username: "eve", serialized_private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC4kOp...", invites: 0, getting_started: true, disable_mail: false, language: "en", email: "bob53bf475@pivotallabs.com", encrypted_password: "$2a$10$fGefWR3Zrhb05pj1BGeN3eeDzIoTTuYawBoOBkudOPdb...", password_salt: "$2a$10$fGefWR3Zrhb05pj1BGeN3e", invitation_token: nil, invitation_sent_at: nil, reset_password_token: nil, remember_token: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, invitation_service: nil, invitation_identifier: nil>, person1 #<Person:0x2b493d52e2c8>, aspect2 #<Aspect id: 3, name: "generic", user_id: 5, created_at: "2011-02-02 19:03:55", updated_at: "2011-02-02 19:03:55", mongo_id: nil, user_mongo_id: nil, contacts_visible: true, open: false>
 
 => There was an error building fixtures
-=> #<ActiveRecord::AssociationTypeMismatch: Aspect(#23655094037560) expected, got NilClass(#23655017063320)>
+=> #<ActiveRecord::AssociationTypeMismatch: Aspect(#23796738033600) expected, got NilClass(#23796661216140)>
 
 /usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/associations/association_proxy.rb:260:in `raise_on_type_mismatch'
 /usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/associations/association_collection.rb:352:in `replace'
@@ -18,8 +95,8 @@
 /usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/base.rb:1406:in `initialize'
 /usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/validations.rb:32:in `new'
 /usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/validations.rb:32:in `create!'
-/home/phurl/experiments/diaspora/spec/helper_methods.rb:6:in `connect_users'
-/home/phurl/experiments/diaspora/spec/support/fixture_builder.rb:13
+/home/phurl/experiments/diaspora/spec/helper_methods.rb:10:in `connect_users'
+/home/phurl/experiments/diaspora/spec/support/fixture_builder.rb:24
 /usr/lib/ruby/gems/1.8/gems/fixture_builder-0.2.0/lib/fixture_builder.rb:65:in `instance_eval'
 /usr/lib/ruby/gems/1.8/gems/fixture_builder-0.2.0/lib/fixture_builder.rb:65:in `factory'
 /usr/lib/ruby/gems/1.8/gems/fixture_builder-0.2.0/lib/fixture_builder.rb:91:in `surface_errors'
@@ -46,3 +123,7 @@
 /usr/lib/ruby/gems/1.8/gems/rspec-core-2.4.0/lib/rspec/core/runner.rb:10:in `autorun'
 /usr/lib/ruby/gems/1.8/bin/rspec:19
 
+rake aborted!
+ruby -S bundle exec rspec ./spec/helpers/statistics_helper_spec.rb ./spec/helpers/users_helper_spec.rb ./spec/helpers/mobile_helper_spec.rb ./spec/helpers/stream_helper_spec.rb ./spec/helpers/application_helper_spec.rb ./spec/intergration/receiving_spec.rb ./spec/misc_spec.rb ./spec/lib/salmon_salmon_spec.rb ./spec/lib/diaspora/webhooks_spec.rb ./spec/lib/diaspora/exporter_spec.rb ./spec/lib/diaspora/parser_spec.rb ./spec/lib/diaspora/web_socket_spec.rb ./spec/lib/fake_spec.rb ./spec/lib/pubsubhubbub_spec.rb ./spec/lib/youtube_titles_spec.rb ./spec/lib/webfinger_spec.rb ./spec/lib/rake_helper_spec.rb ./spec/lib/web_hooks_spec.rb ./spec/lib/data_conversion/export_from_mongo_spec.rb ./spec/lib/data_conversion/import_to_mysql_spec.rb ./spec/lib/encryptor_spec.rb ./spec/lib/postzord/dispatch_spec.rb ./spec/lib/postzord/receiver_spec.rb ./spec/lib/app_config_spec.rb ./spec/lib/webfinger_profile_spec.rb ./spec/lib/hcard_spec.rb ./spec/lib/resque_job_logging_spec.rb ./spec/mailers/notifier_spec.rb ./spec/controllers/aspects_controller_spec.rb ./spec/controllers/status_message_controller_spec.rb ./spec/controllers/people_controller_spec.rb ./spec/controllers/services_controller_spec.rb ./spec/controllers/publics_controller_spec.rb ./spec/controllers/home_controller_spec.rb ./spec/controllers/registrations_controller_spec.rb ./spec/controllers/posts_controller_spec.rb ./spec/controllers/sockets_controller_spec.rb ./spec/controllers/requests_controller_spec.rb ./spec/controllers/statistics_controller_spec.rb ./spec/controllers/notifications_controller_spec.rb ./spec/controllers/comments_controller_spec.rb ./spec/controllers/invitations_controller_spec.rb ./spec/controllers/users_controller_spec.rb ./spec/controllers/photos_controller_spec.rb ./spec/config/config_spec.rb ./spec/models/invitation_spec.rb ./spec/models/profile_spec.rb ./spec/models/aspect_spec.rb ./spec/models/status_message_spec.rb ./spec/models/contact_spec.rb ./spec/models/person_spec.rb ./spec/models/statistic_spec.rb ./spec/models/jobs/http_post_spec.rb ./spec/models/jobs/invite_user_by_email_spec.rb ./spec/models/jobs/notify_local_users_spec.rb ./spec/models/jobs/receive_salmon_spec.rb ./spec/models/jobs/post_to_services_spec.rb ./spec/models/jobs/socket_webfinger_spec.rb ./spec/models/jobs/receive_local_spec.rb ./spec/models/jobs/post_to_service_spec.rb ./spec/models/jobs/publish_to_hub_spec.rb ./spec/models/jobs/receive_spec.rb ./spec/models/user_spec.rb ./spec/models/data_point_spec.rb ./spec/models/user/posting_spec.rb ./spec/models/user/invite_spec.rb ./spec/models/user/querying_spec.rb ./spec/models/user/connecting_spec.rb ./spec/models/user/attack_vectors_spec.rb ./spec/models/user/commenting_spec.rb ./spec/models/retraction_spec.rb ./spec/models/notification_spec.rb ./spec/models/post_spec.rb ./spec/models/comment_spec.rb ./spec/models/photo_spec.rb ./spec/models/request_spec.rb ./spec/models/services/twitter_spec.rb ./spec/models/services/facebook_spec.rb ./spec/models/post_visibility_spec.rb failed
+
+(See full trace by running task with --trace)
