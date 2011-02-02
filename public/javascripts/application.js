@@ -16,13 +16,14 @@ $(document).ready(function() {
       .detach()
       .appendTo("#main_stream")
       .css("display", "block");
-      $("abbr.timeago").timeago();
+    Diaspora.widgets.timeago.updateTimeAgo();
   });
 
   $(window).unbind('.infscr');
-  $('#main_stream + .pagination').hide();
-  
+
   $("a.paginate").live("click", function() {
+    $(this).css("display", "none");
+
     $(document).trigger("retrieve.infscr");
   });
 });

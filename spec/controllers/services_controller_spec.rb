@@ -6,17 +6,6 @@ require 'spec_helper'
 
 describe ServicesController do
   render_views
-
-  p "create user"
-
-#  let(user)    { Factory.create(:user) }
-  user = Factory.create(:user)
-  p "created user:"
-  p user
-
-  let!(:aspect) { user.aspects.create(:name => "lame-os") }
-
-
   let(:mock_access_token) { Object.new }
 
   let(:omniauth_auth) {
@@ -45,10 +34,7 @@ describe ServicesController do
       end
 
       get :index
-      p user
-#      user.reload  
-      p user
-      assigns[:services].should =~ user.services
+      assigns[:services].should == @user.services
     end
   end
 
@@ -80,19 +66,7 @@ describe ServicesController do
       @user.getting_started = false
       request.env['omniauth.auth'] = omniauth_auth
       post :create
-
-      p "what do we have"
-      p user.services.first
-   #   user.services.first.class.name.should == "Service"
-      user.services.first.provider.should == "twitter"
-
-      # need to reload to get "Services::Twitter"
-      user.reload
-
-      # this is called before the "after build is called"
-      ##<Service id: nil, _type: "Services::Twitter", user_id: nil, provider: "twitter", uid: "000005", access_token: "123455", access_secret: "987655", nickname:\ "sirrobertking", created_at: nil, updated_at: nil>
-      # so that the type is not set.... #TODO
-      user.services.first.class.name.should == "Services::Twitter"
+      @user.reload.services.first.class.name.should == "Services::Twitter"
     end
   end
 
@@ -103,10 +77,67 @@ describe ServicesController do
     it 'destroys a service selected by id' do
       lambda{
         delete :destroy, :id => @service1.id
-      }.should change(user.services, :count).by(-1)
+      }.should change(@user.services, :count).by(-1)
     end
   end
-  
 
+  describe '#finder' do
+    before do
+      @service1 = Services::Facebook.new
+      @user.services << @service1
+      @person = Factory(:person)
+      @user.services.stub!(:where).and_return([@service1])
+      @hash = {"facebook_id" => {:contact => @user.contact_for(bob.person), :name => "Robert Bobson", :person => bob.person},
+              "facebook_id2" => {:name    => "Robert Bobson2"}}
+      @service1.should_receive(:finder).and_return(@hash)
+    end
+
+    it 'calls the finder method for the service for that user' do
+      get :finder, :provider => @service1.provider
+      response.should be_success
+    end
+    it 'has no translations missing' do
+      get :finder, :provider => @service1.provider
+      response.body.match(/translation/).should be_nil
+    end
+  end
+
+  describe '#invite' do
+
+    before do
+      @uid = "abc"
+      @invite_params = {:provider => 'facebook', :uid => @uid, :aspect_id => @user.aspects.first.id}
+    end
+
+    it 'sets the subject' do
+      put :inviter, @invite_params
+      assigns[:subject].should_not be_nil
+    end
+
+    it 'sets a message containing the invitation link' do
+      put :inviter, @invite_params
+      assigns[:message].should include(User.last.invitation_token)
+    end
+
+    it 'redirects to a prefilled facebook message url' do
+      put :inviter, @invite_params
+      response.location.should match(/https:\/\/www\.facebook\.com\/\?compose=1&id=.*&subject=.*&message=.*&sk=messages/)
+    end
+
+    it 'creates an invitation' do
+      lambda {
+        put :inviter, @invite_params
+      }.should change(Invitation, :count).by(1)
+    end
+
+    it 'does not create a duplicate invitation' do
+      inv = Invitation.create!(:sender_id => @user.id, :recipient_id => eve.id, :aspect_id => @user.aspects.first.id)
+      @invite_params[:invitation_id] = inv.id
+
+      lambda {
+        put :inviter, @invite_params
+      }.should_not change(Invitation, :count)
+    end
+  end
 end
 

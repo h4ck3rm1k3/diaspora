@@ -29,6 +29,9 @@ class Person < ActiveRecord::Base
 
   belongs_to :owner, :class_name => 'User'
 
+  has_many :notification_actors
+  has_many :notifications, :through => :notification_actors
+
   before_destroy :remove_all_traces
   before_validation :clean_url
 
@@ -157,23 +160,7 @@ class Person < ActiveRecord::Base
   end
 
   def as_json(opts={})
-    {
-      :person => {
-        :id           => self.guid,
-        :name         => self.name,
-        :url          => self.url,
-        :exported_key => exported_key,
-        :diaspora_handle => self.diaspora_handle
-      }
-    }
-  end
-
-  def self.from_post_comment_hash(hash)
-    person_ids = hash.values.flatten.map!{|c| c.person_id}.uniq
-    people = where(:id => person_ids)
-    people_hash = {}
-    people.each{|p| people_hash[p.id] = p}
-    people_hash
+   {:id => self.guid, :name => self.name, :avatar => self.profile.image_url(:thumb_small), :url => "/people/#{self.id}"}
   end
 
   protected
@@ -189,7 +176,8 @@ class Person < ActiveRecord::Base
   private
   def remove_all_traces
     Post.where(:person_id => id).delete_all
+    Comment.where(:person_id => id).delete_all
     Contact.where(:person_id => id).delete_all
-    Notification.where(:actor_id => id).delete_all
+    Notification.joins(:notification_actors).where(:notification_actors => {:person_id => self.id}).all.each{ |n| n.destroy}
   end
 end

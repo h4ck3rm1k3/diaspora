@@ -53,6 +53,11 @@ gem 'cloudfiles', '1.4.10', :require => false
 gem 'resque', '1.10.0'
 gem 'SystemTimer', '1.2.1' unless RUBY_VERSION.include? '1.9'
 
+group :development do
+  gem 'capistrano', '2.5.19', :require => false
+  gem 'capistrano-ext', '1.2.1', :require => false
+end
+
 group :test, :development do
   gem 'factory_girl_rails', :require => false
   gem 'ruby-debug19' if RUBY_VERSION.include? '1.9'

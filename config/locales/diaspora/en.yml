@@ -365,7 +365,7 @@ en:
           fail: "Sorry, we couldn't find %{handle}."
       show:
           no_posts: "no posts to display!"
-          incoming_request: "You have an incoming request from this person."
+          incoming_request: "%{name} wants to share with you"
           return_to_aspects: "Return to your aspects page"
           to_accept_or_ignore: "to accept or ignore it."
           does_not_exist: "Person does not exist!"
@@ -438,14 +438,15 @@ en:
           join_me_on_diaspora: "Join me on DIASPORA*"
           click_link_to_accept_invitation: "Click this link to accept your invitation"
       finder:
-          resend: "resend"
           invite_your_friends_from: "Invite your friends from %{service}"
-          not_connected: "not connected"
           friends:
             zero:   "no friends"
             one:    "1 friend"
             few:    "%{count} friends"
             other:  "%{count} friends"
+          not_connected: "not connected"
+      remote_friend:
+          resend: "resend"
           invite: "invite"
   notifier:
       hello: "Hello %{name}!"
@@ -459,13 +460,14 @@ en:
           subject: "new Diaspora* contact request from %{from}"
           just_sent_you: "just sent you a contact request on Diaspora*"
           try_it_out: "You should really think about checking it out."
-          sign_in: "sign in here"
+          sign_in: "Sign in here"
       request_accepted:
           subject: "%{name} has accepted your contact request on Diaspora*"
           accepted: "has accepted your contact request!"
+          sign_in: "Sign in here"
       comment_on_post:
           subject: "%{name} has commented on your post."
-          commented: "has commented on your post!"
+          commented: "has commented on your post:"
           sign_in: "Sign in to view it."
       also_commented:
           subject: "%{name} has also commented."
@@ -497,3 +499,4 @@ en:
   pagination:
       next: "Next"
       previous: "Previous"
+

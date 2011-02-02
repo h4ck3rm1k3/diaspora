@@ -70,6 +70,15 @@ JSON
       it 'contains a diaspora person object' do
         @service.finder.values.first[:person].should == @user2.person
       end
+      it 'caches the profile' do
+        @service.finder.values.first[:person].profile.loaded?.should be_true
+      end
+      it 'does not include the person if the search is disabled' do
+        p = @user2.person.profile
+        p.searchable = false
+        p.save
+        @service.finder.values.first[:person].should be_nil
+      end
       it 'contains a contact object if connected' do
         connect_users(@user, @user.aspects.first, @user2, @user2.aspects.first)
         @service.finder.values.first[:contact].should == @user.reload.contact_for(@user2.person)

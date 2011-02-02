@@ -1,14 +1,4 @@
 :javascript
-  $('.mark_all_read').live('click', function(){
-    $.ajax({
-      url: 'notifications/read_all',
-      success: function(data, status, xhr) {
-        $('.stream_element').removeClass('unread');
-        $("#notification_badge_number").addClass("hidden");
-      }
-    });
-  });
-
   $('.stream_element').live('mousedown', function(evt){
     var note = $(this).closest('.stream_element'),
         note_id = note.attr('data-guid'),
@@ -37,8 +27,7 @@
   %h2
     = t('.notifications')
 .span-13.last.left
-  .button.mark_all_read
-    = link_to t('.mark_all_as_read'), "#"
+  = link_to t('.mark_all_as_read'), notifications_read_all_path, :class => 'button'
 
 .span-24.last
   %ul.stream.notifications
@@ -49,8 +38,8 @@
           - notes.each do |note|
             .stream_element{:data=>{:guid => note.id}, :class => "#{note.unread ? 'unread' : ''}"}
               %span.from
-                = link_to "#{note.actor.name.titleize}", person_path(note.actor)
+                = notification_people_link(note)
                 = object_link(note)
 
-              %span.time= timeago(note.created_at)
+              %span.time= timeago(note.updated_at)
     = will_paginate @notifications

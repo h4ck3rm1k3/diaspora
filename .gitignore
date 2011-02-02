@@ -9,16 +9,14 @@ config/fb_config.yml
 config/oauth_keys.yml
 config/initializers/secret_token.rb
 config/redis.conf
+config/deploy_config.yml
 .bundle
 vendor/bundle/*
 config/database.yml
 
 # Generated files
 log/*
-public/stylesheets/application.css
-public/stylesheets/sessions.css
-public/stylesheets/ui.css
-public/stylesheets/mobile.css
+public/stylesheets/*.css
 public/diaspora
 spec/fixtures/*.yml
 spec/fixtures/*.fixture.*

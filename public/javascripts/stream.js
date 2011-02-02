@@ -8,16 +8,8 @@ var Stream = {
     var $stream = $(".stream");
     var $publisher = $("#publisher");
 
-    $("abbr.timeago").timeago();
+    Diaspora.widgets.timeago.updateTimeAgo();
     $stream.not(".show").delegate("a.show_post_comments", "click", Stream.toggleComments);
-
-    // publisher textarea reset
-    $publisher.find("textarea").bind("focus", function() {
-      $(this).css('min-height','42px');
-    });
-    $publisher.find("form").bind("blur", function() {
-      $("#publisher textarea").css('min-height','2px');
-    });
 
     // comment link form focus
     $stream.delegate(".focus_comment_textarea", "click", function(e){

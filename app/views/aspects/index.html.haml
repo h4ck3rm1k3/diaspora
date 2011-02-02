@@ -5,7 +5,7 @@
 
 - content_for :head do
   = include_javascripts :home
-
+  
 .span-15.append-2
   = render 'aspects/no_contacts_message', :aspect => @aspect, :contact_count => @contacts.count
 

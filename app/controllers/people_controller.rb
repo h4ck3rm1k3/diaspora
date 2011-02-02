@@ -10,14 +10,16 @@ class PeopleController < ApplicationController
 
   def index
     @aspect = :search
+    params[:q] ||= params[:term]
+    limit = params[:limit] || 15
 
-    @people = Person.search(params[:q], current_user).paginate :page => params[:page], :per_page => 15
+    @people = Person.search(params[:q], current_user).paginate :page => params[:page], :per_page => limit
     @hashes = hashes_for_people(@people, @aspects)
-    @people
     #only do it if it is an email address
     if params[:q].try(:match, Devise.email_regexp)
       webfinger(params[:q])
     end
+    respond_with @people
   end
 
   def hashes_for_people people, aspects
@@ -42,6 +44,7 @@ class PeopleController < ApplicationController
   def show
     @person = Person.where(:id => params[:id]).first
     @post_type = :all
+    @share_with = (params[:share_with] == 'true')
 
     if @person
       @incoming_request = current_user.request_from(@person)

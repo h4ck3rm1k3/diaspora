@@ -106,7 +106,7 @@ describe Person do
     end
 
     it "deletes all notifications from a person's actions" do
-      note = Factory(:notification, :actor => @deleter, :recipient => @user)
+      note = Factory(:notification, :actors => [@deleter], :recipient => @user)
       @deleter.destroy
       Notification.where(:id => note.id).first.should be_nil
     end
@@ -121,11 +121,11 @@ describe Person do
       lambda {@deleter.destroy}.should change(Post, :count).by(-1)
     end
 
-    it "does not delete a person's comments on person deletion" do
+    it "deletes a person's comments on person deletion" do
       Factory.create(:comment, :person_id => @deleter.id, :diaspora_handle => @deleter.diaspora_handle, :text => "i love you",     :post => @other_status)
       Factory.create(:comment, :person_id => @person.id,:diaspora_handle => @person.diaspora_handle,  :text => "you are creepy", :post => @other_status)
 
-      lambda {@deleter.destroy}.should_not change(Comment, :count)
+      lambda {@deleter.destroy}.should change(Comment, :count).by(-1)
     end
   end
 

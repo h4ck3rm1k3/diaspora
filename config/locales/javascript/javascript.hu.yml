@@ -1,0 +1,27 @@
+#   Copyright (c) 2010, Diaspora Inc.  This file is
+#   licensed under the Affero General Public License version 3 or later.  See
+#   the COPYRIGHT file.
+
+
+hu: 
+  javascripts: 
+    confirm_dialog: "Biztos vagy benne?"
+    timeago: 
+      day: "egy napja"
+      days: "%d napja"
+      hour: "körülbelül egy órája"
+      hours: "körülbelül %d órája"
+      minute: "körülbelül egy perce"
+      minutes: "%d perce"
+      month: "körülbelül egy hónapja"
+      months: "%d hónapja"
+      prefixAgo: ""
+      prefixFromNow: ""
+      seconds: "kevesebb mint egy perce"
+      suffixAgo: "ezelőtt"
+      suffixFromNow: "mostantól"
+      year: "körülbelül egy éve"
+      years: "%d éve"
+    videos: 
+      unknown: "Ismeretlen videó tipus"
+      watch: "Videó megtekintése itt: {{provider}}"

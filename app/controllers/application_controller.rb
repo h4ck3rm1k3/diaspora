@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   before_filter :count_requests
   before_filter :set_invites
   before_filter :set_locale
+  before_filter :which_action_and_user
 
   def set_contacts_notifications_and_status
     if user_signed_in?
@@ -17,6 +18,7 @@ class ApplicationController < ActionController::Base
       @object_aspect_ids = []
       @all_aspects = current_user.aspects.includes(:aspect_memberships)
       @notification_count = Notification.for(current_user, :unread =>true).count
+      @user_id = current_user.id
     end
   end
 
@@ -30,6 +32,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def which_action_and_user
+    str = "controller=#{self.class} action=#{self.action_name} "
+    if current_user
+      str << "uid=#{current_user.id}"
+    else
+      str << 'uid=nil'
+    end
+    Rails.logger.info str
+  end
+
   def set_locale
     if user_signed_in?
       I18n.locale = current_user.language
@@ -37,5 +49,4 @@ class ApplicationController < ActionController::Base
       I18n.locale = request.compatible_language_from AVAILABLE_LANGUAGE_CODES
     end
   end
-
 end

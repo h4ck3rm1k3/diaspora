@@ -3,6 +3,7 @@ Feature: posting
     As a rock star
     I want to tell the world I am eating a yogurt
     
+    @javascript
     Scenario: post to all aspects
       Given I am signed in
         And I have an aspect called "Family"
@@ -26,7 +27,7 @@ Feature: posting
         And I preemptively confirm the alert
         And I press the first ".delete" within ".stream_element"
         And I am on the home page
-        Then I should not see "I am eating a yoghurt"
+        Then I should not see "I am eating a yogurt"
 
       
     Scenario Outline: post to one aspect
@@ -36,8 +37,7 @@ Feature: posting
         And I am on the home page
       When I follow "PostTo"
         And I fill in "status_message_message" with "I am eating a yogurt"
-        And I press "Share"
-        
+        And I press "Share" 
         And I follow "<aspect>"
       Then I should <see> "I am eating a yogurt"
       
