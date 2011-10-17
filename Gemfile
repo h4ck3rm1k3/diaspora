@@ -33,16 +33,13 @@ gem 'settingslogic', '2.0.6'
 
 gem 'activerecord-import'
 gem 'foreigner', '0.9.1'
-gem 'mysql2', '0.2.13'
-# if ENV['DB'].nil? || ENV['DB'] == 'all' || ENV['DB'] == 'mysql'
-gem 'pg'
-# if ENV['DB'] == 'all' || ENV['DB'] == 'postgres'
-#gem 'sqlite3' if ENV['DB'] == 'all' || ENV['DB'] == 'sqlite'
+gem 'mysql2', '0.2.13' if ENV['DB'].nil? || ENV['DB'] == 'all' || ENV['DB'] == 'mysql'
+gem 'pg'  if ENV['DB'] == 'all' || ENV['DB'] == 'postgres'
+gem 'sqlite3' if ENV['DB'] == 'all' || ENV['DB'] == 'sqlite'
 
 # file uploading
 
 gem 'aws', '2.3.32' # upgrade to 2.4 breaks 1.8 >.<
-#Gem::RemoteFetcher::FetchError: SocketError: getaddrinfo: Name or service not known (http://rubygems.org/gems/aws-2.3.32.gem)
 
 gem 'carrierwave', '0.5.2'
 gem 'excon', '0.2.4'

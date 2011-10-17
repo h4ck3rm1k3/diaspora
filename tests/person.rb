@@ -93,6 +93,7 @@ class Person #< ActiveRecord::Base
   end
 
   def url=(x)
+    print "Url is " + x + "\n"
     @url=x
   end
 
@@ -206,7 +207,7 @@ class Person #< ActiveRecord::Base
       url
       else
 #      print "ERROR: Missing attributes (url)\n"
-#      print "check" + @url
+      print "check url" + @url  + "\n"
       begin
         uri = URI.parse(@url)
         url = "#{uri.scheme}://#{uri.host}"

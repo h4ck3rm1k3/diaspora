@@ -47,8 +47,9 @@ class Webfinger
   private
   def get_xrd
     begin
+      print "going to get " + xrd_url + "\n"
       http = Faraday.get xrd_url
-
+      print "got body " + http.body
       profile_url = webfinger_profile_url(http.body)
       if profile_url
         return profile_url
@@ -69,7 +70,9 @@ class Webfinger
 
   def get_webfinger_profile(profile_url)
     begin
+      print "get profile url" + profile_url + "\n"
       http = Faraday.get(profile_url)
+      print "got profile url" + http.body + "\n"
 
     rescue
       raise I18n.t('webfinger.fetch_failed', :profile_url => profile_url)
@@ -87,7 +90,11 @@ class Webfinger
       @wf_profile = WebfingerProfile.new(@account, webfinger_profile)
 
       begin
+        print "get hcard url" + hcard_url + "\n"
         hcard = Faraday.get(hcard_url)
+        
+        print "got hcard url" + hcard.body + "\n"
+
       rescue
         return I18n.t('webfinger.hcard_fetch_failed', :account => @account)
       end
