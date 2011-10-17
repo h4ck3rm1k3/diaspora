@@ -1,9 +1,10 @@
 
 require 'uri'
 #require File.join(Rails.root, 'lib/hcard')
-require 'roxml'
+#require 'roxml'
 require 'profile'
 require 'person'
+require 'pp'
 
 require 'rubygems'
 require 'active_record'
@@ -18,7 +19,7 @@ if person
   print person
   if person.profile
     print ("event=webfinger status=success route=local target=#{@account}")
-    print person
+    pp person
   end
   
 end

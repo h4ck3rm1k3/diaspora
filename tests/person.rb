@@ -4,28 +4,28 @@
 
 require 'uri'
 require 'hcard'
-require 'roxml'
+#require 'roxml'
 require 'profile'
 #require 'web_socket'
 require 'rubygems'
 require 'active_record'
 
 class Person #< ActiveRecord::Base
-  include ROXML
-  include ActiveModel::Validations
-  include ActiveModel::Serialization
-#  include ActiveModel::AttributeMethods
-  include ActiveModel::Lint::Tests
+#   include ROXML
+#   include ActiveModel::Validations
+#   include ActiveModel::Serialization
+# #  include ActiveModel::AttributeMethods
+#   include ActiveModel::Lint::Tests
 
 #  include Encryptor::Public
 
 #  include Diaspora::Socketable
 #  include Diaspora::Guid
 
-  xml_attr :diaspora_handle
-  xml_attr :url
-  xml_attr :profile, :as => Profile
-  xml_attr :exported_key
+  # xml_attr :diaspora_handle
+  # xml_attr :url
+  # xml_attr :profile, :as => Profile
+  # xml_attr :exported_key
 
 #  has_one :profile, :dependent => :destroy
   def profile
@@ -39,7 +39,7 @@ class Person #< ActiveRecord::Base
     @profile
   end
 
-  delegate :last_name, :to => :profile
+#  delegate :last_name, :to => :profile
 #  accepts_nested_attributes_for :profile
 
 #  before_validation :downcase_diaspora_handle
@@ -61,8 +61,8 @@ class Person #< ActiveRecord::Base
 #  before_destroy :remove_all_traces
 #  before_validation :clean_url
   
-  validates :url, :presence => true
-  validates :profile, :presence => true
+#  validates :url, :presence => true
+#  validates :profile, :presence => true
 
   def serialized_public_key
     @serialized_public_key
@@ -269,6 +269,9 @@ class Person #< ActiveRecord::Base
    (person.nil? || person.remote?) ? nil : person
   end
 
+  def valid?
+    true
+  end
   def self.create_from_webfinger(profile, hcard)
     return nil if profile.nil? || !profile.valid_diaspora_profile?
     new_person = Person.new

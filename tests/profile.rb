@@ -3,35 +3,35 @@
 #   the COPYRIGHT file.
 require 'rubygems'
 require 'active_record'
-require 'roxml'
+#require 'roxml'
 
 class Profile   #< ActiveRecord::Base
 #  require File.join(Rails.root, 'lib/diaspora/webhooks')
 #  include Diaspora::Webhooks
 #  include Diaspora::Taggable
-  include ROXML
-  include ActiveModel::Validations
-  include ActiveModel::Serialization
-  include ActiveModel::AttributeMethods
-  include ActiveModel::Lint::Tests
+#  include ROXML
+#  include ActiveModel::Validations
+#  include ActiveModel::Serialization
+#  include ActiveModel::AttributeMethods
+#  include ActiveModel::Lint::Tests
   attr_accessor :tag_string
 
 #  acts_as_taggable_on :tags
 #  extract_tags_from :tag_string
 #  validates :tag_list, :length => { :maximum => 5 }
 
-  xml_attr :diaspora_handle
-  xml_attr :first_name
-  xml_attr :last_name
-  xml_attr :image_url
-  xml_attr :image_url_small
-  xml_attr :image_url_medium
-  xml_attr :birthday
-  xml_attr :gender
-  xml_attr :bio
-  xml_attr :location
-  xml_attr :searchable
-  xml_attr :tag_string
+#  xml_attr :diaspora_handle
+#  xml_attr :first_name
+  # xml_attr :last_name
+  # xml_attr :image_url
+  # xml_attr :image_url_small
+  # xml_attr :image_url_medium
+  # xml_attr :birthday
+  # xml_attr :gender
+  # xml_attr :bio
+  # xml_attr :location
+  # xml_attr :searchable
+  # xml_attr :tag_string
 
 #  before_save :strip_names
 #  after_validation :strip_names

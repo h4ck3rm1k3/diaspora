@@ -1,6 +1,7 @@
 require 'hcard'
 require 'webfinger_profile'
 require 'faraday'
+require 'nokogiri'
 
 class Webfinger
   class WebfingerFailedError < RuntimeError; end

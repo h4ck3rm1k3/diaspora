@@ -1,4 +1,5 @@
 require 'profile';
+require 'pp';
 
 x = Profile.new()
-print x
+pp x
